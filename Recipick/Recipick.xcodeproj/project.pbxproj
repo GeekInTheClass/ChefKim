@@ -12,6 +12,7 @@
 		632045B61EC4366E00C9C22D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B41EC4366E00C9C22D /* Main.storyboard */; };
 		632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632045B71EC4366E00C9C22D /* Assets.xcassets */; };
 		632045BB1EC4366E00C9C22D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B91EC4366E00C9C22D /* LaunchScreen.storyboard */; };
+		640785691ECEDAB50025F594 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640785681ECEDAB50025F594 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		632045B71EC4366E00C9C22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632045BA1EC4366E00C9C22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632045BC1EC4366E00C9C22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		640785681ECEDAB50025F594 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				632045B71EC4366E00C9C22D /* Assets.xcassets */,
 				632045B91EC4366E00C9C22D /* LaunchScreen.storyboard */,
 				632045BC1EC4366E00C9C22D /* Info.plist */,
+				640785681ECEDAB50025F594 /* Recipe.swift */,
 			);
 			path = Recipick;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640785691ECEDAB50025F594 /* Recipe.swift in Sources */,
 				632045B31EC4366E00C9C22D /* ViewController.swift in Sources */,
 				632045B11EC4366E00C9C22D /* AppDelegate.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				632045C11EC4366E00C9C22D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
