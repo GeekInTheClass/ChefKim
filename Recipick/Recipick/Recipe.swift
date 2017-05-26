@@ -15,22 +15,24 @@ class Recipe {
     var time: [Time]
     var situation: [Situation]
     var category: [Category]
-    var recipe: [String]
+    var recipe_ingrediant: [String]
+    var recipe_contents: [String]
     var photo: [String]?
     
-
-    init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe: [String]) {
+    
+    init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe_ingrediant: [String], recipe_contents:[String]) {
         self.id = id
         self.name = name
         self.ingrediant = ingrediant
         self.time = time
         self.situation = situation
         self.category = category
-        self.recipe = recipe
+        self.recipe_ingrediant = recipe_ingrediant
+        self.recipe_contents = recipe_contents
     }
     
-    convenience init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe: [String], photo: [String]) {
-        self.init(id: id, name: name, ingrediant: ingrediant, time: time, situation: situation, category: category, recipe: recipe)
+    convenience init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe_ingrediant: [String], recipe_contents:[String], photo: [String]) {
+        self.init(id: id, name: name, ingrediant: ingrediant, time: time, situation: situation, category: category, recipe_ingrediant: recipe_ingrediant, recipe_contents: recipe_contents)
         self.photo = photo
     }
     
@@ -70,7 +72,7 @@ class Recipe {
                 return "우유"
             case .Cream:
                 return "생크림"
-            
+                
             case .Fish:
                 return "생선"
             case .FishCake:
@@ -79,7 +81,7 @@ class Recipe {
                 return "조개"
             case .Squid:
                 return "오징어"
-            
+                
             case .Vege:
                 return "쌈채소"
             case .Pumpkin:
@@ -200,3 +202,5 @@ class Recipe {
     
     
 }
+
+
