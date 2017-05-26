@@ -556,66 +556,6 @@
             </objects>
             <point key="canvasLocation" x="1229.5999999999999" y="1486.5067466266867"/>
         </scene>
-        <!--Situation Collection View Controller-->
-        <scene sceneID="hnS-bn-VCb">
-            <objects>
-                <collectionViewController id="DIj-Nq-vQd" customClass="SituationCollectionViewController" customModule="Recipick" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="fRK-1b-XXq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fSg-Jv-kfx">
-                            <size key="itemSize" width="180" height="210"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Vsd-pA-ZOJ" customClass="SituationCollectionViewCell" customModule="Recipick" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집에서 준비하는 파티음식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7Q-v8-YaW">
-                                            <rect key="frame" x="5" y="190" width="171" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_situ_party" translatesAutoresizingMaskIntoConstraints="NO" id="9fx-wZ-WVC">
-                                            <rect key="frame" x="0.0" y="10" width="180" height="180"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="180" id="DNm-R9-YLx"/>
-                                                <constraint firstAttribute="height" constant="180" id="kxY-IB-4hc"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="X7Q-v8-YaW" firstAttribute="top" secondItem="9fx-wZ-WVC" secondAttribute="bottom" id="1vk-iY-qbM"/>
-                                    <constraint firstItem="9fx-wZ-WVC" firstAttribute="top" secondItem="Vsd-pA-ZOJ" secondAttribute="topMargin" constant="2" id="HG8-D4-29k"/>
-                                    <constraint firstItem="X7Q-v8-YaW" firstAttribute="centerX" secondItem="Vsd-pA-ZOJ" secondAttribute="centerX" id="ldb-Ba-jlv"/>
-                                    <constraint firstItem="9fx-wZ-WVC" firstAttribute="centerX" secondItem="Vsd-pA-ZOJ" secondAttribute="centerX" id="wHK-0N-RXr"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="nameLabel" destination="X7Q-v8-YaW" id="O5W-1L-Nst"/>
-                                    <outlet property="situationImageView" destination="9fx-wZ-WVC" id="7nd-Ru-anJ"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="DIj-Nq-vQd" id="6N4-Az-TPr"/>
-                            <outlet property="delegate" destination="DIj-Nq-vQd" id="xh6-jH-ckk"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="Po6-G7-Yr4"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYS-qc-gmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3087" y="2312"/>
-        </scene>
         <!--Situation View Controller-->
         <scene sceneID="EgW-V9-rm5">
             <objects>
@@ -787,58 +727,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENe-b4-Qiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1229.5999999999999" y="2140.4797601199402"/>
-        </scene>
-        <!--Type Collection View Controller-->
-        <scene sceneID="ZVu-Bo-9iz">
-            <objects>
-                <collectionViewController id="UVj-u9-9rd" customClass="TypeCollectionViewController" customModule="Recipick" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="J97-Zh-Upg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5ll-dz-7uJ">
-                            <size key="itemSize" width="180" height="210"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TypeCell" id="X2g-vC-9cQ" customClass="TypeCollectionViewCell" customModule="Recipick" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-se-v9L">
-                                            <rect key="frame" x="75" y="189" width="30" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_type_korean" translatesAutoresizingMaskIntoConstraints="NO" id="4re-Y1-cqO">
-                                            <rect key="frame" x="0.0" y="10" width="180" height="180"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="180" id="0Ug-8H-A5z"/>
-                                                <constraint firstAttribute="height" constant="180" id="3fo-pt-2oM"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="BD0-se-v9L" firstAttribute="centerX" secondItem="X2g-vC-9cQ" secondAttribute="centerX" id="3J1-Mj-Z7N"/>
-                                    <constraint firstItem="4re-Y1-cqO" firstAttribute="top" secondItem="X2g-vC-9cQ" secondAttribute="topMargin" constant="2" id="EOR-Dw-j8U"/>
-                                    <constraint firstItem="BD0-se-v9L" firstAttribute="top" secondItem="4re-Y1-cqO" secondAttribute="bottom" constant="-1" id="KY3-nW-meD"/>
-                                    <constraint firstItem="4re-Y1-cqO" firstAttribute="centerX" secondItem="X2g-vC-9cQ" secondAttribute="centerX" id="Tef-Ur-CMb"/>
-                                </constraints>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="5sT-Rf-YQZ"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tXx-ED-Vbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3894" y="2311"/>
         </scene>
     </scenes>
     <resources>
