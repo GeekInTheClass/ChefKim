@@ -110,22 +110,3 @@ class TagCollectionViewController: UICollectionViewController {
 
 }
 
-class TagCollectionViewCell:UICollectionViewCell {
-    
-    @IBOutlet weak var tagImageView: UIImageView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    var tagForCell:Type? { didSet{
-        setUpCell()
-        }}
-    
-    func setUpCell() {
-        guard let type = tagForCell else {
-            return
-        }
-        
-        tagImageView.image = UIImage(named: type.thumbnail)
-        nameLabel.text = type.name
-    }
-}
