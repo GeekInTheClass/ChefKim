@@ -28,11 +28,6 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return situations.count
@@ -63,26 +58,5 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
 
 }
 
-class SituationCollectionViewCell:UICollectionViewCell {
-    
-    @IBOutlet weak var situationImageView: UIImageView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    var situation: Recipe.Situation? = nil
-    
-    var situationForCell:Situation? { didSet{
-        setUpCell()
-        }}
-    
-    func setUpCell() {
-        guard let situation = situationForCell else {
-            return
-        }
-        
-        situationImageView.image = UIImage(named: situation.thumbnail)
-        nameLabel.text = situation.name
-    }
-}
 
 

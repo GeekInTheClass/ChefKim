@@ -549,7 +549,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VHE-9P-5Zv" kind="show" id="eN9-BQ-C6T"/>
+                        <segue destination="VHE-9P-5Zv" kind="relationship" relationship="rootViewController" id="KDg-jI-TWk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3W8-2G-FPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,6 +682,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="C3Z-x1-rvR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMQ-s5-yQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,6 +753,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J8T-b5-yzz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wm8-Fo-TRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -779,7 +781,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="kNM-tb-jzi" kind="show" id="wg7-hF-CH9"/>
+                        <segue destination="kNM-tb-jzi" kind="relationship" relationship="rootViewController" id="674-vF-bxh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENe-b4-Qiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -850,6 +852,6 @@
         <image name="ui_search" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qdz-XU-sKu"/>
+        <segue reference="HIW-Dw-Q4s"/>
     </inferredMetricsTieBreakers>
 </document>

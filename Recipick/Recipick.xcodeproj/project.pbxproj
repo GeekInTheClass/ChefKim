@@ -20,10 +20,10 @@
 		63B7132E1ED71D4C0077E44F /* IngredientListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */; };
 		640785691ECEDAB50025F594 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640785681ECEDAB50025F594 /* Recipe.swift */; };
 		644CEE3D1ED72E7A008C60EC /* TagCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE3A1ED72E7A008C60EC /* TagCollectionViewController.swift */; };
-		644CEE401ED7383B008C60EC /* TypeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE3F1ED7383B008C60EC /* TypeCollectionViewController.swift */; };
-		644CEE421ED7D93C008C60EC /* SituationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE411ED7D93C008C60EC /* SituationCollectionViewController.swift */; };
 		644CEE441ED801BE008C60EC /* SituationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE431ED801BE008C60EC /* SituationViewController.swift */; };
 		644CEE481ED80952008C60EC /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE471ED80952008C60EC /* TypeViewController.swift */; };
+		644CEE4A1ED811AF008C60EC /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE491ED811AF008C60EC /* TypeCollectionViewCell.swift */; };
+		644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +42,10 @@
 		63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientListCell.swift; sourceTree = "<group>"; };
 		640785681ECEDAB50025F594 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		644CEE3A1ED72E7A008C60EC /* TagCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionViewController.swift; sourceTree = "<group>"; };
-		644CEE3F1ED7383B008C60EC /* TypeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewController.swift; sourceTree = "<group>"; };
-		644CEE411ED7D93C008C60EC /* SituationCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SituationCollectionViewController.swift; sourceTree = "<group>"; };
 		644CEE431ED801BE008C60EC /* SituationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SituationViewController.swift; sourceTree = "<group>"; };
 		644CEE471ED80952008C60EC /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		644CEE491ED811AF008C60EC /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SituationCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +88,12 @@
 				63001A901ED6ACF40052D9A5 /* MainViewController.swift */,
 				63B713251ED6FDEE0077E44F /* UIRoundButton.swift */,
 				63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */,
-				644CEE411ED7D93C008C60EC /* SituationCollectionViewController.swift */,
+				644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */,
 				644CEE431ED801BE008C60EC /* SituationViewController.swift */,
 				644CEE3A1ED72E7A008C60EC /* TagCollectionViewController.swift */,
 				63B713291ED718BD0077E44F /* IngredientViewController.swift */,
+				644CEE491ED811AF008C60EC /* TypeCollectionViewCell.swift */,
 				644CEE471ED80952008C60EC /* TypeViewController.swift */,
-				644CEE3F1ED7383B008C60EC /* TypeCollectionViewController.swift */,
 				63B7132B1ED718FA0077E44F /* TimeViewController.swift */,
 				63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */,
 			);
@@ -174,18 +174,18 @@
 			files = (
 				63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */,
 				63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */,
-				644CEE421ED7D93C008C60EC /* SituationCollectionViewController.swift in Sources */,
 				63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */,
 				63B713261ED6FDEE0077E44F /* UIRoundButton.swift in Sources */,
+				644CEE4A1ED811AF008C60EC /* TypeCollectionViewCell.swift in Sources */,
 				644CEE441ED801BE008C60EC /* SituationViewController.swift in Sources */,
 				644CEE3D1ED72E7A008C60EC /* TagCollectionViewController.swift in Sources */,
 				63B7132E1ED71D4C0077E44F /* IngredientListCell.swift in Sources */,
+				644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */,
 				640785691ECEDAB50025F594 /* Recipe.swift in Sources */,
 				632045B31EC4366E00C9C22D /* ViewController.swift in Sources */,
 				644CEE481ED80952008C60EC /* TypeViewController.swift in Sources */,
 				632045B11EC4366E00C9C22D /* AppDelegate.swift in Sources */,
 				63001A911ED6ACF40052D9A5 /* MainViewController.swift in Sources */,
-				644CEE401ED7383B008C60EC /* TypeCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
