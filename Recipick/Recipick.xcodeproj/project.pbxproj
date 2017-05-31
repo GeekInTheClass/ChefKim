@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DEBD4D10A9840463390C290 /* Pods_Recipick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */; };
 		63001A911ED6ACF40052D9A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63001A901ED6ACF40052D9A5 /* MainViewController.swift */; };
 		632045B11EC4366E00C9C22D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632045B01EC4366E00C9C22D /* AppDelegate.swift */; };
 		632045B31EC4366E00C9C22D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632045B21EC4366E00C9C22D /* ViewController.swift */; };
@@ -29,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipick/Pods-Recipick.release.xcconfig"; sourceTree = "<group>"; };
+		615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recipick/Pods-Recipick.debug.xcconfig"; sourceTree = "<group>"; };
 		63001A901ED6ACF40052D9A5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		632045AD1EC4366E00C9C22D /* Recipick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632045B01EC4366E00C9C22D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEBD4D10A9840463390C290 /* Pods_Recipick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E1DAC929FE1AD979034CB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */,
+				0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		112ECBC425030D6A22FDF5AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		632045A41EC4366E00C9C22D = {
 			isa = PBXGroup;
 			children = (
 				632045AF1EC4366E00C9C22D /* Recipick */,
 				632045AE1EC4366E00C9C22D /* Products */,
+				05E1DAC929FE1AD979034CB0 /* Pods */,
+				112ECBC425030D6A22FDF5AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632045BF1EC4366E00C9C22D /* Build configuration list for PBXNativeTarget "Recipick" */;
 			buildPhases = (
+				A86996160CA1FBFD5F346908 /* [CP] Check Pods Manifest.lock */,
 				632045A91EC4366E00C9C22D /* Sources */,
 				632045AA1EC4366E00C9C22D /* Frameworks */,
 				632045AB1EC4366E00C9C22D /* Resources */,
+				C665857A7A4192A05E3C4034 /* [CP] Embed Pods Frameworks */,
+				54AC3D088E542FE009BA4587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54AC3D088E542FE009BA4587 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recipick/Pods-Recipick-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86996160CA1FBFD5F346908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C665857A7A4192A05E3C4034 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recipick/Pods-Recipick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		632045A91EC4366E00C9C22D /* Sources */ = {
@@ -314,6 +389,7 @@
 		};
 		632045C01EC4366E00C9C22D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Recipick/Info.plist;
@@ -326,6 +402,7 @@
 		};
 		632045C11EC4366E00C9C22D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Recipick/Info.plist;
