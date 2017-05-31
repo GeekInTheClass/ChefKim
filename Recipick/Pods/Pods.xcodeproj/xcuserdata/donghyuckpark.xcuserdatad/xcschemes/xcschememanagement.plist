@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AccordionMenuSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Recipick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>869A427FA0BE7D077936A21869270F9A</key>
+		<key>60BB8720935026DC9363C02D4BD220EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D7D9BFD4D1B4245818D1E217294ADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

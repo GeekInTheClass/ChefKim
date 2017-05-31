@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AccordionMenuSwift
 
 class IngredientViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class IngredientViewController: UIViewController {
         // Do any additional setup after loading the view.
         IngredientListTable.dataSource = self
         IngredientListTable.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {

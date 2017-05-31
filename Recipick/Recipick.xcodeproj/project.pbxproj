@@ -15,6 +15,7 @@
 		632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632045B71EC4366E00C9C22D /* Assets.xcassets */; };
 		632045BB1EC4366E00C9C22D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B91EC4366E00C9C22D /* LaunchScreen.storyboard */; };
 		63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */; };
+		63A4E3391EDF55C000DFAD04 /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */; };
 		63B713261ED6FDEE0077E44F /* UIRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713251ED6FDEE0077E44F /* UIRoundButton.swift */; };
 		63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */; };
 		63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713291ED718BD0077E44F /* IngredientViewController.swift */; };
@@ -42,6 +43,7 @@
 		632045BA1EC4366E00C9C22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632045BC1EC4366E00C9C22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
 		63B713251ED6FDEE0077E44F /* UIRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundButton.swift; sourceTree = "<group>"; };
 		63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedCollectionViewCell.swift; sourceTree = "<group>"; };
 		63B713291ED718BD0077E44F /* IngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				63B7132B1ED718FA0077E44F /* TimeViewController.swift */,
 				63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */,
 				63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */,
+				63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */,
 			);
 			path = Recipick;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */,
 				63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */,
+				63A4E3391EDF55C000DFAD04 /* TimeListCell.swift in Sources */,
 				63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */,
 				63B713261ED6FDEE0077E44F /* UIRoundButton.swift in Sources */,
 				644CEE4A1ED811AF008C60EC /* TypeCollectionViewCell.swift in Sources */,

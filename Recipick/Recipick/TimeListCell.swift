@@ -1,17 +1,18 @@
 //
-//  IngredientListCell.swift
+//  TimeListCell.swift
 //  Recipick
 //
-//  Created by ParkDongHyuck on 2017. 5. 25..
+//  Created by ParkDongHyuck on 2017. 6. 1..
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
 
 import UIKit
 
-class IngredientListCell: UITableViewCell {
+class TimeListCell: UITableViewCell {
 
-    @IBOutlet weak var IngredientCellImage: UIImageView!
-    @IBOutlet weak var IngredientCellLabel: UILabel!
+    @IBOutlet weak var TimeCellImage: UIImageView!
+    @IBOutlet weak var TimeCellLabel: UILabel!
+    
     
     
     override func awakeFromNib() {
