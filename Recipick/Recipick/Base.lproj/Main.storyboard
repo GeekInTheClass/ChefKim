@@ -120,8 +120,8 @@
                                                     <outlet property="delegate" destination="eOI-S8-exq" id="ccJ-4X-PY0"/>
                                                 </connections>
                                             </collectionView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wID-43-Lwq">
-                                                <rect key="frame" x="0.0" y="130" width="376" height="170"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempimg_main_banner" translatesAutoresizingMaskIntoConstraints="NO" id="wID-43-Lwq">
+                                                <rect key="frame" x="0.0" y="130" width="375" height="170"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="1" green="0.45392849956047643" blue="0.4308986896694188" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -205,7 +205,7 @@
                                 <constraints>
                                     <constraint firstItem="iJ8-ga-wd9" firstAttribute="top" secondItem="AD8-ep-6RT" secondAttribute="top" constant="64" id="IMZ-Mg-LPU"/>
                                     <constraint firstItem="iJ8-ga-wd9" firstAttribute="centerX" secondItem="AD8-ep-6RT" secondAttribute="centerX" id="Wum-dr-Dzr"/>
-                                    <constraint firstAttribute="bottom" secondItem="iJ8-ga-wd9" secondAttribute="bottom" constant="-197" id="q8E-5W-es6"/>
+                                    <constraint firstAttribute="bottom" secondItem="iJ8-ga-wd9" secondAttribute="bottom" id="q8E-5W-es6"/>
                                     <constraint firstItem="iJ8-ga-wd9" firstAttribute="leading" secondItem="AD8-ep-6RT" secondAttribute="leading" id="uxa-Qx-4BL"/>
                                     <constraint firstAttribute="trailing" secondItem="iJ8-ga-wd9" secondAttribute="trailing" id="x1i-6Q-Ge9"/>
                                 </constraints>
@@ -841,6 +841,7 @@
         <image name="tab_03_home" width="26" height="25"/>
         <image name="tab_04_situation" width="25" height="25"/>
         <image name="tab_05_type" width="22" height="25"/>
+        <image name="tempimg_main_banner" width="540" height="243"/>
         <image name="ui_back" width="12" height="22"/>
         <image name="ui_like" width="128" height="118"/>
         <image name="ui_mypage" width="19" height="22"/>
