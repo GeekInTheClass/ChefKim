@@ -9,47 +9,54 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    // 상단 추천레시피 태그를 위한 임시 데이터셋
+    let tagIdentifier = "recipeTag"
+    var temporaryTags = ["달걀","우유","치즈","파티음식","10분컷자취요리","임시태그","태그","태그태그태그","밥"]
+    
+    // 하단 추천레시피 셀을 위한 임시 데이터셋
+    let cellIdentifier = "recipeCell"
+    var temporaryCollectionItems = ["김치찌개", "칼국수", "미역국", "치킨", "파스타", "피자", "탕수육", "냉면", "김치전"]
+    
+    @IBOutlet weak var recommendedTag: UICollectionView!
     
     @IBOutlet weak var navigationLogo: UIImageView!
     
     @IBOutlet weak var recommendedTitleRecipe: UIImageView!
-    
-    
-    var temporaryTags = ["달걀","우유","치즈","파티음식","10분컷자취요리"]
-    var currentElement = 0
 
-    @IBOutlet weak var recommendedTagButton: UIRoundPrimaryButton!
-    
-    @IBAction func showRecommendedTagButton(_ sender: Any) {
-        if currentElement < temporaryTags.count {
-            recommendedTagButton.setTitle(temporaryTags[currentElement], for: UIControlState.normal)
-            currentElement += 1
-        } else {
-            print("No more elements to display.")
-        }
-    }
-    
-    
-    let reuseIdentifier = "cell"
-    var temporaryCollectionItems = ["김치찌개", "칼국수", "미역국", "치킨", "파스타", "피자", "탕수육", "냉면", "김치전", "막걸리", "소주", "맥주", "밥", "된장찌개", "제육볶음"]
-    
     @IBOutlet weak var recommendedSubRecipe: UICollectionView!
 
+    // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.temporaryCollectionItems.count
+        if collectionView == self.recommendedTag {
+            return self.temporaryTags.count
+        }
+        
+        else {
+            return self.temporaryCollectionItems.count
+        }
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
-        
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.RecommendedCellLabel.text = self.temporaryCollectionItems[indexPath.item]
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-        
-        return cell
+        if collectionView == self.recommendedTag {
+            // get a reference to our storyboard cell
+            let recipeTag = collectionView.dequeueReusableCell(withReuseIdentifier: tagIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
+            
+            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+            recipeTag.recommendedTagLabel.text = self.temporaryTags[indexPath.item]
+            recipeTag.layer.cornerRadius = 13.5
+            
+            return recipeTag
+        }
+            
+        else {
+            let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
+            
+            recipeCell.RecommendedCellLabel.text = self.temporaryCollectionItems[indexPath.item]
+            
+            return recipeCell
+        }
     }
     
 
