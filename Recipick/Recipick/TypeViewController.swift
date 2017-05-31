@@ -17,7 +17,6 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
 
         // Do any additional setup after loading the view.
         types += [Type(thumbnail:"icon_type_korean", name:"한식", type:Recipe.Category.Korean), Type(thumbnail:"icon_type_chinese", name:"중식", type:Recipe.Category.Chinese), Type(thumbnail:"icon_type_japanese", name:"일식", type:Recipe.Category.Japanese), Type(thumbnail:"icon_type_western", name:"양식", type:Recipe.Category.Western), Type(thumbnail:"icon_type_global", name:"세계음식", type:Recipe.Category.Global), Type(thumbnail:"icon_type_dessert", name:"디저트", type:Recipe.Category.Dessert)]
@@ -36,8 +35,6 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeCell", for: indexPath) as! TypeCollectionViewCell
         
-        print("hi")
-        
         let type = Array(types)[indexPath.row]
         let thumbnail:UIImage = UIImage(named: type.thumbnail)!
         
@@ -47,6 +44,22 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.typeImageView.image = thumbnail
         
         return cell
+    }
+    
+    var recipeList:[Recipe] = []
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TypeToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                var tagList:[Recipe]
+                for recipe in recipeList {
+                    if recipe.category == Array(types)[self.tableView.indexPathForSelectedRow?.row].type {
+                        tagList.append(recipe)
+                    }
+                }
+                toTag.tagList = tagList
+            }
+        }
     }
 
     /*

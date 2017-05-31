@@ -1,17 +1,17 @@
 //
-//  TagViewController.swift
+//  RecipeViewController.swift
 //  Recipick
 //
-//  Created by SangU on 2017. 5. 26..
+//  Created by SangU on 2017. 5. 31..
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
 
 import UIKit
 
-class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-    var tagList:[Recipe] = []
+class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var recipe:Recipe? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,36 +25,16 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return tagList.count
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath)
         
-        // Configure the cell
-        
-        let tag = Array(tagList)[indexPath.row]
-        let thumbnail:UIImage?
-        if let photo = tag.photo {
-            thumbnail = UIImage(named: photo[0])!
-        } else {
-            thumbnail = UIImage(named: "default")!
-        }
-        
-        
-        cell.nameLabel.text = tag.name
-        cell.tagImageView.image = thumbnail
         
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TagToRecipe" {
-            if let toRecipe = segue.destination as? RecipeViewController {
-                toRecipe.recipe = tagList[0]
-            }
-        }
-    }
 
     /*
     // MARK: - Navigation

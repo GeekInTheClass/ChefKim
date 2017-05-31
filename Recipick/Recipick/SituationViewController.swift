@@ -46,6 +46,21 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SituationToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                var tagList:[Recipe]
+                for recipe in recipeList {
+                    if recipe.situation == Array(situations)[self.tableView.indexPathForSelectedRow?.row].situation {
+                        tagList.append(recipe)
+                    }
+                }
+                toTag.tagList = tagList
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
