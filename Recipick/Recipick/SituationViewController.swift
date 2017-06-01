@@ -46,7 +46,7 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return cell
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SituationToTag" {
             if let toTag = segue.destination as? TagViewController {
@@ -59,7 +59,7 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
                 toTag.tagList = tagList
             }
         }
-    }
+    }*/
     
     /*
     // MARK: - Navigation

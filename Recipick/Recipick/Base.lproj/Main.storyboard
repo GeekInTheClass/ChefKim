@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynP-5r-sob" id="QQH-99-ek6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -360,7 +360,10 @@
                                                         <constraint firstAttribute="width" constant="30" id="XGR-yI-0cm"/>
                                                         <constraint firstAttribute="height" constant="30" id="wpD-pe-hvT"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button" image="ui_like"/>
+                                                    <state key="normal" title="like_button" image="ui_unlike"/>
+                                                    <connections>
+                                                        <action selector="changeButton" destination="Un4-X7-2cQ" eventType="touchUpInside" id="rxt-is-gJW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -410,7 +413,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QLC-Qg-nKi" id="rrl-tB-FWw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYn-Ef-yJa">
@@ -558,7 +561,7 @@
         <scene sceneID="YLu-UM-Tp1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tBJ-Ye-iDD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="상황별" selectedImage="tab_04_situation" id="6tf-QO-z16"/>
+                    <tabBarItem key="tabBarItem" title="상황별" image="tab_04_situation" id="6tf-QO-z16"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="asa-Us-2If">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -681,7 +684,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="한식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWN-gg-tck">
-                                                    <rect key="frame" x="69" y="189" width="42" height="21"/>
+                                                    <rect key="frame" x="69" y="173" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -725,7 +728,7 @@
         <scene sceneID="KOV-Tj-Gqs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwj-Qz-yzC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="종류별" selectedImage="tab_05_type" id="NII-ul-rNB"/>
+                    <tabBarItem key="tabBarItem" title="종류별" image="tab_05_type" id="NII-ul-rNB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F1X-Xh-eTV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -760,12 +763,12 @@
         <image name="tab_04_situation" width="25" height="25"/>
         <image name="tab_05_type" width="25" height="28"/>
         <image name="ui_back" width="12" height="22"/>
-        <image name="ui_like" width="30" height="27"/>
         <image name="ui_mypage" width="19" height="22"/>
         <image name="ui_search" width="22" height="22"/>
+        <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9S1-L7-edb"/>
+        <segue reference="T3X-jb-hAS"/>
         <segue reference="xar-7K-0we"/>
     </inferredMetricsTieBreakers>
 </document>

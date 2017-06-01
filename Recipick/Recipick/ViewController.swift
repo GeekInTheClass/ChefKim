@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        recipeList += [Beefbureau, Fishpaste, PickledCucumber, KimchiFriedRice, ClamSoftTofuStew, FriedSpicyPork, FriedEggPlant, VongolePasta, BeefSeaweedSoup]
     }
 
     override func didReceiveMemoryWarning() {

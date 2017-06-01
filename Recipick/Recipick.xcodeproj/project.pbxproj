@@ -27,6 +27,7 @@
 		644CEE501ED81C7C008C60EC /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE4F1ED81C7C008C60EC /* TagViewController.swift */; };
 		64F7ECD31EDEF10A00319C1B /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD21EDEF10A00319C1B /* RecipeViewController.swift */; };
 		64F7ECD51EDEF57F00319C1B /* Recipe_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD41EDEF57F00319C1B /* Recipe_Data.swift */; };
+		64F7ECD71EDEFDE800319C1B /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD61EDEFDE800319C1B /* RecipeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		644CEE4F1ED81C7C008C60EC /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		64F7ECD21EDEF10A00319C1B /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		64F7ECD41EDEF57F00319C1B /* Recipe_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe_Data.swift; sourceTree = "<group>"; };
+		64F7ECD61EDEFDE800319C1B /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				644CEE491ED811AF008C60EC /* TypeCollectionViewCell.swift */,
 				644CEE471ED80952008C60EC /* TypeViewController.swift */,
 				64F7ECD21EDEF10A00319C1B /* RecipeViewController.swift */,
+				64F7ECD61EDEFDE800319C1B /* RecipeCollectionViewCell.swift */,
 				644CEE4F1ED81C7C008C60EC /* TagViewController.swift */,
 				644CEE4D1ED81C53008C60EC /* TagCollectionViewCell.swift */,
 				63B7132B1ED718FA0077E44F /* TimeViewController.swift */,
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F7ECD71EDEFDE800319C1B /* RecipeCollectionViewCell.swift in Sources */,
 				63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */,
 				63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */,
 				63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */,

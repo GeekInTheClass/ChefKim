@@ -7,6 +7,8 @@
 //
 import Foundation
 
+var recipeList:[Recipe] = []
+
 // 소고기 무국
 let Beefbureau = Recipe(id: 0001,
                         name: "소고기무국",

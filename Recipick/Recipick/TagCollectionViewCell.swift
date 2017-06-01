@@ -16,6 +16,16 @@ class TagCollectionViewCell:UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBAction func changeButton() {
+        let buttonImage = UIImage(named: "ui_unlike")
+        if buttonLike.currentImage == buttonImage {
+            buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)
+        }
+        else {
+            buttonLike.setImage(UIImage(named:"ui_unlike"), for: .normal)
+        }
+    }
+    
     
     var tagForCell:Type? { didSet{
         setUpCell()

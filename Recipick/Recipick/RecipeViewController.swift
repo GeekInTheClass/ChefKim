@@ -10,7 +10,17 @@ import UIKit
 
 class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var recipe:Recipe? = nil
+    var recipe:Recipe!
+    
+    //@IBOutlet weak var timeLabel:UILabel
+    
+    //@IBOutlet weak var situationLabel:UILabel
+    
+    //@IBOutlet weak var typeLabel:UILabel
+    
+    //@IBOutlet weak var recipe_ingrediantLabel:[UILabel]
+    
+    //@IBOutlet weak var recipe_contentsLabel:[UILabel]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +35,18 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        guard let collection = recipe.photo  else {
+            return 0
+        }
+        return collection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as! RecipeCollectionViewCell
+        let photo:String = Array(recipe.photo!)[indexPath.row]
+        let thumbnail:UIImage = UIImage(named: photo)!
         
+        cell.recipeImage = thumbnail
         
         return cell
     }
