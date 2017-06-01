@@ -56,6 +56,19 @@
 		box-sizing: border-box;
 	}
 
+/* Custom CSS for Recipick */
+
+	#banner-background {
+		position: relative;
+		height: 100%;
+		z-index: -1;
+	}
+
+	.title-logo {
+	    width: 200px;
+    	margin-bottom: 20px;
+	}
+
 /* Containers */
 
 	.container {
@@ -3028,12 +3041,13 @@
 /* Banner */
 
 	#banner {
-		background-attachment: scroll,							fixed;
+		background-attachment: scroll, fixed;
 		background-color: #666;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
-		background-position: top left,						center center;
-		background-repeat: repeat,							no-repeat;
-		background-size: auto,							cover;
+		/*background-image: url("images/overlay.png"), url("../../images/banner.jpg");*/
+		background-image: url("../../images/background_01.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;
