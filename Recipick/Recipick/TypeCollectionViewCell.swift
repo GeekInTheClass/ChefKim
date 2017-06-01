@@ -15,7 +15,7 @@ class TypeCollectionViewCell:UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var type: Recipe.Category? = nil
-    /*
+    
     var typeForCell:Type? { didSet{
         setUpCell()
         }}
@@ -27,5 +27,5 @@ class TypeCollectionViewCell:UICollectionViewCell {
         
         typeImageView.image = UIImage(named: type.thumbnail)
         nameLabel.text = type.name
-    }*/
+    }
 }

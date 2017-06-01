@@ -59,9 +59,7 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
         if segue.identifier == "SituationToTag" {
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
-                tagList = recipeList.filter { for situation in $0.situation  {
-                    if situation == selectedSituation { return true}
-                    }}
+                tagList = recipeList.filter { $0.situation == selectedSituation }
                 toTag.tagList = tagList
             }
         }

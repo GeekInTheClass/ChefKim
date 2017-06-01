@@ -11,15 +11,15 @@ class Recipe {
     let id: Int
     var name: String
     var ingrediant: [Ingrediant]
-    var time: [Time]
-    var situation: [Situation]
-    var category: [Category]
+    var time: Time
+    var situation: Situation
+    var category: Category
     var recipe_ingrediant: [String]
     var recipe_contents: [String]
     var photo: [String]?
     
     
-    init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe_ingrediant: [String], recipe_contents:[String]) {
+    init (id: Int, name: String, ingrediant: [Ingrediant], time: Time, situation: Situation, category: Category, recipe_ingrediant: [String], recipe_contents:[String]) {
         self.id = id
         self.name = name
         self.ingrediant = ingrediant
@@ -30,7 +30,7 @@ class Recipe {
         self.recipe_contents = recipe_contents
     }
     
-    convenience init (id: Int, name: String, ingrediant: [Ingrediant], time: [Time], situation: [Situation], category: [Category], recipe_ingrediant: [String], recipe_contents:[String], photo: [String]) {
+    convenience init (id: Int, name: String, ingrediant: [Ingrediant], time: Time, situation: Situation, category: Category, recipe_ingrediant: [String], recipe_contents:[String], photo: [String]) {
         self.init(id: id, name: name, ingrediant: ingrediant, time: time, situation: situation, category: category, recipe_ingrediant: recipe_ingrediant, recipe_contents: recipe_contents)
         self.photo = photo
     }

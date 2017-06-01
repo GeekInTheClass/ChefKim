@@ -57,9 +57,7 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
                 
-                tagList = recipeList.filter { for type in $0.category  {
-                    if type == selectedType { return true}
-                    }}
+                tagList = recipeList.filter { $0.category == selectedType }
                 
                 toTag.tagList = tagList
             }
