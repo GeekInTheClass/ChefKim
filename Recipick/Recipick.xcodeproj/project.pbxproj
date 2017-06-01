@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DEBD4D10A9840463390C290 /* Pods_Recipick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */; };
 		63001A911ED6ACF40052D9A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63001A901ED6ACF40052D9A5 /* MainViewController.swift */; };
 		632045B11EC4366E00C9C22D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632045B01EC4366E00C9C22D /* AppDelegate.swift */; };
 		632045B31EC4366E00C9C22D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632045B21EC4366E00C9C22D /* ViewController.swift */; };
 		632045B61EC4366E00C9C22D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B41EC4366E00C9C22D /* Main.storyboard */; };
 		632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632045B71EC4366E00C9C22D /* Assets.xcassets */; };
 		632045BB1EC4366E00C9C22D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B91EC4366E00C9C22D /* LaunchScreen.storyboard */; };
+		63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */; };
+		63A4E3391EDF55C000DFAD04 /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */; };
 		63B713261ED6FDEE0077E44F /* UIRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713251ED6FDEE0077E44F /* UIRoundButton.swift */; };
 		63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */; };
 		63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713291ED718BD0077E44F /* IngredientViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipick.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipick/Pods-Recipick.release.xcconfig"; sourceTree = "<group>"; };
+		615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recipick/Pods-Recipick.debug.xcconfig"; sourceTree = "<group>"; };
 		63001A901ED6ACF40052D9A5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		632045AD1EC4366E00C9C22D /* Recipick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632045B01EC4366E00C9C22D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,8 @@
 		632045B71EC4366E00C9C22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632045BA1EC4366E00C9C22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632045BC1EC4366E00C9C22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
 		63B713251ED6FDEE0077E44F /* UIRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRoundButton.swift; sourceTree = "<group>"; };
 		63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedCollectionViewCell.swift; sourceTree = "<group>"; };
 		63B713291ED718BD0077E44F /* IngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
@@ -61,17 +69,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEBD4D10A9840463390C290 /* Pods_Recipick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E1DAC929FE1AD979034CB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */,
+				0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		112ECBC425030D6A22FDF5AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B5D8314A849272FA3BE54B /* Pods_Recipick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		632045A41EC4366E00C9C22D = {
 			isa = PBXGroup;
 			children = (
 				632045AF1EC4366E00C9C22D /* Recipick */,
 				632045AE1EC4366E00C9C22D /* Products */,
+				05E1DAC929FE1AD979034CB0 /* Pods */,
+				112ECBC425030D6A22FDF5AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +136,8 @@
 				644CEE4D1ED81C53008C60EC /* TagCollectionViewCell.swift */,
 				63B7132B1ED718FA0077E44F /* TimeViewController.swift */,
 				63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */,
+				63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */,
+				63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */,
 			);
 			path = Recipick;
 			sourceTree = "<group>";
@@ -119,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632045BF1EC4366E00C9C22D /* Build configuration list for PBXNativeTarget "Recipick" */;
 			buildPhases = (
+				A86996160CA1FBFD5F346908 /* [CP] Check Pods Manifest.lock */,
 				632045A91EC4366E00C9C22D /* Sources */,
 				632045AA1EC4366E00C9C22D /* Frameworks */,
 				632045AB1EC4366E00C9C22D /* Resources */,
+				C665857A7A4192A05E3C4034 /* [CP] Embed Pods Frameworks */,
+				54AC3D088E542FE009BA4587 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +212,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		54AC3D088E542FE009BA4587 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recipick/Pods-Recipick-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86996160CA1FBFD5F346908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C665857A7A4192A05E3C4034 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Recipick/Pods-Recipick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		632045A91EC4366E00C9C22D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -187,11 +268,13 @@
 				64F7ECD71EDEFDE800319C1B /* RecipeCollectionViewCell.swift in Sources */,
 				63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */,
 				63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */,
+				63A4E3391EDF55C000DFAD04 /* TimeListCell.swift in Sources */,
 				63B713281ED709A70077E44F /* RecommendedCollectionViewCell.swift in Sources */,
 				63B713261ED6FDEE0077E44F /* UIRoundButton.swift in Sources */,
 				644CEE4A1ED811AF008C60EC /* TypeCollectionViewCell.swift in Sources */,
 				644CEE441ED801BE008C60EC /* SituationViewController.swift in Sources */,
 				63B7132E1ED71D4C0077E44F /* IngredientListCell.swift in Sources */,
+				63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */,
 				644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */,
 				640785691ECEDAB50025F594 /* Recipe.swift in Sources */,
 				632045B31EC4366E00C9C22D /* ViewController.swift in Sources */,
@@ -322,6 +405,7 @@
 		};
 		632045C01EC4366E00C9C22D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 615AB26B607C7C1FFD1E9F1E /* Pods-Recipick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Recipick/Info.plist;
@@ -334,6 +418,7 @@
 		};
 		632045C11EC4366E00C9C22D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0A67E09221EC063951F825 /* Pods-Recipick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Recipick/Info.plist;
