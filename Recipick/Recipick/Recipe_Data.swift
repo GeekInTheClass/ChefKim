@@ -10,7 +10,7 @@ import Foundation
 var recipeList:[Recipe] = []
 
 // 소고기 무국
-let Beefbureau = Recipe(id: 0001,
+/*let Beefbureau = Recipe(id: 0001,
                         name: "소고기무국",
                         ingrediant: [Recipe.Ingrediant.Beef],
                         time: [Recipe.Time.H1],
@@ -159,3 +159,4 @@ let BeefSeaweedSoup = Recipe(id: 0009,
                                                "이어서 육수(물) 재료가 충분히 잠기도록 넉넉하게 부어 보글보글 끓입니다",
                                                "국물이 끓으면 다진마늘 1큰술, 액젓 1큰술, 참치액 1큰술을 추가로 넣어 끓여주세요",
                                                "다시 국물이 끓으면 중약불로 줄이고 뭉근하게 10분 정도 끓여준 후, 부족한 간은 소금으로 맞춰주면 미역국 맛있게 끓이믄법 완성이에요"])
+ */

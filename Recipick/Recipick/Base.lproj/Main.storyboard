@@ -840,9 +840,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J8T-b5-yzz"/>
-                    <connections>
-                        <outlet property="typeCollectionView" destination="POK-dC-nE3" id="u0T-xW-uCJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wm8-Fo-TRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
