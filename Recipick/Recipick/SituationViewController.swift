@@ -12,6 +12,7 @@ typealias Situation = (thumbnail:String, name:String, situation:Recipe.Situation
 
 class SituationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var situationCollectionView: UICollectionView!
     var situations:[Situation] = []
     
     override func viewDidLoad() {
@@ -46,20 +47,25 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return cell
     }
-    /*
+    
+    var selectedSituation:Recipe.Situation!
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedSituation = situations[indexPath.row].situation
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SituationToTag" {
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
-                for recipe in recipeList {
-                    if recipe.situation == Array(situations)[self.tableView.indexPathForSelectedRow?.row].situation {
-                        tagList.append(recipe)
-                    }
-                }
+                tagList = recipeList.filter { for situation in $0.situation  {
+                    if situation == selectedSituation { return true}
+                    }}
                 toTag.tagList = tagList
             }
         }
-    }*/
+    }
     
     /*
     // MARK: - Navigation

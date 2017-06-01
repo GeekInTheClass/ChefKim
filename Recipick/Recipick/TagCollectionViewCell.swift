@@ -20,6 +20,7 @@ class TagCollectionViewCell:UICollectionViewCell {
         let buttonImage = UIImage(named: "ui_unlike")
         if buttonLike.currentImage == buttonImage {
             buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)
+            //likeList.append(self.)
         }
         else {
             buttonLike.setImage(UIImage(named:"ui_unlike"), for: .normal)

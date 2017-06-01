@@ -46,20 +46,25 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
-    /*
+    var selectedType:Recipe.Category!
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedType = types[indexPath.row].type
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TypeToTag" {
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
-                for recipe in recipeList {
-                    if recipe.category == Array(types)[0].type {
-                        tagList.append(recipe)
-                    }
-                }
+                
+                tagList = recipeList.filter { for type in $0.category  {
+                    if type == selectedType { return true}
+                    }}
+                
                 toTag.tagList = tagList
             }
         }
-    }*/
+    }
 
     /*
     // MARK: - Navigation

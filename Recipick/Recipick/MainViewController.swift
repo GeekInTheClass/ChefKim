@@ -8,6 +8,8 @@
 
 import UIKit
 
+var likeList:[Recipe] = []
+
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // 상단 추천레시피 태그를 위한 임시 데이터셋

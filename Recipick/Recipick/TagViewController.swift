@@ -40,6 +40,11 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         } else {
             thumbnail = UIImage(named: "default")!
         }
+        for recipe in likeList {
+            if recipe.id == tag.id {
+                cell.buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)
+            }
+        }
         
         
         cell.nameLabel.text = tag.name
