@@ -58,15 +58,23 @@
 
 /* Custom CSS for Recipick */
 
+/*	
 	#banner-background {
 		position: relative;
 		height: 100%;
 		z-index: -1;
 	}
-
+*/
+	
 	.title-logo {
 	    width: 200px;
     	margin-bottom: 20px;
+	}
+
+	.category-subtitle {
+		/*color: #f26522;*/
+		margin-bottom: 40px;
+		font-size: 30px;
 	}
 
 /* Containers */
