@@ -13,6 +13,10 @@ class IngredientViewController: UIViewController {
 
     @IBOutlet weak var IngredientListTable: UITableView!
     
+    let ingrediantsEnum = [Recipe.Ingrediant.Cheese, Recipe.Ingrediant.Yogurt, Recipe.Ingrediant.Milk, Recipe.Ingrediant.Cream, Recipe.Ingrediant.Fish, Recipe.Ingrediant.FishCake, Recipe.Ingrediant.Clam, Recipe.Ingrediant.Squid, Recipe.Ingrediant.Vege, Recipe.Ingrediant.Pumpkin,Recipe.Ingrediant.Potato, Recipe.Ingrediant.SweetPotato, Recipe.Ingrediant.Beef, Recipe.Ingrediant.Pork, Recipe.Ingrediant.Chicken, Recipe.Ingrediant.Egg, Recipe.Ingrediant.Kimchi, Recipe.Ingrediant.Rice, Recipe.Ingrediant.Fruit]
+    
+    let ingrediants:[String] = []
+    
     let ingredients = ["유제품","고기","야채"]
     let images = ["milk","meat","vegetable"]
     
@@ -31,6 +35,30 @@ class IngredientViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var selectedIngrediant:Recipe.Ingrediant!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIngrediant = ingrediantsEnum[indexPath.row]
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "IngrediantToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                var tagList:[Recipe] = []
+                for recipe in recipeList {
+                    for ingrediant in recipe.ingrediant {
+                        if ingrediant == selectedIngrediant {
+                            tagList.append(recipe)
+                            break
+                        }
+                    }
+                }
+                toTag.tagList = tagList
+                toTag.tagTitle = selectedIngrediant.toString()
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

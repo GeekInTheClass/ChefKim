@@ -12,6 +12,7 @@ class TimeViewController: UIViewController {
 
     @IBOutlet weak var TimeListTable: UITableView!
     
+    let timeListEnum = [Recipe.Time.M10, Recipe.Time.M30, Recipe.Time.H1, Recipe.Time.H2, Recipe.Time.H3, Recipe.Time.Day]
     let timelist = ["10분 내외", "30분 내외", "1시간", "2시간", "3시간 이상", "하루 이상"]
     let images = ["10m", "30m", "1h", "2h", "3h", "1d"]
     
@@ -29,6 +30,24 @@ class TimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var selectedTime:Recipe.Time!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTime = timeListEnum[indexPath.row]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TimeToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                var tagList:[Recipe]
+                
+                tagList = recipeList.filter { $0.time == selectedTime }
+                
+                toTag.tagList = tagList
+                toTag.tagTitle = selectedTime.toString()
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
