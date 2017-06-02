@@ -11,10 +11,12 @@ import UIKit
 class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var tagList:[Recipe] = []
+    var tagTitle:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = tagTitle
         // Do any additional setup after loading the view.
     }
 

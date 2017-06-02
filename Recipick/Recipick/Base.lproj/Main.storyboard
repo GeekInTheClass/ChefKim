@@ -894,7 +894,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="prC-RM-Zi0"/>
         <segue reference="T3X-jb-hAS"/>
-        <segue reference="xar-7K-0we"/>
     </inferredMetricsTieBreakers>
 </document>

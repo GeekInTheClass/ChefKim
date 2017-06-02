@@ -19,6 +19,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = recipe.name
         // Do any additional setup after loading the view.
     }
 
