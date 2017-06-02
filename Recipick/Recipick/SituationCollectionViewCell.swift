@@ -15,7 +15,7 @@ class SituationCollectionViewCell:UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var situation: Recipe.Situation? = nil
-    /*
+    
     var situationForCell:Situation? { didSet{
         setUpCell()
         }}
@@ -27,5 +27,5 @@ class SituationCollectionViewCell:UICollectionViewCell {
         
         situationImageView.image = UIImage(named: situation.thumbnail)
         nameLabel.text = situation.name
-    }*/
+    }
 }

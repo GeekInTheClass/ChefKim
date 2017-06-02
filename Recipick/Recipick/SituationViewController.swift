@@ -57,6 +57,7 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SituationToTag" {
+            print(selectedSituation.toString())
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
                 tagList = recipeList.filter { $0.situation == selectedSituation }
