@@ -11,10 +11,12 @@ import UIKit
 class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var tagList:[Recipe] = []
+    var tagTitle:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = tagTitle
         // Do any additional setup after loading the view.
     }
 
@@ -33,13 +35,15 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         // Configure the cell
         
-        let tag = Array(tagList)[indexPath.row]
+        let tag = tagList[indexPath.row]
         let thumbnail:UIImage?
+        
         if let photo = tag.photo {
             thumbnail = UIImage(named: photo[0])!
         } else {
             thumbnail = UIImage(named: "default")!
         }
+        
         for recipe in likeList {
             if recipe.id == tag.id {
                 cell.buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)

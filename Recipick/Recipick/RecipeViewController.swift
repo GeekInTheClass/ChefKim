@@ -12,25 +12,36 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     var recipe:Recipe!
     
-    //@IBOutlet weak var timeLabel:UILabel
+    @IBOutlet weak var recipe_ingrediant: UILabel!
     
-    //@IBOutlet weak var situationLabel:UILabel
-    
-    //@IBOutlet weak var typeLabel:UILabel
-    
-    //@IBOutlet weak var recipe_ingrediantLabel:[UILabel]
-    
-    //@IBOutlet weak var recipe_contentsLabel:[UILabel]
+    @IBOutlet weak var recipe_content: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = recipe.name
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        var ingrediants:String!
+        var contents:String!
+        
+        for ingrediant in recipe.recipe_ingrediant {
+            ingrediants.append(ingrediant)
+            ingrediants.append("\n")
+        }
+        
+        recipe_ingrediant.text = ingrediants
+        
+        for content in recipe.recipe_contents {
+            contents.append(content)
+            contents.append("\n")
+        }
+        
+        recipe_content.text = contents
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
