@@ -35,27 +35,22 @@ class IngredientViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var selectedIngrediant:Recipe.Ingrediant!
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIngrediant = ingrediantsEnum[indexPath.row]
-    }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var tagList:[Recipe] = []
         if segue.identifier == "IngrediantToTag" {
             if let toTag = segue.destination as? TagViewController {
-                var tagList:[Recipe] = []
-                for recipe in recipeList {
-                    for ingrediant in recipe.ingrediant {
-                        if ingrediant == selectedIngrediant {
-                            tagList.append(recipe)
-                            break
+                if let indexPath = IngredientListTable.indexPathForSelectedRow {
+                    for recipe in recipeList {
+                        for ingrediant in recipe.ingrediant {
+                            if ingrediant ==  ingrediantsEnum[indexPath.row] {
+                                tagList.append(recipe)
+                                break
+                            }
                         }
                     }
+                    toTag.tagList = tagList
+                    toTag.tagTitle = ingrediantsEnum[indexPath.row].toString()
                 }
-                toTag.tagList = tagList
-                toTag.tagTitle = selectedIngrediant.toString()
             }
         }
     }

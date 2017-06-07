@@ -30,21 +30,17 @@ class TimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var selectedTime:Recipe.Time!
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTime = timeListEnum[indexPath.row]
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TimeToTag" {
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
+                if let indexPath = TimeListTable.indexPathForSelectedRow {
+                    tagList = recipeList.filter { $0.time == timeListEnum[indexPath.row] }
+                    
+                    toTag.tagList = tagList
+                    toTag.tagTitle = timeListEnum[indexPath.row].toString()
+                }
                 
-                tagList = recipeList.filter { $0.time == selectedTime }
-                
-                toTag.tagList = tagList
-                toTag.tagTitle = selectedTime.toString()
             }
         }
     }

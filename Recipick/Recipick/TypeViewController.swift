@@ -19,6 +19,7 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
 
         self.title = "상황별 레시피"
+        
         // Do any additional setup after loading the view.
         types += [Type(thumbnail:"icon_type_korean", name:"한식", type:Recipe.Category.Korean), Type(thumbnail:"icon_type_chinese", name:"중식", type:Recipe.Category.Chinese), Type(thumbnail:"icon_type_japanese", name:"일식", type:Recipe.Category.Japanese), Type(thumbnail:"icon_type_western", name:"양식", type:Recipe.Category.Western), Type(thumbnail:"icon_type_global", name:"세계음식", type:Recipe.Category.Global), Type(thumbnail:"icon_type_dessert", name:"디저트", type:Recipe.Category.Dessert)]
     }
