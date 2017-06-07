@@ -13,15 +13,19 @@ class MypageViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
 
     @IBAction func backButtonAction(_ sender: Any) {
-        let _ = self.navigationController?.popViewController(animated: true)
+        // 뒤로가기 버튼 구현 (이전 스토리보드로 이동)
+        present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as UIViewController, animated: true, completion: nil)
     }
     
-    
-    
+    @IBOutlet weak var profileImg: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 프로필 이미지 영역 설정
+        profileImg.layer.borderWidth = 1
+        profileImg.layer.borderColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).cgColor
+        profileImg.layer.cornerRadius = profileImg.frame.height/2
     }
 
     override func didReceiveMemoryWarning() {

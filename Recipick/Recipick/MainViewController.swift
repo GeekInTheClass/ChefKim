@@ -27,6 +27,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var recommendedTitleRecipe: UIImageView!
 
     @IBOutlet weak var recommendedSubRecipe: UICollectionView!
+    
+    @IBAction func moveToMypage(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueMypage", sender: self)
+/*
+        다음 스토리보드의 첫 화면이 NavigationController이면 안된다고 함 -> 이 부분 질문드릴것
+         
+        let storyboard =  UIStoryboard(name: "Mypage", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as UIViewController!
+        navigationController?.pushViewController(vc!, animated: true)
+*/
+
+    }
+    
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

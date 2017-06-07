@@ -23,6 +23,7 @@
 		63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B713291ED718BD0077E44F /* IngredientViewController.swift */; };
 		63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7132B1ED718FA0077E44F /* TimeViewController.swift */; };
 		63B7132E1ED71D4C0077E44F /* IngredientListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */; };
+		63CEE5481EE2E9F6002FF686 /* SendRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEE5471EE2E9F6002FF686 /* SendRecipeViewController.swift */; };
 		640785691ECEDAB50025F594 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640785681ECEDAB50025F594 /* Recipe.swift */; };
 		644CEE441ED801BE008C60EC /* SituationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE431ED801BE008C60EC /* SituationViewController.swift */; };
 		644CEE481ED80952008C60EC /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE471ED80952008C60EC /* TypeViewController.swift */; };
@@ -56,6 +57,7 @@
 		63B713291ED718BD0077E44F /* IngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientViewController.swift; sourceTree = "<group>"; };
 		63B7132B1ED718FA0077E44F /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientListCell.swift; sourceTree = "<group>"; };
+		63CEE5471EE2E9F6002FF686 /* SendRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecipeViewController.swift; sourceTree = "<group>"; };
 		640785681ECEDAB50025F594 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		644CEE431ED801BE008C60EC /* SituationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SituationViewController.swift; sourceTree = "<group>"; };
 		644CEE471ED80952008C60EC /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */,
 				63A4E33A1EE1524900DFAD04 /* Mypage.storyboard */,
 				63A4E33C1EE1577500DFAD04 /* MypageViewController.swift */,
+				63CEE5471EE2E9F6002FF686 /* SendRecipeViewController.swift */,
 			);
 			path = Recipick;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				644CEE501ED81C7C008C60EC /* TagViewController.swift in Sources */,
 				64F7ECD51EDEF57F00319C1B /* Recipe_Data.swift in Sources */,
 				632045B11EC4366E00C9C22D /* AppDelegate.swift in Sources */,
+				63CEE5481EE2E9F6002FF686 /* SendRecipeViewController.swift in Sources */,
 				63001A911ED6ACF40052D9A5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
