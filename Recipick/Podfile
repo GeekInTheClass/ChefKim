@@ -10,5 +10,6 @@ target 'Recipick' do
 
   # Pods for Recipick
   pod 'AccordionMenuSwift', '~> 1.2.6'
+  pod ‘YNSearch’
 
 end

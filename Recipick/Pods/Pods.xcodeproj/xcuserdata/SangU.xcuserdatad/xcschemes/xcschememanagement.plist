@@ -6,13 +6,18 @@
 	<dict>
 		<key>AccordionMenuSwift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Recipick.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YNSearch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96D7D9BFD4D1B4245818D1E217294ADB</key>
+		<key>78805423227B73D4006AC682A5A866D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FE18F13DB0AF34F6E58051EE3914CA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

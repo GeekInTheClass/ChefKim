@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jMG-qL-FhH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tzD-aG-XNC">
+            <objects>
+                <viewController id="jMG-qL-FhH" customClass="YNSearchViewController" customModule="YNSearch" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IZS-Sa-KBe"/>
+                        <viewControllerLayoutGuide type="bottom" id="bBu-fh-UlP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pje-sr-lhx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byj-Bv-NWC" customClass="YNSearchListView" customModule="YNSearch">
+                                <rect key="frame" x="0.0" y="226" width="375" height="441"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NyV-O4-fbX" customClass="YNSearchMainView" customModule="YNSearch">
+                                <rect key="frame" x="0.0" y="89" width="375" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RC-cK-isv" customClass="YNSearchTextField" customModule="YNSearch">
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="wid-HO-M44" id="t1u-XA-v1s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoF-jx-qLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Vp3-0X-qkt">
+                    <connections>
+                        <outlet property="delegate" destination="jMG-qL-FhH" id="zb5-KI-avp"/>
+                        <outlet property="searchContentsController" destination="jMG-qL-FhH" id="BB0-JU-hGp"/>
+                        <outlet property="searchResultsDataSource" destination="jMG-qL-FhH" id="aci-eA-COY"/>
+                        <outlet property="searchResultsDelegate" destination="jMG-qL-FhH" id="cX9-32-d1A"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="p2x-7W-Ooc">
+                    <connections>
+                        <outlet property="delegate" destination="jMG-qL-FhH" id="G1M-sn-5Fg"/>
+                        <outlet property="searchContentsController" destination="jMG-qL-FhH" id="OFQ-qh-Pgw"/>
+                        <outlet property="searchResultsDataSource" destination="jMG-qL-FhH" id="mar-Vd-EFk"/>
+                        <outlet property="searchResultsDelegate" destination="jMG-qL-FhH" id="ETQ-8E-If1"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="wid-HO-M44">
+                    <connections>
+                        <outlet property="delegate" destination="jMG-qL-FhH" id="T21-Am-lFF"/>
+                        <outlet property="searchContentsController" destination="jMG-qL-FhH" id="kgc-vT-Wnc"/>
+                        <outlet property="searchResultsDataSource" destination="jMG-qL-FhH" id="G0m-hS-b45"/>
+                        <outlet property="searchResultsDelegate" destination="jMG-qL-FhH" id="RkP-0U-bd3"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-134" y="-206"/>
+        </scene>
+    </scenes>
+</document>
