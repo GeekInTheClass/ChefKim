@@ -31,6 +31,8 @@
 		644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */; };
 		644CEE4E1ED81C53008C60EC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE4D1ED81C53008C60EC /* TagCollectionViewCell.swift */; };
 		644CEE501ED81C7C008C60EC /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEE4F1ED81C7C008C60EC /* TagViewController.swift */; };
+		6455F49E1EE9456A00EB52EE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6455F49D1EE9456A00EB52EE /* Search.storyboard */; };
+		6455F4A21EE945BC00EB52EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6455F4A11EE945BC00EB52EE /* SearchViewController.swift */; };
 		64F7ECD31EDEF10A00319C1B /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD21EDEF10A00319C1B /* RecipeViewController.swift */; };
 		64F7ECD51EDEF57F00319C1B /* Recipe_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD41EDEF57F00319C1B /* Recipe_Data.swift */; };
 		64F7ECD71EDEFDE800319C1B /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7ECD61EDEFDE800319C1B /* RecipeCollectionViewCell.swift */; };
@@ -65,6 +67,8 @@
 		644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SituationCollectionViewCell.swift; sourceTree = "<group>"; };
 		644CEE4D1ED81C53008C60EC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		644CEE4F1ED81C7C008C60EC /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		6455F49D1EE9456A00EB52EE /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		6455F4A11EE945BC00EB52EE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		64F7ECD21EDEF10A00319C1B /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		64F7ECD41EDEF57F00319C1B /* Recipe_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe_Data.swift; sourceTree = "<group>"; };
 		64F7ECD61EDEFDE800319C1B /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				63B713271ED709A70077E44F /* RecommendedCollectionViewCell.swift */,
 				64F7ECD41EDEF57F00319C1B /* Recipe_Data.swift */,
 				644CEE4B1ED811C2008C60EC /* SituationCollectionViewCell.swift */,
+				6455F49D1EE9456A00EB52EE /* Search.storyboard */,
+				6455F4A11EE945BC00EB52EE /* SearchViewController.swift */,
 				644CEE431ED801BE008C60EC /* SituationViewController.swift */,
 				63B713291ED718BD0077E44F /* IngredientViewController.swift */,
 				644CEE491ED811AF008C60EC /* TypeCollectionViewCell.swift */,
@@ -217,6 +223,7 @@
 				632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */,
 				632045B61EC4366E00C9C22D /* Main.storyboard in Resources */,
 				63A4E33B1EE1524900DFAD04 /* Mypage.storyboard in Resources */,
+				6455F49E1EE9456A00EB52EE /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +295,7 @@
 				63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */,
 				644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */,
 				640785691ECEDAB50025F594 /* Recipe.swift in Sources */,
+				6455F4A21EE945BC00EB52EE /* SearchViewController.swift in Sources */,
 				632045B31EC4366E00C9C22D /* ViewController.swift in Sources */,
 				644CEE481ED80952008C60EC /* TypeViewController.swift in Sources */,
 				644CEE4E1ED81C53008C60EC /* TagCollectionViewCell.swift in Sources */,
