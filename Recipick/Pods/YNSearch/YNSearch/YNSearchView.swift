@@ -18,6 +18,7 @@ open class YNSearchView: UIView, YNSearchMainViewDelegate, YNSearchListViewDeleg
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        
         self.ynScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         
         self.ynSearchMainView = YNSearchMainView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))

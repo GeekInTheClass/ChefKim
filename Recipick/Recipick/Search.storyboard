@@ -9,50 +9,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="2BB-kt-ifP">
             <objects>
-                <viewController id="qTS-wt-ycl" sceneMemberID="viewController">
+                <viewController id="qTS-wt-ycl" customClass="SearchViewController" customModule="Recipick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A4v-fI-9hG"/>
-                        <viewControllerLayoutGuide type="bottom" id="mb8-Hj-Jnh"/>
+                        <viewControllerLayoutGuide type="top" id="8wW-uO-TNm"/>
+                        <viewControllerLayoutGuide type="bottom" id="0OV-OY-OQR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iC0-Xh-adY">
+                    <view key="view" contentMode="scaleToFill" id="NaY-ls-lHe" customClass="YNSearchView" customModule="YNSearch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyR-Mq-mv6" customClass="YNSearchListView" customModule="YNSearch">
-                                <rect key="frame" x="0.0" y="190" width="375" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YNSearchListViewCell" id="I77-xj-94G" customClass="YNSearchListViewCell" customModule="YNSearch">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I77-xj-94G" id="gr1-HB-eY1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-bm-ERL" customClass="YNSearchMainView" customModule="YNSearch">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpD-nZ-Pli" customClass="YNSearchMainView" customModule="YNSearch">
+                                <rect key="frame" x="0.0" y="74" width="375" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eL6-3U-qTv" customClass="YNCategoryButton" customModule="YNSearch">
-                                <rect key="frame" x="0.0" y="76" width="375" height="71"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-jJ-12l">
+                                <rect key="frame" x="0.0" y="333" width="375" height="334"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTt-IR-5NP" customClass="YNSearchTextFieldView" customModule="YNSearch">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-qr-6bD">
+                                        <rect key="frame" x="8" y="18" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="NWR-i0-Yd5" kind="showDetail" id="EIC-ze-2DO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="eMb-qr-6bD" id="IM7-ps-99B"/>
+                        <outlet property="mainview" destination="lpD-nZ-Pli" id="a2M-tp-Aae"/>
+                        <outlet property="scrollview" destination="Q1O-jJ-12l" id="C1c-sR-CTK"/>
+                        <outlet property="searchView" destination="NaY-ls-lHe" id="SoI-3p-GEb"/>
+                        <outlet property="textFieldView" destination="eTt-IR-5NP" id="9IE-gL-ALu"/>
+                        <outlet property="ynSearchView" destination="NaY-ls-lHe" id="ONY-l4-K2I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TS4-vN-FyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-95.200000000000003" y="154.27286356821591"/>
+        </scene>
+        <!--MainStoryboard-->
+        <scene sceneID="gQY-7K-Xlv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="NWR-i0-Yd5" userLabel="MainStoryboard" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1F-NW-aHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856" y="-93"/>
         </scene>
     </scenes>
 </document>
