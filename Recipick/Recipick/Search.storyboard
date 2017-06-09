@@ -39,7 +39,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="NWR-i0-Yd5" kind="showDetail" id="EIC-ze-2DO"/>
+                                            <segue destination="NWR-i0-Yd5" kind="show" identifier="tagSegue" action="showDetailViewController:sender:" id="EIC-ze-2DO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -55,16 +55,25 @@
                         <outlet property="searchView" destination="NaY-ls-lHe" id="SoI-3p-GEb"/>
                         <outlet property="textFieldView" destination="eTt-IR-5NP" id="9IE-gL-ALu"/>
                         <outlet property="ynSearchView" destination="NaY-ls-lHe" id="ONY-l4-K2I"/>
+                        <segue destination="fDu-id-A0e" kind="show" identifier="tagSegue" id="Nec-0T-4RW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TS4-vN-FyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-95.200000000000003" y="154.27286356821591"/>
         </scene>
-        <!--MainStoryboard-->
+        <!--Main-->
+        <scene sceneID="F20-RZ-tAA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="fDu-id-A0e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5N8-Qh-I5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="-308"/>
+        </scene>
+        <!--mainrecipe-->
         <scene sceneID="gQY-7K-Xlv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="NWR-i0-Yd5" userLabel="MainStoryboard" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Tag" id="NWR-i0-Yd5" userLabel="mainrecipe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1F-NW-aHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856" y="-93"/>
