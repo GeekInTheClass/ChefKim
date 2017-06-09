@@ -83,12 +83,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="48g-hR-KM7">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="ui_back" style="plain" id="qum-22-t9A">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i62-Vh-fMt">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="jGj-pO-Mct">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조리시간별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-Nx-eLc">
+                                    <rect key="frame" x="7" y="6" width="136" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="X8Z-Nx-eLc" firstAttribute="leading" secondItem="jGj-pO-Mct" secondAttribute="leading" constant="7" id="6uK-30-LfS"/>
+                                <constraint firstItem="X8Z-Nx-eLc" firstAttribute="centerX" secondItem="jGj-pO-Mct" secondAttribute="centerX" id="bwx-Sd-EtP"/>
+                                <constraint firstItem="X8Z-Nx-eLc" firstAttribute="centerY" secondItem="jGj-pO-Mct" secondAttribute="centerY" id="yFe-Lq-Ade"/>
+                            </constraints>
+                        </view>
                     </navigationItem>
                     <connections>
                         <outlet property="TimeListTable" destination="5dN-6m-aOf" id="s1l-Bd-QCG"/>
@@ -577,7 +595,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="T6Z-d9-h2L"/>
+                    <navigationItem key="navigationItem" id="T6Z-d9-h2L">
+                        <view key="titleView" contentMode="scaleToFill" id="mJh-Ax-ehi">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4G-4p-l56">
+                                    <rect key="frame" x="13" y="6" width="124" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="p4G-4p-l56" firstAttribute="leading" secondItem="mJh-Ax-ehi" secondAttribute="leading" constant="13" id="Hbx-78-i6M"/>
+                                <constraint firstItem="p4G-4p-l56" firstAttribute="centerX" secondItem="mJh-Ax-ehi" secondAttribute="centerX" id="XOR-wj-VGJ"/>
+                                <constraint firstItem="p4G-4p-l56" firstAttribute="centerY" secondItem="mJh-Ax-ehi" secondAttribute="centerY" id="q8S-2t-nQy"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="IngredientListTable" destination="1dL-ui-xLY" id="z4b-Or-ABa"/>
                     </connections>
@@ -704,12 +740,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tBJ-Ye-iDD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="상황별" image="tab_04_situation" id="6tf-QO-z16"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="asa-Us-2If">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="asa-Us-2If">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
-                                <color key="value" red="0.9929470419883728" green="0.82081115245819092" blue="0.25644257664680481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.99215686274509807" green="0.79607843137254897" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
@@ -757,11 +793,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_situ_party" translatesAutoresizingMaskIntoConstraints="NO" id="0Mu-4C-f0I">
-                                                    <rect key="frame" x="30" y="18" width="120" height="120"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_situ_party" translatesAutoresizingMaskIntoConstraints="NO" id="0Mu-4C-f0I">
+                                                    <rect key="frame" x="0.0" y="18" width="180" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="3Bf-t5-PIb"/>
-                                                        <constraint firstAttribute="width" constant="120" id="bvW-aw-ooQ"/>
+                                                        <constraint firstAttribute="width" constant="180" id="bvW-aw-ooQ"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -794,14 +830,33 @@
                             <constraint firstAttribute="bottom" secondItem="nPs-IJ-JKc" secondAttribute="bottom" id="qMx-V8-UZ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="C3Z-x1-rvR"/>
+                    <navigationItem key="navigationItem" id="C3Z-x1-rvR">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="6Kc-qg-7j2">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상황별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-GM-Ku9">
+                                    <rect key="frame" x="13" y="6" width="124" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="gzI-GM-Ku9" firstAttribute="leading" secondItem="6Kc-qg-7j2" secondAttribute="leading" constant="13" id="Guz-Pm-C4Y"/>
+                                <constraint firstItem="gzI-GM-Ku9" firstAttribute="centerY" secondItem="6Kc-qg-7j2" secondAttribute="centerY" id="PM2-8m-rRF"/>
+                                <constraint firstItem="gzI-GM-Ku9" firstAttribute="centerX" secondItem="6Kc-qg-7j2" secondAttribute="centerX" id="yXc-KZ-HYk"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="situationCollectionView" destination="nPs-IJ-JKc" id="HVS-nW-SgL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMQ-s5-yQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2169" y="1486"/>
+            <point key="canvasLocation" x="2168.8000000000002" y="1485.6071964017992"/>
         </scene>
         <!--Mypage-->
         <scene sceneID="uHf-nC-flT">
@@ -890,7 +945,26 @@
                             <constraint firstAttribute="trailing" secondItem="xRs-R3-VEo" secondAttribute="trailing" id="quA-Xb-GAP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="J8T-b5-yzz"/>
+                    <navigationItem key="navigationItem" id="J8T-b5-yzz">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="JQ7-gR-V6F">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음식 종류별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-6D-GaJ">
+                                    <rect key="frame" x="7" y="6" width="137" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="GSz-6D-GaJ" firstAttribute="bottom" secondItem="JQ7-gR-V6F" secondAttribute="bottomMargin" constant="2" id="LPy-48-WD5"/>
+                                <constraint firstItem="GSz-6D-GaJ" firstAttribute="centerX" secondItem="JQ7-gR-V6F" secondAttribute="centerX" id="fVK-4R-9R1"/>
+                                <constraint firstItem="GSz-6D-GaJ" firstAttribute="leading" secondItem="JQ7-gR-V6F" secondAttribute="leading" constant="7" id="xrY-y1-TZp"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wm8-Fo-TRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -902,12 +976,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwj-Qz-yzC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="종류별" image="tab_05_type" id="NII-ul-rNB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F1X-Xh-eTV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="F1X-Xh-eTV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="BarTintColor">
-                                <color key="value" red="0.99341613054275513" green="0.79734134674072266" blue="0.13672322034835815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.99215686274509807" green="0.79607843137254897" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
@@ -941,7 +1015,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1WW-og-bJh"/>
+        <segue reference="9S1-L7-edb"/>
         <segue reference="prC-RM-Zi0"/>
     </inferredMetricsTieBreakers>
 </document>
