@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2RT-sQ-L10">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2RT-sQ-L10">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynP-5r-sob" id="QQH-99-ek6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-Yy-MVf">
@@ -262,7 +262,7 @@
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="dM3-ya-FkF">
-                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iP3-t2-QN6">
@@ -281,6 +281,9 @@
                                 <rect key="frame" x="337" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ui_search"/>
+                                <connections>
+                                    <segue destination="kIN-M1-RKi" kind="show" id="LHW-tc-c6t"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -320,7 +323,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DuH-pS-nsy">
-                                        <rect key="frame" x="0.0" y="-38" width="100" height="90"/>
+                                        <rect key="frame" x="0.0" y="-37.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
@@ -330,7 +333,7 @@
                                         <size key="customSize" width="100" height="90"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KzH-Gr-ode">
-                                        <rect key="frame" x="110" y="-38" width="100" height="90"/>
+                                        <rect key="frame" x="110" y="-37.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
@@ -340,7 +343,7 @@
                                         <size key="customSize" width="100" height="90"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2Js-hy-g4l">
-                                        <rect key="frame" x="220" y="-38" width="100" height="90"/>
+                                        <rect key="frame" x="220" y="-37.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
@@ -350,7 +353,7 @@
                                         <size key="customSize" width="100" height="90"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fFR-z3-pdG">
-                                        <rect key="frame" x="330" y="-38" width="100" height="90"/>
+                                        <rect key="frame" x="330" y="-37.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
@@ -360,7 +363,7 @@
                                         <size key="customSize" width="100" height="90"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4qG-gy-ERK">
-                                        <rect key="frame" x="440" y="-38" width="100" height="90"/>
+                                        <rect key="frame" x="440" y="-37.5" width="100" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
@@ -527,7 +530,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QLC-Qg-nKi" id="rrl-tB-FWw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYn-Ef-yJa">
@@ -788,6 +791,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAI-g7-zcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3172" y="1355"/>
+        </scene>
+        <!--SearchScene-->
+        <scene sceneID="uOs-s3-veb">
+            <objects>
+                <viewControllerPlaceholder id="kIN-M1-RKi" userLabel="SearchScene" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brD-nF-sVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3187" y="1498"/>
         </scene>
         <!--Type View Controller-->
         <scene sceneID="Gts-yc-AOu">
