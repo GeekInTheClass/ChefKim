@@ -67,7 +67,7 @@ extension TimeViewController: UITableViewDataSource{
         let cell = TimeListTable.dequeueReusableCell(withIdentifier: "TimeListCell", for: indexPath) as! TimeListCell
         
         cell.TimeCellLabel.text = timelist[indexPath.row]
-        cell.TimeCellImage.image = UIImage(named: images[indexPath.row])
+        cell.TimeCellImage.image = UIImage(named: "icon_time_" + images[indexPath.row])
         
         return cell } }
 
