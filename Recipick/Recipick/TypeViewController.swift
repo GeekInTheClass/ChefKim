@@ -52,6 +52,8 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedType = types[indexPath.row].type
+        print(indexPath.row)
+        performSegue(withIdentifier: "TypeToTag", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,7 +64,8 @@ class TypeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 tagList = recipeList.filter { $0.category == selectedType }
                 
                 toTag.tagList = tagList
-                toTag.tagTitle = selectedType.toString()
+                print(selectedType.toString())
+                toTag.tagTitle.append(selectedType.toString())
             }
         }
     }

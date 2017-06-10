@@ -12,6 +12,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
 
     var tagList:[Recipe] = []
     var tagTitle:String = ""
+    var chosenRecipe:Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +58,15 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        chosenRecipe = tagList[indexPath.row]
+        performSegue(withIdentifier: "TagToRecipe", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TagToRecipe" {
             if let toRecipe = segue.destination as? RecipeViewController {
-                toRecipe.recipe = tagList[0]
+                toRecipe.recipe = chosenRecipe
             }
         }
     }

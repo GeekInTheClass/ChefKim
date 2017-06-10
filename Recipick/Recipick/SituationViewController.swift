@@ -53,11 +53,15 @@ class SituationViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedSituation = situations[indexPath.row].situation
+        print(selectedSituation.toString())
+        performSegue(withIdentifier: "SituToTag", sender: self)
     }
     
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SituationToTag" {
+        
+        if segue.identifier == "SituToTag" {
             print(selectedSituation.toString())
             if let toTag = segue.destination as? TagViewController {
                 var tagList:[Recipe]
