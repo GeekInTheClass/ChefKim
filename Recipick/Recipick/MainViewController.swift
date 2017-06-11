@@ -10,7 +10,7 @@ import UIKit
 
 var likeList:[Recipe] = []
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
@@ -30,16 +30,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func moveToMypage(_ sender: Any) {
         self.performSegue(withIdentifier: "segueMypage", sender: self)
-/*
-        다음 스토리보드의 첫 화면이 NavigationController이면 안된다고 함 -> 이 부분 질문드릴것
-         
-        let storyboard =  UIStoryboard(name: "Mypage", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController() as UIViewController!
-        navigationController?.pushViewController(vc!, animated: true)
-*/
-
     }
     
+    var sizingCell: RecommendedTagCollectionViewCell?
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,6 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == self.recommendedTag {
             // get a reference to our storyboard cell
             let recipeTag = collectionView.dequeueReusableCell(withReuseIdentifier: tagIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
+            self.configureCell(cell: recipeTag, forIndexPath: indexPath)
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
             recipeTag.recommendedTagLabel.text = self.temporaryTags[indexPath.item]
@@ -74,6 +68,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath) {
+        let tag = temporaryTags[indexPath.row]
+        cell.recommendedTagLabel.text = tag
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.recommendedTag {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath)
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+        
+        else {
+            return CGSize(width: view.frame.size.width/3 - 20, height: view.frame.size.width/3)
+            
+            // To get 1 column
+            //return CGSize(width: view.frame.size.width, height: view.frame.size.width)
+            
+            // To get 2 column
+            //return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
+        }
+    }
 
     
     override func viewDidLoad() {
@@ -83,6 +102,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         navigationLogo.image = UIImage(named: "logo")
         
+        let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
+        self.recommendedTag.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
+        self.recommendedTag.backgroundColor = UIColor.clear
+    
+        self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! RecommendedTagCollectionViewCell?
     }
 
     override func didReceiveMemoryWarning() {

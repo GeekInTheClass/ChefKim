@@ -14,7 +14,9 @@
 		632045B61EC4366E00C9C22D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B41EC4366E00C9C22D /* Main.storyboard */; };
 		632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632045B71EC4366E00C9C22D /* Assets.xcassets */; };
 		632045BB1EC4366E00C9C22D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632045B91EC4366E00C9C22D /* LaunchScreen.storyboard */; };
-		63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */; };
+		6347F4021EED759600E4A037 /* RecommendedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347F4001EED759600E4A037 /* RecommendedTagCollectionViewCell.swift */; };
+		6347F4031EED759600E4A037 /* RecommendedTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6347F4011EED759600E4A037 /* RecommendedTagCollectionViewCell.xib */; };
+		6347F4051EED7CF400E4A037 /* RecommendedTagCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6347F4041EED7CF400E4A037 /* RecommendedTagCollectionFlowLayout.swift */; };
 		63A4E3391EDF55C000DFAD04 /* TimeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */; };
 		63A4E33B1EE1524900DFAD04 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A4E33A1EE1524900DFAD04 /* Mypage.storyboard */; };
 		63A4E33D1EE1577500DFAD04 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E33C1EE1577500DFAD04 /* MypageViewController.swift */; };
@@ -51,7 +53,9 @@
 		632045B71EC4366E00C9C22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632045BA1EC4366E00C9C22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632045BC1EC4366E00C9C22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		6347F4001EED759600E4A037 /* RecommendedTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		6347F4011EED759600E4A037 /* RecommendedTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendedTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		6347F4041EED7CF400E4A037 /* RecommendedTagCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedTagCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeListCell.swift; sourceTree = "<group>"; };
 		63A4E33A1EE1524900DFAD04 /* Mypage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
 		63A4E33C1EE1577500DFAD04 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
@@ -151,11 +155,13 @@
 				644CEE4D1ED81C53008C60EC /* TagCollectionViewCell.swift */,
 				63B7132B1ED718FA0077E44F /* TimeViewController.swift */,
 				63B7132D1ED71D4C0077E44F /* IngredientListCell.swift */,
-				63A4E3361EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift */,
 				63A4E3381EDF55C000DFAD04 /* TimeListCell.swift */,
 				63A4E33A1EE1524900DFAD04 /* Mypage.storyboard */,
 				63A4E33C1EE1577500DFAD04 /* MypageViewController.swift */,
 				63CEE5471EE2E9F6002FF686 /* SendRecipeViewController.swift */,
+				6347F4001EED759600E4A037 /* RecommendedTagCollectionViewCell.swift */,
+				6347F4011EED759600E4A037 /* RecommendedTagCollectionViewCell.xib */,
+				6347F4041EED7CF400E4A037 /* RecommendedTagCollectionFlowLayout.swift */,
 			);
 			path = Recipick;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				632045BB1EC4366E00C9C22D /* LaunchScreen.storyboard in Resources */,
+				6347F4031EED759600E4A037 /* RecommendedTagCollectionViewCell.xib in Resources */,
 				632045B81EC4366E00C9C22D /* Assets.xcassets in Resources */,
 				632045B61EC4366E00C9C22D /* Main.storyboard in Resources */,
 				63A4E33B1EE1524900DFAD04 /* Mypage.storyboard in Resources */,
@@ -285,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6347F4051EED7CF400E4A037 /* RecommendedTagCollectionFlowLayout.swift in Sources */,
 				64F7ECD71EDEFDE800319C1B /* RecipeCollectionViewCell.swift in Sources */,
 				63B7132A1ED718BD0077E44F /* IngredientViewController.swift in Sources */,
 				63B7132C1ED718FA0077E44F /* TimeViewController.swift in Sources */,
@@ -295,12 +303,12 @@
 				644CEE441ED801BE008C60EC /* SituationViewController.swift in Sources */,
 				63B7132E1ED71D4C0077E44F /* IngredientListCell.swift in Sources */,
 				63A4E33D1EE1577500DFAD04 /* MypageViewController.swift in Sources */,
-				63A4E3371EDDE80200DFAD04 /* RecommendedTagCollectionViewCell.swift in Sources */,
 				644CEE4C1ED811C2008C60EC /* SituationCollectionViewCell.swift in Sources */,
 				640785691ECEDAB50025F594 /* Recipe.swift in Sources */,
 				6455F4A21EE945BC00EB52EE /* SearchViewController.swift in Sources */,
 				632045B31EC4366E00C9C22D /* ViewController.swift in Sources */,
 				6455F4A41EE9781F00EB52EE /* DetailViewController.swift in Sources */,
+				6347F4021EED759600E4A037 /* RecommendedTagCollectionViewCell.swift in Sources */,
 				644CEE481ED80952008C60EC /* TypeViewController.swift in Sources */,
 				644CEE4E1ED81C53008C60EC /* TagCollectionViewCell.swift in Sources */,
 				64F7ECD31EDEF10A00319C1B /* RecipeViewController.swift in Sources */,
