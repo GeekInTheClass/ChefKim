@@ -48,6 +48,9 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.setYNCategoryButtonType(type: .colorful)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -262,6 +265,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         if segue.identifier == "tagSegue" {
             if let destination = segue.destination as? TagViewController {
                 destination.tagList = self.tagList
