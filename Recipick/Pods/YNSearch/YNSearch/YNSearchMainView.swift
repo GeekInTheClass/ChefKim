@@ -46,7 +46,6 @@ open class YNSearchMainView: UIView {
     
     open func ynCategoryButtonClicked(_ sender: UIButton) {
         guard let text = ynCategoryButtons[sender.tag].titleLabel?.text else { return }
-        ynSearch.appendSearchHistories(value: text)
         self.delegate?.ynCategoryButtonClicked(text: text)
     }
     

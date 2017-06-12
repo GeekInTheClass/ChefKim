@@ -92,6 +92,7 @@ open class YNCategoryButton: UIButton {
         case .colorful:
             self.layer.borderColor = nil
             self.layer.borderWidth = 0
+            self.layer.cornerRadius = 10.0
             self.backgroundColor = randomColor()
             self.setTitleColor(UIColor.white, for: .normal)
             self.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted)
