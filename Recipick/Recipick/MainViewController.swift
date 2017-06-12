@@ -14,7 +14,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
-    var temporaryTags = ["달걀","우유","치즈","파티음식","10분컷자취요리","임시태그","태그","태그태그태그","밥"]
+    var temporaryTags = ["달걀","우유우유","치즈","파티음식","10분컷자취요리","임시태그","태그","태그태그태그","밥","ㅇㅁㄹㅇㅁㄹ"]
     
     // 하단 추천레시피 셀을 위한 임시 데이터셋
     let cellIdentifier = "recipeCell"
@@ -32,6 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.performSegue(withIdentifier: "segueMypage", sender: self)
     }
     
+
     var sizingCell: RecommendedTagCollectionViewCell?
 
     // tell the collection view how many cells to make
@@ -53,7 +54,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.configureCell(cell: recipeTag, forIndexPath: indexPath)
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            recipeTag.recommendedTagLabel.text = self.temporaryTags[indexPath.item]
+//            recipeTag.recommendedTagLabel.text = "#" + self.temporaryTags[indexPath.item]
             recipeTag.layer.cornerRadius = 13.5
             
             return recipeTag
@@ -70,7 +71,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath) {
         let tag = temporaryTags[indexPath.row]
-        cell.recommendedTagLabel.text = tag
+        cell.recommendedTagLabel.text = "# " + tag
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -84,7 +85,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
         else {
-            return CGSize(width: view.frame.size.width/3 - 20, height: view.frame.size.width/3)
+            return CGSize(width: view.frame.size.width/3 - 17, height: view.frame.size.width/3)
             
             // To get 1 column
             //return CGSize(width: view.frame.size.width, height: view.frame.size.width)
@@ -94,6 +95,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +109,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.recommendedTag.backgroundColor = UIColor.clear
     
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! RecommendedTagCollectionViewCell?
+        
+        self.recommendedTag.collectionViewLayout = UICollectionViewFlowLayout()
+        
+//        self.recommendedTag.frame = self.view.frame
+//        self.view.addSubview(self.recommendedTag!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +132,40 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     */
     
-    
-    
+//    private let minItemSpacing: CGFloat = 8
+//    private let itemWidth: CGFloat      = 100
+//    private let headerHeight: CGFloat   = 32
+//    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        // Create our custom flow layout that evenly space out the items, and have them in the center
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+//        layout.minimumInteritemSpacing = minItemSpacing
+//        layout.minimumLineSpacing = minItemSpacing
+//        layout.headerReferenceSize = CGSize(width: 0, height: headerHeight)
+//        
+//        // Find n, where n is the number of item that can fit into the collection view
+//        var n: CGFloat = 1
+//        let containerWidth = recommendedTag.bounds.width
+//        while true {
+//            let nextN = n + 1
+//            let totalWidth = (nextN * itemWidth) + ((nextN - 1) * minItemSpacing)
+//            
+//            if totalWidth > containerWidth {
+//                break
+//            } else {
+//                n = nextN
+//            }
+//        }
+//        
+//        // Calculate the section inset for left and right.
+//        // Setting this section inset will manipulate the items such that they will all be aligned horizontally center.
+//        let inset = max(minItemSpacing, floor((containerWidth - (n * itemWidth) - (n - 1) * minItemSpacing) / 2 ))
+//        layout.sectionInset = UIEdgeInsets(top: minItemSpacing, left: inset, bottom: minItemSpacing, right: inset)
+//        
+//        recommendedTag.collectionViewLayout = layout
+//    }
+//    
 }

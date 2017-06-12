@@ -16,9 +16,8 @@ class RecommendedTagCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.backgroundColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-//        self.recommendedTagLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-//        self.layer.cornerRadius = 4
+        self.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1)
+        self.recommendedTagLabel.textColor = UIColor.white
         self.tagLabelMaxConstraint.constant = UIScreen.main.bounds.width - 8 * 2 - 8 * 2
     }
 
