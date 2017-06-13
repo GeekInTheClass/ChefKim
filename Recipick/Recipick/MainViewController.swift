@@ -64,7 +64,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
             
             recipeCell.RecommendedCellLabel.text = self.temporaryCollectionItems[indexPath.item]
-            
+            recipeCell.RecommendedCellImage.image = UIImage(named: "default")
             return recipeCell
         }
     }
