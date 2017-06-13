@@ -197,7 +197,7 @@ extension AccordionTableViewController {
         return self.total
     }
     
-    override  open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell!
         
@@ -210,10 +210,19 @@ extension AccordionTableViewController {
         else {
             cell = tableView.dequeueReusableCell(withIdentifier: parentCellIdentifier, for: indexPath)
             cell.textLabel!.text = self.dataSource[parent].title
+        
+//            tableView.cellForRow(at: indexPath)?.addSubview(cell.imageView!)
+//            cell.imageView?.frame = CGRect(x: 0, y: 0, width: 30.0, height: 30.0)
+//            cell.imageView?.frame.size = CGSize(width: 30.0, height: 30.0)
+//            cell.imageView?.contentMode = .scaleAspectFit
+            cell.imageView?.image = UIImage(named: "icon_ingre_" + self.dataSource[parent].img)
+            
+//            cell.imageView?.image = self.ResizeImage(image: UIImage(named: "icon_ingre_" + self.dataSource[parent].img)!, targetSize: CGSize(width: 50.0, height: 50.0))
         }
         
         return cell
     }
+    
     
     // MARK: UITableViewDelegate
     
@@ -236,6 +245,40 @@ extension AccordionTableViewController {
     }
     
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return !self.findParent(indexPath.row).isParentCell ? 44.0 : 64.0
+        return !self.findParent(indexPath.row).isParentCell ? 44.0 : (tableView.frame.size.height - 64 - 49)/8
+        // 64 : height of navigation bar
+        // 49 : height of tab bar
+    }
+    
+    
+    
+    ////////// Added Code //////////
+    // resize UIImageView for icon of parent cell
+    func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        print("ResizeImage Called!!!!!")
+        
+        return newImage!
     }
 }

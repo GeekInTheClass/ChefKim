@@ -42,10 +42,14 @@ public struct Parent {
     /// The title for the cell.
     var title: String
     
-    public init(state: State, childs: [String], title: String) {
+    /// Image of parentCell
+    var img: String
+    
+    public init(state: State, childs: [String], title: String, image: String) {
         self.state = state
         self.childs = childs
         self.title = title
+        self.img = image
     }
 }
 
