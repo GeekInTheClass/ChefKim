@@ -54,6 +54,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         cell.nameLabel.text = tag.name
         cell.tagImageView.image = thumbnail
+        cell.recipe = tag
         
         return cell
     }

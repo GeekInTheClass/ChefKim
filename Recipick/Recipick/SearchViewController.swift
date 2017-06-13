@@ -43,6 +43,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         
         self.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
         
         
         self.setYNCategoryButtonType(type: .colorful)
@@ -50,6 +51,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
 
@@ -266,6 +268,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.tabBarController?.tabBar.isHidden = false
         if segue.identifier == "tagSegue" {
             if let destination = segue.destination as? TagViewController {
                 destination.tagList = self.tagList
