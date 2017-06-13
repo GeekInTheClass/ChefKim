@@ -122,15 +122,28 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+/*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       if segue.identifier == "MainToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                var tagList:[Recipe]
+                tagList = recipeList.filter { $0.situation ==  a}
+                toTag.tagList = tagList
+                toTag.tagTitle = a.toString()
+            }
+       } else if segue.identifier == "TagToRecipe" {
+        if let toRecipe = segue.destination as? RecipeViewController {
+            toRecipe.recipe = chosenRecipe
+        }
+        
+        }
+         
     }
-    */
+ */
     
 //    private let minItemSpacing: CGFloat = 8
 //    private let itemWidth: CGFloat      = 100

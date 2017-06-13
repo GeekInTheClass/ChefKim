@@ -9,7 +9,7 @@
 import UIKit
 
 class RecipeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var recipeImage: UIImage!
+    @IBOutlet weak var recipeImage: UIImageView!
     
     var recipeForCell:String? { didSet{
         setUpCell()
@@ -20,7 +20,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        recipeImage = UIImage(named:thumbnail)
+        recipeImage.image = UIImage(named:thumbnail)
     }
     
     
