@@ -91,7 +91,7 @@
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="jGj-pO-Mct">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조리시간별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-Nx-eLc">
@@ -611,7 +611,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="RMU-mo-sNX">
             <objects>
-                <tabBarController id="2RT-sQ-L10" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" id="2RT-sQ-L10" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GFP-S3-Cc9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -693,7 +693,7 @@
         <!--홈-->
         <scene sceneID="PUD-6G-ccb">
             <objects>
-                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="jk5-23-OnY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jk5-23-OnY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="tab_03_home" id="0jd-Jb-fMs">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -1009,7 +1009,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTT-1k-AFL"/>
         <segue reference="prC-RM-Zi0"/>
+        <segue reference="5cp-5m-MCW"/>
     </inferredMetricsTieBreakers>
 </document>
