@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
     var tagList:[Recipe] = []
     var tagTitle:String = ""
@@ -56,12 +56,34 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         cell.tagImageView.image = thumbnail
         cell.recipe = tag
         
+        // add underline of cells
+        if indexPath.row < tagList.count - 2 {
+            let bottomLine = CALayer()
+            bottomLine.frame = CGRect.init(x: 0, y: cell.frame.height - 1, width: cell.frame.width, height: 1)
+            bottomLine.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1).cgColor
+            cell.layer.addSublayer(bottomLine)
+        }
+        
+        // add middleline of cells
+        if indexPath.row % 2 == 0 {
+            let middleLine = CALayer()
+            middleLine.frame = CGRect.init(x: cell.frame.width - 1, y: 0, width: 1, height: cell.frame.height)
+            middleLine.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1).cgColor
+            cell.layer.addSublayer(middleLine)
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         chosenRecipe = tagList[indexPath.row]
         performSegue(withIdentifier: "TagToRecipe", sender: self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -18,6 +18,11 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBAction func backButtonAction(_ sender: Any) {
+        // 뒤로가기 버튼 구현 (이전 스토리보드로 이동)
+        present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as UIViewController, animated: true, completion: nil)
+    }
+    
     var tagList:[Recipe] = []
     
     override func viewDidLoad() {
@@ -287,3 +292,4 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     */
 
 }
+
