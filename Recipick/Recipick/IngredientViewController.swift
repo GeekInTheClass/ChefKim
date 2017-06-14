@@ -49,22 +49,25 @@ class IngredientViewController: AccordionTableViewController {
     }
     
     // 여기에 어떻게 값을 넣을지모르겠어
-    var selectedIngrediant:String!
-    
+//    var selectedIngrediant:String!
+    var selectedIngrediantIndex:String!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var tagList:[Recipe] = []
+        selectedIngrediantIndex = String(super.selectedIndex)
+        print("selectedIndex:" + selectedIngrediantIndex)
+        
         if segue.identifier == "IngrediantToTag" {
             if let toTag = segue.destination as? TagViewController {
                 for recipe in recipeList {
                     for ingredient in recipe.ingrediant {
-                        if ingredient.toString() == selectedIngrediant {
+                        if ingredient.toString() == selectedIngrediantIndex {
                             tagList.append(recipe)
                         }
                     }
                 }
                 toTag.tagList = tagList
-                toTag.tagTitle = selectedIngrediant
+                toTag.tagTitle = selectedIngrediantIndex
             }
         }
     }

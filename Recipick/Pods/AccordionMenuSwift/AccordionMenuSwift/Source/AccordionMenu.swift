@@ -10,6 +10,8 @@ import UIKit
 
 open class AccordionTableViewController: UITableViewController {
     
+    open var selectedIndex: Int = 0
+    
     /// The number of elements in the data source
     open var total = 0
     
@@ -223,6 +225,8 @@ extension AccordionTableViewController {
         return cell
     }
     
+
+
     
     // MARK: UITableViewDelegate
     
@@ -230,11 +234,21 @@ extension AccordionTableViewController {
         
         let (parent, isParentCell, actualPosition) = self.findParent(indexPath.row)
         
+        if self.findParent(indexPath.row).isParentCell == true {
+            if self.dataSource[parent].childs.count == 0 {
+                selectedIndex = indexPath.row
+                print(selectedIndex)
+            }
+        }
+        
         guard isParentCell else {
             NSLog("A child was tapped!!!")
             
             // The value of the child is indexPath.row - actualPosition - 1
             NSLog("The value of the child is \(self.dataSource[parent].childs[indexPath.row - actualPosition - 1])")
+            
+            selectedIndex = indexPath.row
+            print(selectedIndex)
             
             return
         }
