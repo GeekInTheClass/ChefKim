@@ -10,6 +10,7 @@ import UIKit
 import AccordionMenuSwift
 
 class IngredientViewController: AccordionTableViewController {
+    
 
 //    @IBOutlet weak var IngredientListTable: UITableView!
     
@@ -39,11 +40,33 @@ class IngredientViewController: AccordionTableViewController {
         dataSource = [item1, item2, item3, item4, item5, item6, item7, item8]
         numberOfCellsExpanded = .several
         total = dataSource.count
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // 여기에 어떻게 값을 넣을지모르겠어
+    var selectedIngrediant:String!
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var tagList:[Recipe] = []
+        if segue.identifier == "IngrediantToTag" {
+            if let toTag = segue.destination as? TagViewController {
+                for recipe in recipeList {
+                    for ingredient in recipe.ingrediant {
+                        if ingredient.toString() == selectedIngrediant {
+                            tagList.append(recipe)
+                        }
+                    }
+                }
+                toTag.tagList = tagList
+                toTag.tagTitle = selectedIngrediant
+            }
+        }
     }
 
     
