@@ -9,8 +9,14 @@
 import UIKit
 
 class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    /*
+    var ref:DatabaseReference!
+    var refHandle:DatabaseHandle!
+     */
+    
     //  Collections used for tags : Ingredient/Time/Situation/Type
+    @IBOutlet weak var nameField: UITextField!
+    
     @IBOutlet weak var ingredientTagCollection: UICollectionView!
     
     @IBOutlet weak var timeTagCollection: UICollectionView!
@@ -21,6 +27,9 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var photoCollection: UICollectionView!
 
+    @IBOutlet weak var detailIngredientField: UITextView!
+    
+    @IBOutlet weak var detailRecipeField: UITextView!
     
     // Sample data arrays for tags
     let ingre_cellIdentifier = "ingredientCell"
@@ -37,6 +46,48 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     let photo_cellIdentifier = "photoListCell"
     var temp_photo:[String] = ["temp_1", "temp_2", "temp_3"]
+    /* Firebase 로 데이터 업로드
+     
+    @IBAction func upLoadFb(_ sender: Any) {
+        print("fddd")
+        let code = madeCode(length : 3)
+        
+        let upId = ["id" : code.0]
+        ref.child("Recipe/\(code.1)").updateChildValues(upId)
+        let upName = ["name" : nameField.text!]
+        ref.child("Recipe/\(code.1)").updateChildValues(upName)
+        let upIngredient = ["ingredients" : upIngreData(inputData: temp_ingredients)]
+        ref.child("Recipe/\(code.1)").updateChildValues(upIngredient)
+        let upTime = ["time" : upTimeData(inputData : temp_time)]
+        ref.child("Recipe/\(code.1)").updateChildValues(upTime)
+        let upSituation = ["situation" : upSituationData(inputData: temp_situation)]
+        ref.child("Recipe/\(code.1)").updateChildValues(upSituation)
+        let upType = ["type" : upTypeData(inputData : temp_type)]
+        ref.child("Recipe/\(code.1)").updateChildValues(upType)
+        let upDetailIngredient = ["upDetailIngredient" : detailIngredientField.text!]
+        ref.child("Recipe/\(code.1)").updateChildValues(upDetailIngredient)
+        let upDetailRecipe = ["upDetailRecipe" : detailRecipeField.text!]
+        ref.child("Recipe/\(code.1)").updateChildValues(upDetailRecipe)
+        let upPhotoURL = ["upPhotoURL" : temp_photo]
+        ref.child("Recipe/\(code.1)").updateChildValues(upPhotoURL)
+    }
+    
+    // firebase 분류코드 생성
+    func madeCode(length: Int) -> (String, String){
+        
+        let letters : NSString = "012356789"
+        let len = UInt32(letters.length)
+        
+        var Code = ""
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            Code += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return (Code, "Recipe" + Code)
+    }
+    */
     
     
     // Tell the collection view how many cells to make
@@ -244,6 +295,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        ref = Database.database().reference()
 
         // Do any additional setup after loading the view.
 
