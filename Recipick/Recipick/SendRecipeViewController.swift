@@ -36,13 +36,13 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_ingredients:[String] = ["김치", "계란"]
     
     let time_cellIdentifier = "timeCell"
-    var temp_time:[String] = []
+    var temp_time:String = "10분 이내"
     
     let situ_cellIdentifier = "situationCell"
-    var temp_situation:[String] = []
+    var temp_situation:String = "아플때"
     
     let type_cellIdentifier = "typeCell"
-    var temp_type:[String] = []
+    var temp_type:String = "한식"
     
     let photo_cellIdentifier = "photoListCell"
     var temp_photo:[String] = ["temp_1", "temp_2", "temp_3"]
@@ -97,15 +97,15 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         }
             
         else if collectionView == self.timeTagCollection {
-            return self.temp_time.count + 1
+            return 1
         }
             
         else if collectionView == self.situationTagCollection {
-            return self.temp_situation.count + 1
+            return 1
         }
             
         else if collectionView == self.typeTagCollection {
-            return self.temp_type.count + 1
+            return 1
         }
         
         else {
@@ -148,24 +148,12 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             
         else if collectionView == self.timeTagCollection {
             let timeTag = collectionView.dequeueReusableCell(withReuseIdentifier: time_cellIdentifier, for: indexPath as IndexPath) as! TimeTagCell
-           
-            if indexPath.row == temp_time.count {
-                print(temp_time)
-                
-                timeTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
-                timeTag.layer.borderWidth = 1
-                timeTag.backgroundColor = UIColor.white
-                timeTag.timeTagCellLabel.text = "+"
-                timeTag.timeTagCellLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
-            }
-                
-            else {
-                timeTag.layer.borderColor = UIColor.clear.cgColor
-                timeTag.layer.borderWidth = 0
-                timeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-                timeTag.timeTagCellLabel.text = self.temp_time[indexPath.item]
-                timeTag.timeTagCellLabel.textColor = UIColor.white
-            }
+            
+            timeTag.layer.borderColor = UIColor.clear.cgColor
+            timeTag.layer.borderWidth = 0
+            timeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+            timeTag.timeTagCellLabel.text = temp_time
+            timeTag.timeTagCellLabel.textColor = UIColor.white
             
             timeTag.layer.cornerRadius = 13.5
             
@@ -175,23 +163,11 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         else if collectionView == self.typeTagCollection {
             let typeTag = collectionView.dequeueReusableCell(withReuseIdentifier: type_cellIdentifier, for: indexPath as IndexPath) as! TypeTagCell
             
-            if indexPath.row == temp_type.count {
-                print(temp_type)
-                
-                typeTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
-                typeTag.layer.borderWidth = 1
-                typeTag.backgroundColor = UIColor.white
-                typeTag.typeTagCellLabel.text = "+"
-                typeTag.typeTagCellLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
-            }
-                
-            else {
-                typeTag.layer.borderColor = UIColor.clear.cgColor
-                typeTag.layer.borderWidth = 0
-                typeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-                typeTag.typeTagCellLabel.text = self.temp_type[indexPath.item]
-                typeTag.typeTagCellLabel.textColor = UIColor.white
-            }
+            typeTag.layer.borderColor = UIColor.clear.cgColor
+            typeTag.layer.borderWidth = 0
+            typeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+            typeTag.typeTagCellLabel.text = temp_type
+            typeTag.typeTagCellLabel.textColor = UIColor.white
             
             typeTag.layer.cornerRadius = 13.5
             
@@ -201,24 +177,11 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         else if collectionView == self.situationTagCollection {
             let situationTag = collectionView.dequeueReusableCell(withReuseIdentifier: situ_cellIdentifier, for: indexPath as IndexPath) as! SituationTagCell
             
-            if indexPath.row == temp_situation.count {
-                print(temp_situation)
-                
-                situationTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
-                situationTag.layer.borderWidth = 1
-                situationTag.backgroundColor = UIColor.white
-                situationTag.situationTagCellLabel.text = "+"
-                situationTag.situationTagCellLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
-            }
-                
-            else {
-                situationTag.layer.borderColor = UIColor.clear.cgColor
-                situationTag.layer.borderWidth = 0
-                situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-                situationTag.situationTagCellLabel.text = self.temp_situation[indexPath.item]
-                situationTag.situationTagCellLabel.textColor = UIColor.white
-            }
-            
+            situationTag.layer.borderColor = UIColor.clear.cgColor
+            situationTag.layer.borderWidth = 0
+            situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+            situationTag.situationTagCellLabel.text = temp_situation
+            situationTag.situationTagCellLabel.textColor = UIColor.white
             situationTag.layer.cornerRadius = 13.5
             
             return situationTag
@@ -253,26 +216,26 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             }
         }
         
-        else if collectionView == self.timeTagCollection {
-            if indexPath.item == temp_time.count {
-                temp_time += ["newTime"]
-            }
-        }
-        
-        else if collectionView == self.situationTagCollection {
-            if indexPath.item == temp_situation.count {
-                temp_situation += ["newSitu"]
-            }
-        }
-        
-        else if collectionView == self.typeTagCollection {
-            if indexPath.item == temp_type.count {
-                temp_type += ["newType"]
-            }
-        }
+//        else if collectionView == self.timeTagCollection {
+//            if indexPath.item == temp_time.count {
+//                temp_time += ["newTime"]
+//            }
+//        }
+//        
+//        else if collectionView == self.situationTagCollection {
+//            if indexPath.item == temp_situation.count {
+//                temp_situation += ["newSitu"]
+//            }
+//        }
+//        
+//        else if collectionView == self.typeTagCollection {
+//            if indexPath.item == temp_type.count {
+//                temp_type += ["newType"]
+//            }
+//        }
         
         // 사진 Collection
-        else {
+        else if collectionView == self.photoCollection {
             if indexPath.item == temp_photo.count {
                 /*  TODO :  마지막 태그(+버튼) 클릭시 갤러리 모달로 띄우고 이미지 선택,
                             선택 완료하면 모달 닫기
@@ -284,6 +247,10 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             else {
                 return
             }
+        }
+        
+        else {
+            return
         }
         
         // 추가된 데이터를 화면에 반영하기 위해 view를 다시 로드함
