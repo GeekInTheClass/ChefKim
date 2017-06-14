@@ -2284,6 +2284,7 @@
 
 		.box.special {
 			text-align: center;
+			/*line-break: keep-all;*/
 		}
 
 		.box .image.featured {
