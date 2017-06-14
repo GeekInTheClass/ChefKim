@@ -40,16 +40,16 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     let imagePicker = UIImagePickerController()
     
     // Sample data arrays for tags
-    let ingre_cellIdentifier = "ingredientCell"
+    let ingre_cellIdentifier = "recipeTag"
     var temp_ingredients:[String] = ["김치", "계란"]
     
-    let time_cellIdentifier = "timeCell"
+    let time_cellIdentifier = "recipeTag"
     var temp_time:String = "10분 이내"
     
-    let situ_cellIdentifier = "situationCell"
+    let situ_cellIdentifier = "recipeTag"
     var temp_situation:String = "아플때"
     
-    let type_cellIdentifier = "typeCell"
+    let type_cellIdentifier = "recipeTag"
     var temp_type:String = "한식"
     
     let photo_cellIdentifier = "photoListCell"
@@ -155,6 +155,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 
             // 태그 셀의 가장자리를 둥글게 설정
             ingredientTag.layer.cornerRadius = 13.5
+            print("1111111111111111111")
             
             return ingredientTag
         }
@@ -170,6 +171,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             timeTag.recommendedTagLabel.textColor = UIColor.white
             
             timeTag.layer.cornerRadius = 13.5
+            print("22222222222222222")
             
             return timeTag
         }
@@ -185,10 +187,23 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             typeTag.recommendedTagLabel.textColor = UIColor.white
             
             typeTag.layer.cornerRadius = 13.5
+            print("3333333333333333333")
             
             return typeTag
         }
         
+//        else if collectionView == self.situationTagCollection {
+//            let situationTag = collectionView.dequeueReusableCell(withReuseIdentifier: situ_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
+//            self.configureCell(cell: situationTag, forIndexPath: indexPath, type: [temp_situation])
+//            
+//            situationTag.layer.borderColor = UIColor.clear.cgColor
+//            situationTag.layer.borderWidth = 0
+//            situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+//            situationTag.recommendedTagLabel.text = temp_situation
+//            situationTag.recommendedTagLabel.textColor = UIColor.white
+//            situationTag.layer.cornerRadius = 13.5
+//            
+//            return situationTag
         else if collectionView == self.situationTagCollection {
             let situationTag = collectionView.dequeueReusableCell(withReuseIdentifier: situ_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
             self.configureCell(cell: situationTag, forIndexPath: indexPath, type: [temp_situation])
@@ -196,8 +211,9 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             situationTag.layer.borderColor = UIColor.clear.cgColor
             situationTag.layer.borderWidth = 0
             situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-            situationTag.recommendedTagLabel.text = temp_situation
+            situationTag.recommendedTagLabel.text = temp_type
             situationTag.recommendedTagLabel.textColor = UIColor.white
+            
             situationTag.layer.cornerRadius = 13.5
             
             return situationTag
@@ -305,7 +321,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 //        ref = Database.database().reference()
         
         // Set collectionView Cells for each tag collection
-        let cellNib = UINib(nibName: "RecommendTagCollectionViewCell", bundle: nil)
+        let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
         
         self.ingredientTagCollection.register(cellNib, forCellWithReuseIdentifier: "RecipeTag")
         self.ingredientTagCollection.backgroundColor = UIColor.clear
@@ -345,22 +361,22 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 
 
 // Classes for each tag's cells
-class IngredientTagCell: UICollectionViewCell {
-    @IBOutlet weak var ingredientTagCellLabel: UILabel!
-}
-
-class TimeTagCell: UICollectionViewCell {
-    @IBOutlet weak var timeTagCellLabel: UILabel!
-}
-
-class SituationTagCell: UICollectionViewCell {
-    @IBOutlet weak var situationTagCellLabel: UILabel!
-}
-
-class TypeTagCell: UICollectionViewCell {
-    @IBOutlet weak var typeTagCellLabel: UILabel!
-}
-
+//class IngredientTagCell: UICollectionViewCell {
+//    @IBOutlet weak var ingredientTagCellLabel: UILabel!
+//}
+//
+//class TimeTagCell: UICollectionViewCell {
+//    @IBOutlet weak var timeTagCellLabel: UILabel!
+//}
+//
+//class SituationTagCell: UICollectionViewCell {
+//    @IBOutlet weak var situationTagCellLabel: UILabel!
+//}
+//
+//class TypeTagCell: UICollectionViewCell {
+//    @IBOutlet weak var typeTagCellLabel: UILabel!
+//}
+//
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var photoCellImage: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
