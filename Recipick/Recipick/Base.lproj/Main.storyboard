@@ -155,9 +155,6 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </view>
                                                         <color key="backgroundColor" red="0.51372549020000002" green="0.57647058819999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <connections>
-                                                            <segue destination="gXL-ah-F4H" kind="show" identifier="MainToTag" id="xQw-6n-eRb"/>
-                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -315,6 +312,8 @@
                         <outlet property="recommendedSubRecipe" destination="X1M-Rh-TmC" id="YK2-zn-g6f"/>
                         <outlet property="recommendedTag" destination="g23-R9-cPX" id="n2g-Zj-CSr"/>
                         <outlet property="recommendedTitleRecipe" destination="wID-43-Lwq" id="EpK-de-IiT"/>
+                        <segue destination="ZJw-FC-QvP" kind="show" identifier="MainToRecipe" id="LhX-3H-0yG"/>
+                        <segue destination="gXL-ah-F4H" kind="show" identifier="MainToTag" id="agZ-jE-PS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYH-Cg-xa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,6 +578,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="ZJw-FC-QvP" kind="show" identifier="TagToRecipe" id="dLk-qF-CGs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lo-na-85t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -635,7 +637,7 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <segue destination="gXL-ah-F4H" kind="show" identifier="IngrediantToTag" id="TKM-WY-38B"/>
+                        <segue destination="gXL-ah-F4H" kind="show" identifier="IngrediantToTag" id="2uI-73-WxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRX-yx-fW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1043,6 +1045,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TKM-WY-38B"/>
+        <segue reference="2uI-73-WxL"/>
+        <segue reference="LhX-3H-0yG"/>
     </inferredMetricsTieBreakers>
 </document>

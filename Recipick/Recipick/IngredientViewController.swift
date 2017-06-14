@@ -71,13 +71,7 @@ class IngredientViewController: AccordionTableViewController {
             }
         }
     }
-
     override func performSegueIngrediantToTag() {
-//        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            selectedType = types[indexPath.row].type
-//            print(indexPath.row)
-//            performSegue(withIdentifier: "TypeToTag", sender: self)
-//        }
         print("dajsdf")
         performSegue(withIdentifier: "IngrediantToTag", sender: self)
     }

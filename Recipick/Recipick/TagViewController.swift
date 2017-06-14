@@ -39,11 +39,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         let tag = tagList[indexPath.row]
         let thumbnail:UIImage?
         
-        if let photo = tag.photo {
-            thumbnail = UIImage(named: photo[0])!
-        } else {
-            thumbnail = UIImage(named: "default")!
-        }
+        thumbnail = tag.urlToPhoto(index: 0)
         
         for recipe in likeList {
             if recipe.id == tag.id {
