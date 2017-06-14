@@ -12,6 +12,10 @@ open class AccordionTableViewController: UITableViewController {
     
     open var selectedIndex: Int = 0
     
+    open func performSegueIngrediantToTag() {
+        
+    }
+    
     /// The number of elements in the data source
     open var total = 0
     
@@ -238,6 +242,8 @@ extension AccordionTableViewController {
             if self.dataSource[parent].childs.count == 0 {
                 selectedIndex = indexPath.row
                 print(selectedIndex)
+                
+                performSegueIngrediantToTag()
             }
         }
         
@@ -249,6 +255,8 @@ extension AccordionTableViewController {
             
             selectedIndex = indexPath.row
             print(selectedIndex)
+            
+            performSegueIngrediantToTag()
             
             return
         }

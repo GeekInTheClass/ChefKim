@@ -298,20 +298,6 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 //        ref = Database.database().reference()
 
         // Do any additional setup after loading the view.
-
-// 태그 크기 자동조절을 위한 임시코드
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 150, left: 10, bottom: 150, right: 10)
-//        // layout.itemSize = CGSize(width: 90, height: 45)
-//        layout.itemSize = CGSizeFromString("Aloha")
-//        
-//        ingredientTagCollection = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-//        ingredientTagCollection!.dataSource = self
-//        ingredientTagCollection!.delegate = self
-//        ingredientTagCollection!.register(IngredientTagCell.self, forCellWithReuseIdentifier: "ingredientCell")
-//        ingredientTagCollection!.backgroundColor = UIColor.white
-//        
-//        self.view.addSubview(ingredientTagCollection!)
         
     }
 
