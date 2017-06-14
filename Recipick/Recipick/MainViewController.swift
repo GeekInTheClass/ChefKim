@@ -187,64 +187,48 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Dispose of any resources that can be recreated.
     }
     
+    var selectedTag:String!
+    var selectedRecipe:Recipe!
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == recommendedTag {
+            selectedTag = temporaryTags[indexPath.row]
+        }
+        else {
+            selectedRecipe = recipeList[indexPath.row]
+        }
+    }
+    
 
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
        if segue.identifier == "MainToTag" {
             if let toTag = segue.destination as? TagViewController {
-                var tagList:[Recipe]
-                tagList = recipeList.filter { $0.situation ==  a}
-                toTag.tagList = tagList
-                toTag.tagTitle = a.toString()
+                var list:[Recipe] = []
+                for recipe in recipeList {
+                    if (recipe.name.range(of: selectedTag) != nil) || (recipe.category.toString().range(of: selectedTag) != nil) || (recipe.situation.toString().range(of: selectedTag) != nil) {
+                        list.append(recipe)
+                    }
+                    for ingrediant in recipe.ingrediant {
+                        if (ingrediant.toString().range(of: selectedTag) != nil) {
+                            list.append(recipe)
+                            
+                        }
+                    }
+                }
+                toTag.tagList = list
+                toTag.tagTitle = selectedTag
             }
        } else if segue.identifier == "MainToRecipe" {
-        if let toRecipe = segue.destination as? RecipeViewController {
-            toRecipe.recipe = chosenRecipe
-        }
-        
+            if let toRecipe = segue.destination as? RecipeViewController {
+                toRecipe.recipe = selectedRecipe
+            }
         }
          
-    }*/
- 
+    }
     
-//    private let minItemSpacing: CGFloat = 8
-//    private let itemWidth: CGFloat      = 100
-//    private let headerHeight: CGFloat   = 32
-//    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        // Create our custom flow layout that evenly space out the items, and have them in the center
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-//        layout.minimumInteritemSpacing = minItemSpacing
-//        layout.minimumLineSpacing = minItemSpacing
-//        layout.headerReferenceSize = CGSize(width: 0, height: headerHeight)
-//        
-//        // Find n, where n is the number of item that can fit into the collection view
-//        var n: CGFloat = 1
-//        let containerWidth = recommendedTag.bounds.width
-//        while true {
-//            let nextN = n + 1
-//            let totalWidth = (nextN * itemWidth) + ((nextN - 1) * minItemSpacing)
-//            
-//            if totalWidth > containerWidth {
-//                break
-//            } else {
-//                n = nextN
-//            }
-//        }
-//        
-//        // Calculate the section inset for left and right.
-//        // Setting this section inset will manipulate the items such that they will all be aligned horizontally center.
-//        let inset = max(minItemSpacing, floor((containerWidth - (n * itemWidth) - (n - 1) * minItemSpacing) / 2 ))
-//        layout.sectionInset = UIEdgeInsets(top: minItemSpacing, left: inset, bottom: minItemSpacing, right: inset)
-//        
-//        recommendedTag.collectionViewLayout = layout
-//    }
-//    
 }
