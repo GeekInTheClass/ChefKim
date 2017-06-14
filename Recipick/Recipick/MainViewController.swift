@@ -105,7 +105,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//Firebase에서 데이터 가져오기
+        recipeList.append(contentsOf: g_RecipeArray)
+
+        //Firebase에서 데이터 가져오기
         ref = Database.database().reference()
         
         ref.child("Recipe").observe(.childAdded, with: { (snapshot) in

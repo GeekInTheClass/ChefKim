@@ -5,10 +5,9 @@
 //  Created by ParkDongHyuck on 2017. 6. 3..
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
-
 import UIKit
 
-class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     /*
     var ref:DatabaseReference!
     var refHandle:DatabaseHandle!
@@ -31,6 +30,15 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var detailRecipeField: UITextView!
     
+    @IBAction func AddPhotoAction(_ sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    let imagePicker = UIImagePickerController()
+    
     // Sample data arrays for tags
     let ingre_cellIdentifier = "ingredientCell"
     var temp_ingredients:[String] = ["김치", "계란"]
@@ -45,7 +53,9 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_type:String = "한식"
     
     let photo_cellIdentifier = "photoListCell"
-    var temp_photo:[String] = ["temp_1", "temp_2", "temp_3"]
+    var photoArray:[UIImage] = [#imageLiteral(resourceName: "temp_1"), #imageLiteral(resourceName: "temp_2"), #imageLiteral(resourceName: "temp_3")]
+    
+    
     /* Firebase 로 데이터 업로드
      
     @IBAction func upLoadFb(_ sender: Any) {
@@ -109,7 +119,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         }
         
         else {
-            return self.temp_photo.count + 1
+            return self.photoArray.count + 1
         }
     }
     
@@ -192,7 +202,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: photo_cellIdentifier, for: indexPath as IndexPath) as! PhotoCell
             
             // 마지막 사진 추가(+) 셀
-            if indexPath.row == temp_photo.count {
+            if indexPath.row == photoArray.count {
                 // 이미지 파일이 보이지 않도록 설정
                 photoCell.photoCellImage.image = nil
                 // 임시로 보라색으로 칠함 - <TODO>사진추가 이미지 삽입
@@ -201,7 +211,8 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             
             else {
                 // 이미지 셀
-                photoCell.photoCellImage.image = UIImage(named: temp_photo[indexPath.row])
+                photoCell.photoCellImage.image = photoArray[indexPath.row]
+                photoCell.addPhotoButton.isHidden = true
             }
             
             return photoCell
@@ -235,19 +246,18 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 //        }
         
         // 사진 Collection
-        else if collectionView == self.photoCollection {
-            if indexPath.item == temp_photo.count {
-                /*  TODO :  마지막 태그(+버튼) 클릭시 갤러리 모달로 띄우고 이미지 선택,
-                            선택 완료하면 모달 닫기
-                            현재는 임시 이미지를 배열에 추가하도록 되어 있음 */
-                temp_photo += ["temp_newImage"]
-                print(temp_photo)
-            }
-            
-            else {
-                return
-            }
-        }
+//        else if collectionView == self.photoCollection {
+//            if indexPath.item == photoArray.count {
+//                /*  TODO :  마지막 태그(+버튼) 클릭시 갤러리 모달로 띄우고 이미지 선택,
+//                            선택 완료하면 모달 닫기
+//                            현재는 임시 이미지를 배열에 추가하도록 되어 있음 */
+//                photoArray += ["temp_newImage"]
+//            }
+//            
+//            else {
+//                return
+//            }
+//        }
         
         else {
             return
@@ -258,14 +268,25 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         self.view.setNeedsDisplay()
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            photoArray.append(pickedImage)
+            print(photoArray)
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        ref = Database.database().reference()
 
-        // Do any additional setup after loading the view.
-        
+        self.imagePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -306,4 +327,5 @@ class TypeTagCell: UICollectionViewCell {
 
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var photoCellImage: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
 }
