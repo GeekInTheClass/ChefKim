@@ -71,7 +71,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         timeTag.setTitle(recipe.time.toString(), for: .normal)
         situationTag.setTitle(recipe.situation.toString(), for: .normal)
         typeTag.setTitle(recipe.situation.toString(), for: .normal)
-        
+        /*
         for ingrediant in recipe.recipe_ingrediant {
             ingrediants.append(ingrediant)
             ingrediants.append("\n")
@@ -83,7 +83,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             contents.append(content)
             contents.append("\n")
         }
-        
+        */
         recipe_content.text = contents
     }
     

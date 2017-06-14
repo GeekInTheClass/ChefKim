@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 var likeList:[Recipe] = []
 
+
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    var ref : DatabaseReference!
+    
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
     var temporaryTags = ["달걀","우유우유","치즈","파티음식","10분컷자취요리","임시태그","태그","태그태그태그","밥","ㅇㅁㄹㅇㅁㄹ"]
@@ -99,6 +103,50 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//Firebase에서 데이터 가져오기
+        ref = Database.database().reference()
+        
+        ref.child("Recipe").observe(.childAdded, with: { (snapshot) in
+            let data = snapshot.value as! [String: AnyObject]
+            
+            var recipe = Recipe(id: " ", name: " ", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.Day, situation: Recipe.Situation.Birth, category: Recipe.Category.Japanese, recipe_ingrediant: " ", recipe_contents: " ", photo: [" "])
+            let recieveId = data["id"]
+            let recieveName = data["name"]
+            let recieveIngre = data["ingredients"]
+            let recieveSituation = data["situation"]
+            let recieveTime = data["time"]
+            let recieveType = data["type"]
+            let recieveDetailIngre = data["upDetailIngredient"]
+            let recieveDetailRecipe = data["upDetailRecipe"]
+            let recievePhoto = data["upPhotoURL"]
+            
+            let convId = recieveId as! String
+            let convName = recieveName as! String
+            let convIngre = convertIngre(inputData: recieveIngre as! NSArray)
+            let convTime = convertTime(inputData: recieveTime as! NSArray)
+            let convSitu = convertSitu(inputData: recieveSituation as! NSArray)
+            let convCate = convertCategory(inputData: recieveType as! NSArray)
+            let convDetailIngre = recieveDetailIngre as! String
+            let convDetailRecipe = recieveDetailRecipe as! String
+            let convPhotoURL = convertPhotoURL(inputData: recievePhoto as! NSArray)
+            
+            recipe = Recipe(id: convId,
+                            name: convName,
+                            ingrediant: convIngre,
+                            time: convTime,
+                            situation: convSitu,
+                            category: convCate,
+                            recipe_ingrediant: convDetailIngre,
+                            recipe_contents: convDetailRecipe,
+                            photo: convPhotoURL)
+            
+            g_RecipeData[snapshot.key] = recipe
+            g_RecipeArray = Array(g_RecipeData.values)
+            
+            print(g_RecipeArray)
+            
+        })
 
         // Do any additional setup after loading the view.
         
