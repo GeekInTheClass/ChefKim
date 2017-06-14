@@ -11,19 +11,21 @@ import Firebase
 
 var searchHistory:[String] = []
 var likeList:[Recipe] = []
+var ref : DatabaseReference!
 
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var ref : DatabaseReference!
     
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
-    var temporaryTags = ["달걀","우유","치즈","파티","10분컷자취요리","고기","한식","백반","당충전","생선"]
+    var temporaryTags:[String] = []
+    let tagList = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일", "파티", "저녁식사", "다이어트", "아침", "아플 때", "안주", "백반", "당충전", "생일상", "한식", "중식", "일식", "양식", "세계 음식", "디저트"]
     
+    
+    //let randomNumber = arc4random_uniform(UInt32(colorArray.count))
     // 하단 추천레시피 셀을 위한 임시 데이터셋
     let cellIdentifier = "recipeCell"
-    var temporaryCollectionItems = ["김치찌개", "칼국수", "미역국", "치킨", "파스타", "피자", "탕수육", "냉면", "김치전"]
     
     @IBOutlet weak var recommendedTag: UICollectionView!
     
@@ -42,70 +44,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.recommendedTag {
-            return self.temporaryTags.count
+        print("시발")
+        while temporaryTags.count < 13 {
+            let randomNumber = arc4random_uniform(UInt32(tagList.count))
+            if !temporaryTags.contains(tagList[Int(randomNumber)]) {
+                temporaryTags.append(tagList[Int(randomNumber)])
+            }
         }
         
-        else {
-            return self.temporaryCollectionItems.count
-        }
-    }
-    
-    // make a cell for each cell index path
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.recommendedTag {
-            // get a reference to our storyboard cell
-            let recipeTag = collectionView.dequeueReusableCell(withReuseIdentifier: tagIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-            self.configureCell(cell: recipeTag, forIndexPath: indexPath)
-            
-            // Use the outlet in our custom class to get a reference to the UILabel in the cell
-//            recipeTag.recommendedTagLabel.text = "#" + self.temporaryTags[indexPath.item]
-            recipeTag.layer.cornerRadius = 13.5
-            
-            return recipeTag
-        }
-            
-        else {
-            let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
-            
-            recipeCell.RecommendedCellLabel.text = self.temporaryCollectionItems[indexPath.item]
-            recipeCell.RecommendedCellImage.image = UIImage(named: "default")
-            return recipeCell
-        }
-    }
-    
-    func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath) {
-        let tag = temporaryTags[indexPath.row]
-        cell.recommendedTagLabel.text = "# " + tag
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if collectionView == self.recommendedTag {
-            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath)
-            
-            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-        }
-        
-        else {
-            return CGSize(width: view.frame.size.width/3 - 17, height: view.frame.size.width/3)
-            
-            // To get 1 column
-            //return CGSize(width: view.frame.size.width, height: view.frame.size.width)
-            
-            // To get 2 column
-            //return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
-        }
-    }
-
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-//Firebase에서 데이터 가져오기
+        //Firebase에서 데이터 가져오기
         ref = Database.database().reference()
         
         ref.child("Recipe").observe(.childAdded, with: { (snapshot) in
@@ -143,12 +90,82 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                             photo: convPhotoURL)
             
             g_RecipeData[snapshot.key] = recipe
-            g_RecipeArray = Array(g_RecipeData.values)
-            
-            print(g_RecipeArray)
+            recipeList = Array(g_RecipeData.values)
+            print(recipeList.count)
             
         })
+        print(recipeList.count)
+        print("fuck")
 
+        
+        if collectionView == self.recommendedTag {
+            return self.temporaryTags.count
+        }
+        
+        else {
+            return 9
+        }
+    }
+    
+    // make a cell for each cell index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == self.recommendedTag {
+            // get a reference to our storyboard cell
+            let recipeTag = collectionView.dequeueReusableCell(withReuseIdentifier: tagIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
+            self.configureCell(cell: recipeTag, forIndexPath: indexPath)
+            
+            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+//            recipeTag.recommendedTagLabel.text = "#" + self.temporaryTags[indexPath.item]
+            recipeTag.layer.cornerRadius = 13.5
+            
+            return recipeTag
+        }
+            
+        else {
+            let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
+            print(recipeList.count)
+            recipeCell.RecommendedCellLabel.text = recipeList[indexPath.row].name
+            //if let photo = recipeList[indexPath.row].photo {
+            //    photo =
+            //}
+            recipeCell.RecommendedCellImage.image = recipeList[indexPath.row].urlToPhoto(index: 0)
+            return recipeCell
+        }
+    }
+    
+    func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath) {
+        let tag = temporaryTags[indexPath.row]
+        cell.recommendedTagLabel.text = "# " + tag
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.recommendedTag {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath)
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+        
+        else {
+            return CGSize(width: view.frame.size.width/3 - 17, height: view.frame.size.width/3)
+            
+            // To get 1 column
+            //return CGSize(width: view.frame.size.width, height: view.frame.size.width)
+            
+            // To get 2 column
+            //return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
+        }
+    }
+
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
         navigationLogo.image = UIImage(named: "logo")
