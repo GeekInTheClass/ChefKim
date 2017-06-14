@@ -67,7 +67,7 @@ open class YNCategoryButton: UIButton {
     open func initVIew() {
         self.layer.borderColor = UIColor.darkGray.cgColor
         self.layer.borderWidth = 1
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         self.setTitleColor(UIColor.darkGray, for: .normal)
         self.setTitleColor(UIColor.lightGray, for: .highlighted)
         self.layer.cornerRadius = self.frame.height * 0.1
@@ -92,7 +92,7 @@ open class YNCategoryButton: UIButton {
         case .colorful:
             self.layer.borderColor = nil
             self.layer.borderWidth = 0
-            self.layer.cornerRadius = 10.0
+            self.layer.cornerRadius = 12.0
             self.backgroundColor = randomColor()
             self.setTitleColor(UIColor.white, for: .normal)
             self.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted)
@@ -101,7 +101,7 @@ open class YNCategoryButton: UIButton {
     }
     
     open func randomColor() -> UIColor {
-        let colorArray = ["009999", "0099cc", "0099ff", "00cc99", "00cccc", "336699", "3366cc", "3366ff", "339966", "666666", "666699", "6666cc", "6666ff", "996666", "996699", "999900", "999933", "99cc00", "99cc33", "660066", "669933", "990066", "cc9900", "cc6600" , "cc3300", "cc3366", "cc6666", "cc6699", "cc0066", "cc0033", "ffcc00", "ffcc33", "ff9900", "ff9933", "ff6600", "ff6633", "ff6666", "ff6699", "ff3366", "ff3333"]
+        let colorArray = ["009999", "0099cc", "0099ff", "00cc99", "00cccc", "336699", "3366cc", "3366ff", "339966", "666666", "666699", "6666cc", "6666ff", "996666", "996699", "999900", "999933", "99cc00", "99cc33", "660066", "669933", "990066", "cc9900", "cc6600" , "cc3300", "cc3366", "cc6666", "cc6699", "cc0066", "cc0033", "ffcc00", "ffcc33", "ff9900", "ff9933", "ff6600", "ff6633", "ff6666", "ff6699", "ff3366", "ff3333", "12d5ff", "e1c1c0", "ff6f69", "8393ca"]
         
         let randomNumber = arc4random_uniform(UInt32(colorArray.count))
         return UIColor(hexString: colorArray[Int(randomNumber)])

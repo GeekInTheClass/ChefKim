@@ -78,7 +78,7 @@ open class YNSearchMainView: UIView {
         var formerHeight: CGFloat = 50
         
         for i in 0..<categories.count {
-            let size = categories[i].size(attributes: userAttributes)
+            let size = ("  #" + categories[i]).size(attributes: userAttributes)
             if i > 0 {
                 formerWidth = ynCategoryButtons[i-1].frame.size.width + ynCategoryButtons[i-1].frame.origin.x + 10
                 if formerWidth + size.width + margin > UIScreen.main.bounds.width {
@@ -88,7 +88,7 @@ open class YNSearchMainView: UIView {
             }
             let button = YNCategoryButton(frame: CGRect(x: formerWidth, y: formerHeight, width: size.width + 10, height: size.height + 10))
             button.addTarget(self, action: #selector(ynCategoryButtonClicked(_:)), for: .touchUpInside)
-            button.setTitle(categories[i], for: .normal)
+            button.setTitle(" #" + categories[i] + " ", for: .normal)
             button.tag = i
             
             ynCategoryButtons.append(button)
@@ -101,6 +101,7 @@ open class YNSearchMainView: UIView {
         self.searchHistoryLabel.font = UIFont.systemFont(ofSize: 13)
         self.searchHistoryLabel.textColor = UIColor.darkGray
         self.addSubview(self.searchHistoryLabel)
+        redrawSearchHistoryButtons()
         
     }
     
