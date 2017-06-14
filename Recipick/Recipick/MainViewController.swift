@@ -160,7 +160,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                             photo: convPhotoURL)
             
             g_RecipeData[snapshot.key] = recipe
-            recipeList = Array(g_RecipeData.values)
+            recipeList += Array(g_RecipeData.values)
             print(recipeList.count)
             
         })
@@ -195,9 +195,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == recommendedTag {
             selectedTag = temporaryTags[indexPath.row]
+            performSegue(withIdentifier: "MainToTag", sender: self)
         }
         else {
+            print("recipe" + String(recipeList.count))
+            print(indexPath.row)
             selectedRecipe = recipeList[indexPath.row]
+            performSegue(withIdentifier: "MainToRecipe", sender: self)
         }
     }
     

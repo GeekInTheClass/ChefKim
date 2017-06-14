@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var recipe:Recipe!
+    var recipe:Recipe = Recipe(id: "000", name: "뚝배기", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.H1, situation: Recipe.Situation.Birth, category: Recipe.Category.Dessert, recipe_ingrediant: "섞어", recipe_contents: "걍 먹어")
     
     var tagList:[Recipe] = []
     
@@ -20,71 +20,28 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var timeTag: UIButton!
     
-    @IBAction func timeTagClicked (_sender: Any) {
-        for recipe in recipeList {
-            if recipe.time.toString() == timeTag.currentTitle {
-                tagList.append(recipe)
-            }
-        }
-        performSegue(withIdentifier: "recipeToTag", sender: self)
-    }
-    
     @IBOutlet weak var situationTag: UIButton!
     
-    @IBAction func situationTagClicked (_sender: Any) {
-        for recipe in recipeList {
-            if recipe.situation.toString() == situationTag.currentTitle {
-                tagList.append(recipe)
-            }
-        }
-        performSegue(withIdentifier: "recipeToTag", sender: self)
-    }
-    
     @IBOutlet weak var typeTag: UIButton!
-    
-    @IBAction func typeTagClicked (_sender: Any) {
-        for recipe in recipeList {
-            if recipe.category.toString() == typeTag.currentTitle {
-                tagList.append(recipe)
-            }
-        }
-        performSegue(withIdentifier: "recipeToTag", sender: self)
-    }
     
     @IBOutlet weak var recipe_ingrediant: UILabel!
     
     @IBOutlet weak var recipe_content: UILabel!
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         self.title = recipe.name
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        var ingrediants:String!
-        var contents:String!
         
         timeTag.setTitle(recipe.time.toString(), for: .normal)
         situationTag.setTitle(recipe.situation.toString(), for: .normal)
-        typeTag.setTitle(recipe.situation.toString(), for: .normal)
-        /*
-        for ingrediant in recipe.recipe_ingrediant {
-            ingrediants.append(ingrediant)
-            ingrediants.append("\n")
-        }
-        
-        recipe_ingrediant.text = ingrediants
-        
-        for content in recipe.recipe_contents {
-            contents.append(content)
-            contents.append("\n")
-        }
-        */
-        recipe_content.text = contents
+        typeTag.setTitle(recipe.category.toString(), for: .normal)
+        recipe_ingrediant.text = recipe.recipe_ingrediant
+        recipe_content.text = recipe.recipe_contents
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -92,7 +49,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         if collectionView == self.ingredientTagCollection {
             return self.recipe.ingrediant.count
         }
-        
+            
         else {
             guard let collection = self.recipe.photo  else {
                 return 0
@@ -103,7 +60,8 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.ingredientTagCollection {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ingredientCell", for: indexPath as IndexPath) as! MainIngredientTagCell
+            print("ingredi")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ingrediantCell", for: indexPath as IndexPath) as! MainIngredientTagCell
             
             
             cell.layer.borderColor = UIColor.clear.cgColor
@@ -114,9 +72,10 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as! RecipeCollectionViewCell
+            print("recipe")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipePhotoCell", for: indexPath) as! RecipeCollectionViewCell
             let thumbnail:UIImage = recipe.urlToPhoto(index: indexPath.row)
-        
+            
             cell.recipeImage.image = thumbnail
             
             return cell
@@ -146,14 +105,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    */
-
 }
 
 

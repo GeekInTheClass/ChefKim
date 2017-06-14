@@ -332,13 +332,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="주재료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBb-LY-dPL">
-                                <rect key="frame" x="23" y="20" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="필요 재료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReW-g6-Qr7">
                                 <rect key="frame" x="16" y="383" width="343" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,40 +353,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="udF-6q-8LH">
-                                <rect key="frame" x="16" y="267" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XJA-bI-wVv">
-                                    <size key="itemSize" width="104" height="94"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZgB-Ap-BUE" customClass="RecipeCollectionViewCell" customModule="Recipick" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="17" width="104" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="104" height="94"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mX-tW-pgN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="94"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="recipeImage" destination="0mX-tW-pgN" id="rvU-If-hjf"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="SPa-m1-JIo" id="gmZ-HK-wuS"/>
-                                    <outlet property="delegate" destination="SPa-m1-JIo" id="bb0-T7-xQt"/>
-                                </connections>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="주재료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqX-Ci-2tF">
                                 <rect key="frame" x="16" y="142" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -422,45 +381,6 @@
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B55-5k-ZMR">
-                                <rect key="frame" x="144" y="138" width="201" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OGv-0k-vSR">
-                                    <size key="itemSize" width="50" height="27"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientCell" id="wEh-4D-L7l" customClass="MainIngredientTagCell" customModule="Recipick" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="66" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="66" height="27"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38i-Ba-ERn">
-                                                    <rect key="frame" x="12" y="3" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.57647058819999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="38i-Ba-ERn" firstAttribute="centerY" secondItem="wEh-4D-L7l" secondAttribute="centerY" id="Ypx-Ec-HbC"/>
-                                            <constraint firstItem="38i-Ba-ERn" firstAttribute="centerX" secondItem="wEh-4D-L7l" secondAttribute="centerX" id="g6n-ux-5pY"/>
-                                        </constraints>
-                                        <size key="customSize" width="66" height="27"/>
-                                        <connections>
-                                            <outlet property="ingredientLabel" destination="38i-Ba-ERn" id="bJN-H0-Qqv"/>
-                                            <outlet property="ingredientTagCellLabel" destination="38i-Ba-ERn" id="qwe-i9-bXc"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1A-xX-Dms" customClass="UIRoundPrimaryButton" customModule="Recipick" customModuleProvider="target">
                                 <rect key="frame" x="144" y="172" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -485,17 +405,78 @@
                                     <action selector="typeTagClickedWith_sender:" destination="ZJw-FC-QvP" eventType="touchUpInside" id="mv0-QD-wrc"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-I1-Khq">
+                                <rect key="frame" x="144" y="142" width="224" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FqE-cx-1Wu">
+                                    <size key="itemSize" width="64" height="23"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingrediantCell" id="FsP-r5-3Rp" customClass="MainIngredientTagCell" customModule="Recipick" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-dz-Qw4">
+                                                    <rect key="frame" x="11" y="1" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="SPa-m1-JIo" id="ebb-LM-yuO"/>
+                                    <outlet property="delegate" destination="SPa-m1-JIo" id="y2j-A5-U9G"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPl-3k-wQa">
+                                <rect key="frame" x="16" y="280" width="343" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ACR-UB-Dmm">
+                                    <size key="itemSize" width="96" height="96"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipePhotoCell" id="Mfz-We-etT">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kXi-lS-X1u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="ingredientTagCollection" destination="B55-5k-ZMR" id="I5p-HT-SZy"/>
-                        <outlet property="photoCollection" destination="udF-6q-8LH" id="CCz-E0-OhH"/>
-                        <outlet property="recipe_content" destination="qof-Cy-5fW" id="b1a-gB-kGd"/>
-                        <outlet property="recipe_ingrediant" destination="ReW-g6-Qr7" id="YtR-FR-99T"/>
-                        <outlet property="situationTag" destination="vT0-FQ-OP0" id="xkd-D7-lL5"/>
-                        <outlet property="timeTag" destination="g1A-xX-Dms" id="ysj-tS-dU3"/>
-                        <outlet property="typeTag" destination="JvL-bL-IyI" id="Wdg-HB-Fgc"/>
+                        <outlet property="ingredientTagCollection" destination="OkV-I1-Khq" id="TgA-6N-cQk"/>
+                        <outlet property="photoCollection" destination="oPl-3k-wQa" id="t5W-dr-F5X"/>
+                        <outlet property="recipe_content" destination="qof-Cy-5fW" id="F7G-Ex-hTI"/>
+                        <outlet property="recipe_ingrediant" destination="ReW-g6-Qr7" id="gXQ-Qc-ifw"/>
+                        <outlet property="situationTag" destination="vT0-FQ-OP0" id="ILF-yn-JsP"/>
+                        <outlet property="timeTag" destination="g1A-xX-Dms" id="2uW-lG-X87"/>
+                        <outlet property="typeTag" destination="JvL-bL-IyI" id="REA-8j-INu"/>
                         <segue destination="gXL-ah-F4H" kind="show" identifier="recipeToTag" id="SPj-iV-iR6"/>
                     </connections>
                 </viewController>
@@ -1045,7 +1026,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2uI-73-WxL"/>
-        <segue reference="LhX-3H-0yG"/>
+        <segue reference="dLk-qF-CGs"/>
+        <segue reference="SPj-iV-iR6"/>
     </inferredMetricsTieBreakers>
 </document>
