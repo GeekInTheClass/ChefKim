@@ -43,7 +43,7 @@ open class YNSearchViewController: UIViewController, UITextFieldDelegate {
         self.ynSearchView.ynSearchMainView.setYNCategoryButtonType(type: .colorful)
     }
     
-    open func initData(database: [Any]) {
+    open func initData(database: [String]) {
         self.ynSearchView.ynSearchListView.initData(database: database)
     }
 

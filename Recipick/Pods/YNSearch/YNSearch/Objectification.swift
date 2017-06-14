@@ -15,10 +15,10 @@ public enum ObjectificationType {
 }
 
 public class Objectification {
-    private var objects = [Any]()
+    private var objects = [String]()
     private var stringObjects = [[String]]()
     
-    public init(objects: [Any], type: ObjectificationType) {
+    public init(objects: [String], type: ObjectificationType) {
         
         for object in objects {
             let mirror = Mirror(reflecting: object)
@@ -38,14 +38,12 @@ public class Objectification {
         self.objects = objects
     }
     
-    public func objects(contain string:String) -> [Any] {
-        var returnObject = [Any]()
-        let predicate = NSPredicate(format: "SELF CONTAINS[c] %@", string)
+    public func objects(contain string:String) -> [String] {
+        var returnObject = [String]()
         
-        for i in 0..<stringObjects.count {
-            let searchDataSource = stringObjects[i].filter { predicate.evaluate(with: $0) }
-            if !searchDataSource.isEmpty {
-                returnObject.append(objects[i])
+        for recipe in objects {
+            if (recipe.range(of: string) != nil) {
+                returnObject.append(recipe)
             }
         }
 

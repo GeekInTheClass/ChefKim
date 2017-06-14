@@ -9,8 +9,8 @@
 import UIKit
 
 open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-    open var database = [Any]()
-    open var searchResultDatabase = [Any]()
+    open var database = [String]()
+    open var searchResultDatabase = [String]()
     
     open var ynSearchListViewDelegate: YNSearchListViewDelegate?
     open var ynSearch = YNSearch()
@@ -34,7 +34,7 @@ open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSo
         self.initView()
     }
     
-    open func initData(database: [Any]) {
+    open func initData(database: [String]) {
         self.database = database
         self.searchResultDatabase = database
         self.reloadData()

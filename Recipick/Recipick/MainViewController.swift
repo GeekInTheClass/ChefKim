@@ -8,6 +8,7 @@
 
 import UIKit
 
+var searchHistory:[String] = []
 var likeList:[Recipe] = []
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

@@ -9,7 +9,8 @@
 import UIKit
 import YNSearch
 
-class SearchViewController: YNSearchViewController, YNSearchDelegate {
+
+class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMainViewDelegate {
 
     @IBOutlet weak var textFieldView: YNSearchTextFieldView!
     @IBOutlet var searchView: YNSearchView!
@@ -35,14 +36,14 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         print("nothing")
         searchView.ynScrollView = scrollview
         searchView.ynSearchMainView = mainview
-        let ynSearch = YNSearch()
+        //let ynSearch = YNSearch()
         
         // Do any additional setup after loading the view.
         
         let tags = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일", "파티", "저녁식사", "다이어트", "아침", "아플 때", "안주", "백반", "당충전", "생일상", "한식", "중식", "일식", "양식", "세계 음식", "디저트"]
         
         ynSerach.setCategories(value: tags)
-        ynSerach.setSearchHistories(value: [])
+        ynSerach.setSearchHistories(value: searchHistory)
         
         self.ynSearchinit()
         
@@ -51,6 +52,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.tabBarController?.tabBar.isHidden = true
         
         var nameList:[String] = []
+        nameList += ["쇠고기", "돼지고기", "닭고기", "바보"]
         
         for recipe in recipeList {
             nameList.append(recipe.name)
@@ -66,10 +68,34 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func ynSearchListView(_ ynSearchListView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.ynSearchView.ynSearchListView.dequeueReusableCell(withIdentifier: YNSearchListViewCell.ID) as! YNSearchListViewCell
+        
+            cell.searchLabel.text = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row]
+        
+        return cell
+    }
+    
+    func ynSearchListView(_ ynSearchListView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let key = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row]
+        searchHistory.append(key)
+        print("this" + key)
+            // Call listview clicked based on key
+        self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(key: key)
+            
+            // return object you set in database
+        self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(object: self.ynSearchView.ynSearchListView.database[indexPath.row])
+            
+            // Append Search history
+        self.ynSearchView.ynSearchListView.ynSearch.appendSearchHistories(value: key)
+        
     }
     
     func ynSearchListViewDidScroll() {
@@ -84,6 +110,20 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
                 tagList.append(recipe)
             }
         }
+        for recipe in recipeList {
+            for ingrediant in recipe.ingrediant {
+                if ingrediant.toString().range(of: text) != nil {
+                    tagList.append(recipe)
+                }
+            }
+           
+        }
+        for recipe in recipeList {
+            if recipe.category.toString().range(of: text) != nil || recipe.situation.toString().range(of: text) != nil {
+                tagList.append(recipe)
+            }
+        }
+        
         performSegue(withIdentifier: "tagSegue", sender: self)
     }
     
@@ -92,10 +132,9 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         var ingredientTag: Recipe.Ingrediant? = nil
         var situationTag: Recipe.Situation? = nil
         var typeTag: Recipe.Category? = nil
-        
-        print(text)
-        var nextTag: Bool = false
-        switch text {
+        let button:String = text[text.index(text.startIndex, offsetBy:2) ..< text.index(before:text.endIndex)]
+        print(button)
+        switch button {
         case "치즈":
             ingredientTag = Recipe.Ingrediant.Cheese
             break
@@ -153,8 +192,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         case "과일":
             ingredientTag = Recipe.Ingrediant.Fruit
             break
-        default:
-            nextTag = true
+        default: break
         }
         
         if let tag = ingredientTag {
@@ -170,9 +208,8 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
             return
         }
         
-        nextTag = false
         
-        switch text {
+        switch button {
         case "파티":
             situationTag = Recipe.Situation.Party
         case "저녁식사":
@@ -191,8 +228,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
             situationTag = Recipe.Situation.Sugar
         case "생일상":
             situationTag = Recipe.Situation.Birth
-        default:
-            nextTag = true
+        default: break
         }
         if let tag = situationTag {
             for recipe in recipeList {
@@ -205,7 +241,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
             return
         }
         
-        switch text {
+        switch button {
         case "한식":
             typeTag = Recipe.Category.Korean
         case "중식":
@@ -218,8 +254,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
             typeTag = Recipe.Category.Dessert
         case "양식":
             typeTag = Recipe.Category.Western
-        default:
-            nextTag = false
+        default: break
         }
         if let tag = typeTag {
             for recipe in recipeList {
@@ -247,28 +282,6 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     
     func ynSearchListViewClicked(object: Any) {
         print(object)
-    }
-    
-    func ynSearchListView(_ ynSearchListView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.ynSearchView.ynSearchListView.dequeueReusableCell(withIdentifier: YNSearchListViewCell.ID) as! YNSearchListViewCell
-        if let ynmodel = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row] as? YNSearchModel {
-            cell.searchLabel.text = ynmodel.key
-        }
-        
-        return cell
-    }
-    
-    func ynSearchListView(_ ynSearchListView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let ynmodel = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row] as? YNSearchModel, let key = ynmodel.key {
-            // Call listview clicked based on key
-            self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(key: key)
-            
-            // return object you set in database
-            self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(object: self.ynSearchView.ynSearchListView.database[indexPath.row])
-            
-            // Append Search history
-            self.ynSearchView.ynSearchListView.ynSearch.appendSearchHistories(value: key)
-        }
     }
     
     
