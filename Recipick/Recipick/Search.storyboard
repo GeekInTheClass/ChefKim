@@ -9,26 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="BrX-bh-FCH">
-            <objects>
-                <navigationController id="Qkt-Qo-aXO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKq-dt-std">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="qTS-wt-ycl" kind="relationship" relationship="rootViewController" id="ZJk-GL-JxT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2U-DK-sSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1190" y="142"/>
-        </scene>
         <!--Search View Controller-->
         <scene sceneID="2BB-kt-ifP">
             <objects>
-                <viewController id="qTS-wt-ycl" customClass="SearchViewController" customModule="Recipick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Search" id="qTS-wt-ycl" customClass="SearchViewController" customModule="Recipick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8wW-uO-TNm"/>
                         <viewControllerLayoutGuide type="bottom" id="0OV-OY-OQR"/>
@@ -55,7 +39,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="NWR-i0-Yd5" kind="show" identifier="" action="showDetailViewController:sender:" id="EIC-ze-2DO"/>
+                                            <action selector="backButtonAction:" destination="qTS-wt-ycl" eventType="touchUpInside" id="IuE-TO-Px4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,14 +70,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5N8-Qh-I5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="-308"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="gQY-7K-Xlv">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Tag" storyboardName="Main" id="NWR-i0-Yd5" userLabel="Main" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1F-NW-aHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="856" y="-93"/>
         </scene>
     </scenes>
 </document>

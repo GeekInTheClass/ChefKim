@@ -303,7 +303,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ui_search"/>
                                 <connections>
-                                    <segue destination="kIN-M1-RKi" kind="show" id="LHW-tc-c6t"/>
+                                    <segue destination="kIN-M1-RKi" kind="presentation" id="LHW-tc-c6t"/>
                                 </connections>
                             </button>
                         </barButtonItem>
