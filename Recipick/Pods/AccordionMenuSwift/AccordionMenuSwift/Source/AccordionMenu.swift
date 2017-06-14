@@ -10,7 +10,11 @@ import UIKit
 
 open class AccordionTableViewController: UITableViewController {
     
-    open var selectedIndex: Int = 0
+    open var selectedIndex:String!
+    
+    open func performSegueIngrediantToTag() {
+        
+    }
     
     /// The number of elements in the data source
     open var total = 0
@@ -233,8 +237,10 @@ extension AccordionTableViewController {
         
         if self.findParent(indexPath.row).isParentCell == true {
             if self.dataSource[parent].childs.count == 0 {
-                selectedIndex = indexPath.row
+                selectedIndex = self.dataSource[parent].title
                 print(selectedIndex)
+                
+                performSegueIngrediantToTag()
             }
         }
         
@@ -244,8 +250,10 @@ extension AccordionTableViewController {
             // The value of the child is indexPath.row - actualPosition - 1
             NSLog("The value of the child is \(self.dataSource[parent].childs[indexPath.row - actualPosition - 1])")
             
-            selectedIndex = indexPath.row
+            selectedIndex = self.dataSource[parent].childs[indexPath.row - actualPosition - 1]
             print(selectedIndex)
+            
+            performSegueIngrediantToTag()
             
             return
         }

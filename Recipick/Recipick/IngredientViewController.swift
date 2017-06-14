@@ -71,7 +71,10 @@ class IngredientViewController: AccordionTableViewController {
             }
         }
     }
-    
+    override func performSegueIngrediantToTag() {
+        print("dajsdf")
+        performSegue(withIdentifier: "IngrediantToTag", sender: self)
+    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        var tagList:[Recipe] = []
