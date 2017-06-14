@@ -142,9 +142,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let convId = recieveId as! String
             let convName = recieveName as! String
             let convIngre = convertIngre(inputData: recieveIngre as! NSArray)
-            let convTime = convertTime(inputData: recieveTime as! NSArray)
-            let convSitu = convertSitu(inputData: recieveSituation as! NSArray)
-            let convCate = convertCategory(inputData: recieveType as! NSArray)
+            let convTime = convertTime(inputData: recieveTime as! String)
+            let convSitu = convertSitu(inputData: recieveSituation as! String)
+            let convCate = convertCategory(inputData: recieveType as! String)
             let convDetailIngre = recieveDetailIngre as! String
             let convDetailRecipe = recieveDetailRecipe as! String
             let convPhotoURL = convertPhotoURL(inputData: recievePhoto as! NSArray)

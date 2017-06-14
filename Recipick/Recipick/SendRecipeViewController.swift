@@ -6,12 +6,13 @@
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
 import UIKit
+import Firebase
 
 class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    /*
+
     var ref:DatabaseReference!
     var refHandle:DatabaseHandle!
-     */
+ 
     
     //  Collections used for tags : Ingredient/Time/Situation/Type
     @IBOutlet weak var nameField: UITextField!
@@ -44,10 +45,10 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_ingredients:[String] = ["김치", "계란"]
     
     let time_cellIdentifier = "timeCell"
-    var temp_time:String = "10분 이내"
+    var temp_time:String = "10분 내외"
     
     let situ_cellIdentifier = "situationCell"
-    var temp_situation:String = "아플때"
+    var temp_situation:String = "몸이 좋지 않을 때"
     
     let type_cellIdentifier = "typeCell"
     var temp_type:String = "한식"
@@ -56,7 +57,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var photoArray:[UIImage] = [#imageLiteral(resourceName: "temp_1"), #imageLiteral(resourceName: "temp_2"), #imageLiteral(resourceName: "temp_3")]
     
     
-    /* Firebase 로 데이터 업로드
+    //Firebase 로 데이터 업로드
      
     @IBAction func upLoadFb(_ sender: Any) {
         print("fddd")
@@ -78,8 +79,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailIngredient)
         let upDetailRecipe = ["upDetailRecipe" : detailRecipeField.text!]
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailRecipe)
-        let upPhotoURL = ["upPhotoURL" : temp_photo]
-        ref.child("Recipe/\(code.1)").updateChildValues(upPhotoURL)
+        let upPhotoURL = ["upPhotoURL" : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Recipe392%2Fcham_dice.jpg?alt=media&token=7de47077-9058-4821-9224-7a6a3d39e944"]]
     }
     
     // firebase 분류코드 생성
@@ -97,7 +97,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         
         return (Code, "Recipe" + Code)
     }
-    */
+    
     
     
     // Tell the collection view how many cells to make
@@ -284,7 +284,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ref = Database.database().reference()
+        ref = Database.database().reference()
 
         self.imagePicker.delegate = self
     }

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -413,6 +413,9 @@
                                                 <state key="normal" title="제보하기">
                                                     <color key="titleColor" red="0.98823529409999999" green="0.26226929529999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="upLoadFb:" destination="21J-cW-8M8" eventType="touchUpInside" id="sog-Df-VZK"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="요리 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-E4-ogM">
                                                 <rect key="frame" x="24" y="21" width="98" height="21"/>
@@ -495,7 +498,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailIngredientField" destination="cl6-M4-FyJ" id="iiY-9Z-sgC"/>
+                        <outlet property="detailRecipeField" destination="eMW-CJ-QKA" id="btj-cf-ysz"/>
                         <outlet property="ingredientTagCollection" destination="w6S-Nv-ZTi" id="V3C-DJ-ylA"/>
+                        <outlet property="nameField" destination="1HD-kj-OoX" id="Kj3-QZ-XRc"/>
                         <outlet property="photoCollection" destination="aPP-mo-BtI" id="ami-ct-eWv"/>
                         <outlet property="situationTagCollection" destination="Y5G-5b-Exx" id="TyV-2y-Hp3"/>
                         <outlet property="timeTagCollection" destination="xz6-cb-h5V" id="5mo-5t-E1e"/>

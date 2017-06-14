@@ -56,14 +56,14 @@ func upIngreData(inputData : [String]) -> [String]{
             tempOutput?.append("Pork")
         case "닭고기":
             tempOutput?.append("Chicken")
-
-// 김치와 달걀 중복 마무리전에 꼭 수정해야됨 아래것이 맞음
-/*
-        case "달걀":
-            tempOutput?.append("Egg")
-        case "김치":
-            tempOutput?.append("Kimchi")
- */
+            
+            // 김치와 달걀 중복 마무리전에 꼭 수정해야됨 아래것이 맞음
+            /*
+             case "달걀":
+             tempOutput?.append("Egg")
+             case "김치":
+             tempOutput?.append("Kimchi")
+             */
         case "밥":
             tempOutput?.append("Rice")
         case "과일":
@@ -132,78 +132,78 @@ func upIngreData(inputData : [String]) -> [String]{
 func upTimeData(inputData : String) -> String{
     
     var tempTime = "10분 내외"
-        switch inputData{
+    switch inputData{
         
-        case "10분 내외":
-            tempTime = "M10"
-        case "30분 내외":
-            tempTime = "M30"
-        case "1시간":
-            tempTime = "H1"
-        case "2시간":
-            tempTime = "H2"
-        case "3시간 이상":
-            tempTime = "H3"
-        case "하루 이상":
-            tempTime = "Day"
-        default:
-            print("end")
-        }
+    case "10분 내외":
+        tempTime = "M10"
+    case "30분 내외":
+        tempTime = "M30"
+    case "1시간":
+        tempTime = "H1"
+    case "2시간":
+        tempTime = "H2"
+    case "3시간 이상":
+        tempTime = "H3"
+    case "하루 이상":
+        tempTime = "Day"
+    default:
+        print("end")
+    }
     return tempTime
 }
 
 func upSituationData(inputData : String) -> String{
     
     var tempSitu = "집에서 준비하는 파티 음식"
-   
-        switch inputData{
-            
-        case "집에서 준비하는 파티 음식":
-            tempSitu = "Party"
-        case "근사한 저녁식사":
-            tempSitu = "Dinner"
-        case "다이어트 중이에요!":
-            tempSitu = "Diet"
-        case "더운 여름 이겨내기":
-            tempSitu = "Summer"
-        case "빠르고 든든한 아침":
-            tempSitu = "Breakfast"
-        case "몸이 좋지 않을 때":
-            tempSitu = "Sick"
-        case "간단한 안주 모음":
-            tempSitu = "Snack"
-        case "집밥 생각나는 백반":
-            tempSitu = "Home"
-        case "당충전이 필요해":
-            tempSitu = "Sugar"
-        case "생일상 차리기":
-            tempSitu = "Birth"
-        default:
-            print("end")
-        }
+    
+    switch inputData{
+        
+    case "집에서 준비하는 파티 음식":
+        tempSitu = "Party"
+    case "근사한 저녁식사":
+        tempSitu = "Dinner"
+    case "다이어트 중이에요!":
+        tempSitu = "Diet"
+    case "더운 여름 이겨내기":
+        tempSitu = "Summer"
+    case "빠르고 든든한 아침":
+        tempSitu = "Breakfast"
+    case "몸이 좋지 않을 때":
+        tempSitu = "Sick"
+    case "간단한 안주 모음":
+        tempSitu = "Snack"
+    case "집밥 생각나는 백반":
+        tempSitu = "Home"
+    case "당충전이 필요해":
+        tempSitu = "Sugar"
+    case "생일상 차리기":
+        tempSitu = "Birth"
+    default:
+        print("end")
+    }
     return tempSitu
 }
 
-//입력받은 time String을 영문으로 바꾸는 func
+//입력받은 type String을 영문으로 바꾸는 func
 func upTypeData(inputData : String) -> String{
     var tempType = "Korean"
-        switch inputData{
-        case "한식":
-            tempType = "Korean"
-        case "중식":
-            tempType = "Chinese"
-        case "일식":
-            tempType = "Japanese"
-        case "양식":
-            tempType = "Western"
-        case "세계 음식":
-            tempType = "Global"
-        case "디저트":
-            tempType = "Dessert"
-            
-        default:
-            print("end")
-        }
+    switch inputData{
+    case "한식":
+        tempType = "Korean"
+    case "중식":
+        tempType = "Chinese"
+    case "일식":
+        tempType = "Japanese"
+    case "양식":
+        tempType = "Western"
+    case "세계 음식":
+        tempType = "Global"
+    case "디저트":
+        tempType = "Dessert"
+        
+    default:
+        print("end")
+    }
     return tempType
 }
 
@@ -255,11 +255,11 @@ func convertIngre(inputData : NSArray) -> [Recipe.Ingrediant]{
                 temp_ingre?.append(Recipe.Ingrediant.Egg)
             case "kimci":
                 temp_ingre?.append(Recipe.Ingrediant.Kimchi)
-/*          마무리 전에 대체해야함
-            case "Egg":
-                temp_ingre?.append(Recipe.Ingrediant.Egg)
-            case "Kimchi":
-                temp_ingre?.append(Recipe.Ingrediant.Kimchi)*/
+                /*          마무리 전에 대체해야함
+                 case "Egg":
+                 temp_ingre?.append(Recipe.Ingrediant.Egg)
+                 case "Kimchi":
+                 temp_ingre?.append(Recipe.Ingrediant.Kimchi)*/
             case "Rice":
                 temp_ingre?.append(Recipe.Ingrediant.Rice)
             case "Fruit":
@@ -278,105 +278,86 @@ func convertIngre(inputData : NSArray) -> [Recipe.Ingrediant]{
 }
 
 // firebase 에서 데이터 받아올때 time enum 으로 변환해주는 func
-func convertTime(inputData : NSArray) -> Recipe.Time{
+func convertTime(inputData : String) -> Recipe.Time{
     
     var tempTime = Recipe.Time.M10
     
-            
-        let convertArray = NSMutableArray(array: inputData)
-
-        if let swiftArray = convertArray as NSArray as? [String]{
-            for i in 0 ..< swiftArray.count {
-                switch swiftArray[i] {
-                case "M10":
-                    tempTime = Recipe.Time.M10
-                case "M30":
-                    tempTime = Recipe.Time.M30
-                case "H1":
-                    tempTime = Recipe.Time.H1
-                case "H2":
-                    tempTime = Recipe.Time.H2
-                case "H3":
-                    tempTime = Recipe.Time.H3
-                case "Day":
-                    tempTime = Recipe.Time.Day
-                default:
-                    print("end")
-                }
-        }
+    switch inputData {
+    case "M10":
+        tempTime = Recipe.Time.M10
+    case "M30":
+        tempTime = Recipe.Time.M30
+    case "H1":
+        tempTime = Recipe.Time.H1
+    case "H2":
+        tempTime = Recipe.Time.H2
+    case "H3":
+        tempTime = Recipe.Time.H3
+    case "Day":
+        tempTime = Recipe.Time.Day
+    default:
+        print("end")
     }
     return tempTime
 }
 
 // firebase 에서 데이터 받아올때 situation enum 으로 변환해주는 func
-func convertSitu(inputData : NSArray) -> Recipe.Situation{
+func convertSitu(inputData : String) -> Recipe.Situation{
     
     var tempSitu = Recipe.Situation.Party
     
     
-    let convertArray = NSMutableArray(array: inputData)
-    
-    if let swiftArray = convertArray as NSArray as? [String]{
-        for i in 0 ..< swiftArray.count {
-            switch swiftArray[i] {
-            case "Party":
-                tempSitu = Recipe.Situation.Party
-            case "Dinner":
-                tempSitu = Recipe.Situation.Dinner
-            case "Diet":
-                tempSitu = Recipe.Situation.Diet
-            case "Summer":
-                tempSitu = Recipe.Situation.Summer
-            case "Breakfast":
-                tempSitu = Recipe.Situation.Breakfast
-            case "Sick":
-                tempSitu = Recipe.Situation.Sick
-            case "Snack":
-                tempSitu = Recipe.Situation.Snack
-            case "Home":
-                tempSitu = Recipe.Situation.Home
-            case "Sugar":
-                tempSitu = Recipe.Situation.Sugar
-            case "Birth":
-                tempSitu = Recipe.Situation.Birth
-
-            default:
-                print("end")
-            }
-        }
+    switch inputData {
+    case "Party":
+        tempSitu = Recipe.Situation.Party
+    case "Dinner":
+        tempSitu = Recipe.Situation.Dinner
+    case "Diet":
+        tempSitu = Recipe.Situation.Diet
+    case "Summer":
+        tempSitu = Recipe.Situation.Summer
+    case "Breakfast":
+        tempSitu = Recipe.Situation.Breakfast
+    case "Sick":
+        tempSitu = Recipe.Situation.Sick
+    case "Snack":
+        tempSitu = Recipe.Situation.Snack
+    case "Home":
+        tempSitu = Recipe.Situation.Home
+    case "Sugar":
+        tempSitu = Recipe.Situation.Sugar
+    case "Birth":
+        tempSitu = Recipe.Situation.Birth
+        
+    default:
+        print("end")
     }
+    
     return tempSitu
 }
 
 // firebase 에서 데이터 받아올때 category enum 으로 변환해주는 func
-func convertCategory(inputData : NSArray) -> Recipe.Category{
+func convertCategory(inputData : String) -> Recipe.Category{
     
     var tempCateg = Recipe.Category.Global
     
     
-    let convertArray = NSMutableArray(array: inputData)
-    
-    if let swiftArray = convertArray as NSArray as? [String]{
-        for i in 0 ..< swiftArray.count {
-            switch swiftArray[i] {
-                
-            case "Korean":
-                tempCateg = Recipe.Category.Korean
-            case "Chinese":
-                tempCateg = Recipe.Category.Chinese
-            case "Japanese":
-                tempCateg = Recipe.Category.Japanese
-            case "Western":
-                tempCateg = Recipe.Category.Western
-            case "Global":
-                tempCateg = Recipe.Category.Global
-            case "Dessert":
-                tempCateg = Recipe.Category.Dessert
-
-            default:
-                print("end")
-            }
-        }
+    switch inputData {
+        
+    case "Korean":
+        tempCateg = Recipe.Category.Korean
+    case "Chinese":
+        tempCateg = Recipe.Category.Chinese
+    case "Japanese":
+        tempCateg = Recipe.Category.Japanese
+    case "Western":
+        tempCateg = Recipe.Category.Western
+    case "Global":
+        tempCateg = Recipe.Category.Global
+    case "Dessert":
+        tempCateg = Recipe.Category.Dessert
+    default:
+        print("end")
     }
     return tempCateg
 }
