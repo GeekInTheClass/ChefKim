@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
-    var temporaryTags = ["달걀","우유우유","치즈","파티음식","10분컷자취요리","임시태그","태그","태그태그태그","밥","ㅇㅁㄹㅇㅁㄹ"]
+    var temporaryTags = ["달걀","우유","치즈","파티","10분컷자취요리","고기","한식","백반","당충전","생선"]
     
     // 하단 추천레시피 셀을 위한 임시 데이터셋
     let cellIdentifier = "recipeCell"
@@ -175,7 +175,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-/*    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
        if segue.identifier == "MainToTag" {
             if let toTag = segue.destination as? TagViewController {
@@ -184,15 +184,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 toTag.tagList = tagList
                 toTag.tagTitle = a.toString()
             }
-       } else if segue.identifier == "TagToRecipe" {
+       } else if segue.identifier == "MainToRecipe" {
         if let toRecipe = segue.destination as? RecipeViewController {
             toRecipe.recipe = chosenRecipe
         }
         
         }
          
-    }
- */
+    }*/
+ 
     
 //    private let minItemSpacing: CGFloat = 8
 //    private let itemWidth: CGFloat      = 100

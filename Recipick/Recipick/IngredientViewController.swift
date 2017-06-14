@@ -71,7 +71,7 @@ class IngredientViewController: AccordionTableViewController {
             }
         }
     }
-
+    
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        var tagList:[Recipe] = []

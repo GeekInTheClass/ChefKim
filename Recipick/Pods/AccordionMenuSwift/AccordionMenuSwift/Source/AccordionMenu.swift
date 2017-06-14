@@ -225,9 +225,6 @@ extension AccordionTableViewController {
         return cell
     }
     
-
-
-    
     // MARK: UITableViewDelegate
     
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

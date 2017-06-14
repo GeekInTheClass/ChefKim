@@ -6,6 +6,7 @@
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
 import Foundation
+import UIKit
 
 class Recipe {
     var id: String
@@ -197,6 +198,17 @@ class Recipe {
                 return "디저트"
             }
         }
+    }
+    func urlToPhoto (index:Int) -> UIImage {
+        if let image = photo?[index] {
+            let url = URL(string: image)
+            let data = try?Data(contentsOf: url!)
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                return image!
+            }
+        }
+        return UIImage(named: "default")!
     }
     
 }

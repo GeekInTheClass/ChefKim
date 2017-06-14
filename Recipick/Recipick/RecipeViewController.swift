@@ -115,8 +115,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as! RecipeCollectionViewCell
-            let photo:String = Array(recipe.photo!)[indexPath.row]
-            let thumbnail:UIImage = UIImage(named: photo)!
+            let thumbnail:UIImage = recipe.urlToPhoto(index: indexPath.row)
         
             cell.recipeImage.image = thumbnail
             
