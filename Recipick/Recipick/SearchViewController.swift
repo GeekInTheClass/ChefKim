@@ -9,7 +9,7 @@
 import UIKit
 import YNSearch
 
-class SearchViewController: YNSearchViewController, YNSearchDelegate {
+class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMainViewDelegate {
 
     @IBOutlet weak var textFieldView: YNSearchTextFieldView!
     @IBOutlet var searchView: YNSearchView!
@@ -51,6 +51,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.tabBarController?.tabBar.isHidden = true
         
         var nameList:[String] = []
+        nameList += ["쇠고기", "돼지고기", "닭고기", "바보"]
         
         for recipe in recipeList {
             nameList.append(recipe.name)
@@ -66,10 +67,31 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func ynSearchListView(_ ynSearchListView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.ynSearchView.ynSearchListView.dequeueReusableCell(withIdentifier: YNSearchListViewCell.ID) as! YNSearchListViewCell
+        
+            cell.searchLabel.text = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row]
+        
+        return cell
+    }
+    
+    func ynSearchListView(_ ynSearchListView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let key = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row]
+            // Call listview clicked based on key
+        self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(key: key)
+            
+            // return object you set in database
+        self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(object: self.ynSearchView.ynSearchListView.database[indexPath.row])
+            
+            // Append Search history
+        self.ynSearchView.ynSearchListView.ynSearch.appendSearchHistories(value: key)
     }
     
     func ynSearchListViewDidScroll() {
@@ -247,28 +269,6 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
     
     func ynSearchListViewClicked(object: Any) {
         print(object)
-    }
-    
-    func ynSearchListView(_ ynSearchListView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.ynSearchView.ynSearchListView.dequeueReusableCell(withIdentifier: YNSearchListViewCell.ID) as! YNSearchListViewCell
-        if let ynmodel = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row] as? YNSearchModel {
-            cell.searchLabel.text = ynmodel.key
-        }
-        
-        return cell
-    }
-    
-    func ynSearchListView(_ ynSearchListView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let ynmodel = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row] as? YNSearchModel, let key = ynmodel.key {
-            // Call listview clicked based on key
-            self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(key: key)
-            
-            // return object you set in database
-            self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(object: self.ynSearchView.ynSearchListView.database[indexPath.row])
-            
-            // Append Search history
-            self.ynSearchView.ynSearchListView.ynSearch.appendSearchHistories(value: key)
-        }
     }
     
     
