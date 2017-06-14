@@ -50,6 +50,13 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tabBarController?.tabBar.isHidden = true
         
+        var nameList:[String] = []
+        
+        for recipe in recipeList {
+            nameList.append(recipe.name)
+        }
+        
+        self.initData(database: nameList)
         
         self.setYNCategoryButtonType(type: .colorful)
     }
