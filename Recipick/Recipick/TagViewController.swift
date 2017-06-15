@@ -18,8 +18,6 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("taglist count")
-        print(tagList.count)
 
         self.title = tagTitle
         // Do any additional setup after loading the view.
@@ -27,7 +25,10 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
         
         self.tagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
-        
+
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightSemibold), NSForegroundColorAttributeName: UIColor.white]
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
 
     override func didReceiveMemoryWarning() {
