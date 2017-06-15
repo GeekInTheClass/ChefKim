@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,6 +45,9 @@
                                 <state key="normal" title="찜한 레시피 목록">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="likeListButtonAction:" destination="XHl-in-vHw" eventType="touchUpInside" id="YTg-FF-oQn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBz-01-Oz0">
                                 <rect key="frame" x="36" y="438" width="342" height="30"/>
@@ -95,11 +98,20 @@
                     <connections>
                         <outlet property="backButton" destination="f6w-VP-Ggr" id="Eks-KL-FkA"/>
                         <outlet property="profileImg" destination="UsP-I8-9bv" id="2s5-wo-RvU"/>
+                        <segue destination="CB9-wU-we6" kind="show" identifier="LikeToTag" id="emc-Bb-9KN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrU-L3-Hza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039.2" y="-39.130434782608695"/>
+        </scene>
+        <!--toTag-->
+        <scene sceneID="Dnz-ar-UKQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Tag" id="CB9-wU-we6" userLabel="toTag" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRY-5f-c5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1364" y="512"/>
         </scene>
         <!--Send Recipe View Controller-->
         <scene sceneID="n3L-wf-yof">

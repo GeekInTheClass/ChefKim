@@ -210,17 +210,33 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
        if segue.identifier == "MainToTag" {
+        var has:Bool = false
             if let toTag = segue.destination as? TagViewController {
                 var list:[Recipe] = []
                 for recipe in recipeList {
                     if (recipe.name.range(of: selectedTag) != nil) || (recipe.category.toString().range(of: selectedTag) != nil) || (recipe.situation.toString().range(of: selectedTag) != nil) {
-                        list.append(recipe)
+                        for temp in list {
+                            if temp.id == recipe.id {
+                                has = true
+                                break
+                            }
+                        }
+                        if has == false {
+                            list.append(recipe)
+                        }
                     }
                     for ingrediant in recipe.ingrediant {
                         if (ingrediant.toString().range(of: selectedTag) != nil) {
-                            list.append(recipe)
+                            for temp in list {
+                            if temp.id == recipe.id {
+                                has = true
+                                break
+                            }
+                            }
+                            if has == false {
+                                list.append(recipe)
+                            }
                             
                         }
                     }

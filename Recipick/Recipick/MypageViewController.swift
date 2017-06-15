@@ -17,6 +17,10 @@ class MypageViewController: UIViewController {
         present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as UIViewController, animated: true, completion: nil)
     }
     
+    @IBAction func likeListButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "LikeToTag", sender: self)
+    }
+    
     @IBOutlet weak var profileImg: UIImageView!
 
     override func viewDidLoad() {
@@ -34,14 +38,14 @@ class MypageViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "LikeToTag" {
+            if let like = segue.destination as? TagViewController {
+                like.tagList = likeList
+                like.tagTitle = " # 내가 찜한 레시피"
+            }
+        }
     }
-    */
 
 }
