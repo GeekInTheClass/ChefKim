@@ -6,33 +6,28 @@
 	<dict>
 		<key>AccordionMenuSwift.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Recipick.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SCLAlertView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>YNSearch.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -42,17 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17191D05C0C57E0505E5145F58375FCB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>60BB8720935026DC9363C02D4BD220EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6F63C94626D27DE51ADF24879187C49</key>
+		<key>B2F833F0960FFE13B7517952EFE300D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEB70282DF847D35448E77F974E333CC</key>
+		<key>F1C4D15BA0F92E34D830DEA4F479D3E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

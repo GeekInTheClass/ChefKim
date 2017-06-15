@@ -7,6 +7,7 @@
 //
 import UIKit
 import Firebase
+import SCLAlertView
 
 class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -42,7 +43,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     // Sample data arrays for tags
     let ingre_cellIdentifier = "recipeTag"
-    var temp_ingredients:[String] = ["김치", "계란", "+"]
+    var temp_ingredients:[String] = ["+"]
     
 
     let time_cellIdentifier = "recipeTag"
@@ -182,11 +183,14 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
             if indexPath.row == temp_ingredients.count - 1 {
                 print(temp_ingredients) // 배열에 태그가 들어갔는지 확인 (지울것)
 
-                ingredientTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
-                ingredientTag.layer.borderWidth = 1
-                ingredientTag.backgroundColor = UIColor.white
-//                ingredientTag.recommendedTagLabel.text = "+"
-                ingredientTag.recommendedTagLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
+//                ingredientTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
+//                ingredientTag.layer.borderWidth = 1
+//                ingredientTag.backgroundColor = UIColor.white
+                ingredientTag.recommendedTagLabel.text = "+"
+//                ingredientTag.recommendedTagLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
+                ingredientTag.layer.borderColor = UIColor.clear.cgColor
+                ingredientTag.layer.borderWidth = 0
+                ingredientTag.backgroundColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
             }
              
             // index가 그 외의 셀을 가리킬 때 : 태그 입력
@@ -307,20 +311,84 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.ingredientTagCollection {
             if indexPath.item == temp_ingredients.count - 1 {
-                temp_ingredients += ["newIngre"]     //새로운 태그 추가
+                let appearance = SCLAlertView.SCLAppearance(
+                    showCloseButton: false
+                )
+                let alertView = SCLAlertView(appearance: appearance)
+                let ingredients:[String] = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일"]
+                for index in ingredients {
+                    for tags in self.temp_ingredients {
+                        // 이미 선택한 태그일 때
+                        if tags == index {
+                            alertView.addButton(index, backgroundColor: UIColor.red, textColor: UIColor.white) {
+                                // 해당 태그 제거
+                                if let tempIndex = self.temp_ingredients.index(of:tags) {
+                                    self.temp_ingredients.remove(at: tempIndex)
+                                }
+                                collectionView.reloadData()
+                                self.view.setNeedsDisplay()
+                            }
+                        }
+                        // 새로 선택한 태그일 때
+                        else {
+                            alertView.addButton(index) {
+                                self.temp_ingredients.insert(index, at: self.temp_ingredients.count - 1)
+                                collectionView.reloadData()
+                                self.view.setNeedsDisplay()
+                            }
+                        }
+                    }
+                }
+                alertView.showSuccess("주재료 선택", subTitle: "요리의 주요 재료들을 추가해주세요")
             }
         }
         
         else if collectionView == self.timeTagCollection {
-            
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false
+            )
+            let alertView = SCLAlertView(appearance: appearance)
+            let times:[String] = ["10분 내외", "30분 내외", "1시간", "2시간", "3시간 이상", "1일 이상"]
+            for index in times {
+                alertView.addButton(index) {
+                    self.temp_time = index
+                    collectionView.reloadData()
+                    self.view.setNeedsDisplay()
+                }
+            }
+            alertView.showSuccess("조리시간 선택", subTitle: "예상 시간을 선택해주세요")
         }
         
         else if collectionView == self.situationTagCollection {
-            
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false
+            )
+            let alertView = SCLAlertView(appearance: appearance)
+            let situations:[String] = ["홈파티 준비", "근사한 저녁", "다이어트", "더운 여름", "간편한 아침", "아플 때"]
+            for index in situations {
+                alertView.addButton(index) {
+                    self.temp_situation = index
+                    collectionView.reloadData()
+                    self.view.setNeedsDisplay()
+                }
+            }
+            alertView.showSuccess("요리 상황 선택", subTitle: "어울리는 상황을 선택해주세요")
         }
         
         else if collectionView == self.typeTagCollection {
-            
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false
+            )
+            let alertView = SCLAlertView(appearance: appearance)
+            let types:[String] = ["한식", "중식", "일식", "양식", "세계음식", "디저트"]
+            for index in types {
+                alertView.addButton(index) {
+                    self.temp_type = index
+                    collectionView.reloadData()
+                    self.view.setNeedsDisplay()
+                }
+            }
+            alertView.showSuccess("음식 종류 선택", subTitle: "음식의 종류를 선택해주세요")
         }
         
         // 사진 Collection

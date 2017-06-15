@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6F63C94626D27DE51ADF24879187C49"
-               BuildableName = "Pods_Recipick.framework"
-               BlueprintName = "Pods-Recipick"
+               BlueprintIdentifier = "B2F833F0960FFE13B7517952EFE300D1"
+               BuildableName = "YNSearch.framework"
+               BlueprintName = "YNSearch"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6F63C94626D27DE51ADF24879187C49"
-            BuildableName = "Pods_Recipick.framework"
-            BlueprintName = "Pods-Recipick"
+            BlueprintIdentifier = "B2F833F0960FFE13B7517952EFE300D1"
+            BuildableName = "YNSearch.framework"
+            BlueprintName = "YNSearch"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B2F833F0960FFE13B7517952EFE300D1"
+            BuildableName = "YNSearch.framework"
+            BlueprintName = "YNSearch"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -89,7 +89,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width/2, height: view.frame.size.width/2)
+        return CGSize(width: view.frame.size.width/2, height: view.frame.size.height/3.5)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
