@@ -46,13 +46,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBz-01-Oz0">
-                                <rect key="frame" x="36" y="438" width="342" height="30"/>
-                                <state key="normal" title="내 정보 수정">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-8C-UPs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYPAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-8C-UPs">
                                 <rect key="frame" x="142" y="257" width="130" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="euJ-B1-5Zq"/>
@@ -70,10 +64,7 @@
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="centerX" secondItem="nIH-8C-UPs" secondAttribute="centerX" id="FaW-jN-5fE"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="leading" secondItem="nIH-8C-UPs" secondAttribute="leading" id="IbY-Bn-cLP"/>
                             <constraint firstItem="CTs-Yl-1aN" firstAttribute="top" secondItem="N9g-YV-pMb" secondAttribute="bottom" constant="8" symbolic="YES" id="RCu-jc-xvj"/>
-                            <constraint firstItem="CTs-Yl-1aN" firstAttribute="trailing" secondItem="iBz-01-Oz0" secondAttribute="trailing" id="Vdb-4U-fcW"/>
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="leading" secondItem="CTs-Yl-1aN" secondAttribute="leading" id="WhC-n2-7sy"/>
-                            <constraint firstItem="iBz-01-Oz0" firstAttribute="top" secondItem="CTs-Yl-1aN" secondAttribute="bottom" constant="8" symbolic="YES" id="ghq-iX-JeX"/>
-                            <constraint firstItem="CTs-Yl-1aN" firstAttribute="leading" secondItem="iBz-01-Oz0" secondAttribute="leading" id="jZg-IZ-8f2"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="trailing" secondItem="nIH-8C-UPs" secondAttribute="trailing" id="thh-AJ-uZr"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="top" secondItem="s1e-z8-a2N" secondAttribute="bottom" constant="55" id="uHS-23-KW9"/>
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="trailing" secondItem="CTs-Yl-1aN" secondAttribute="trailing" id="v7b-f7-FNL"/>

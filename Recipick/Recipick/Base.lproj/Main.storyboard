@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2RT-sQ-L10">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2RT-sQ-L10">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynP-5r-sob" id="QQH-99-ek6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-Yy-MVf">
@@ -91,7 +91,7 @@
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="jGj-pO-Mct">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조리시간별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-Nx-eLc">
@@ -134,6 +134,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ8-ga-wd9">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="799"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olx-US-LBj">
+                                                <rect key="frame" x="0.0" y="300" width="375" height="499"/>
+                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g23-R9-cPX">
                                                 <rect key="frame" x="10" y="8" width="355" height="114"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,9 +175,9 @@
                                                 </constraints>
                                             </imageView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X1M-Rh-TmC">
-                                                <rect key="frame" x="13" y="311" width="349" height="480"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Phi-PZ-rAm">
+                                                <rect key="frame" x="13" y="320" width="349" height="480"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="Phi-PZ-rAm">
                                                     <size key="itemSize" width="100" height="120"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -231,17 +235,21 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="X1M-Rh-TmC" secondAttribute="trailing" constant="13" id="13K-4Q-rLi"/>
                                             <constraint firstItem="g23-R9-cPX" firstAttribute="leading" secondItem="iJ8-ga-wd9" secondAttribute="leading" constant="10" id="42a-BM-glz"/>
-                                            <constraint firstItem="X1M-Rh-TmC" firstAttribute="top" secondItem="wID-43-Lwq" secondAttribute="bottom" constant="11" id="DfR-a9-dcz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Olx-US-LBj" secondAttribute="trailing" id="Avy-9O-2Ft"/>
+                                            <constraint firstItem="X1M-Rh-TmC" firstAttribute="top" secondItem="wID-43-Lwq" secondAttribute="bottom" constant="20" id="DfR-a9-dcz"/>
                                             <constraint firstItem="X1M-Rh-TmC" firstAttribute="leading" secondItem="iJ8-ga-wd9" secondAttribute="leading" constant="13" id="ITV-65-0Hv"/>
                                             <constraint firstAttribute="trailing" secondItem="g23-R9-cPX" secondAttribute="trailing" constant="10" id="Npg-ct-pPp"/>
+                                            <constraint firstItem="Olx-US-LBj" firstAttribute="leading" secondItem="iJ8-ga-wd9" secondAttribute="leading" id="PgQ-VJ-tc0"/>
                                             <constraint firstAttribute="height" constant="799" id="Q4v-yo-vy3"/>
                                             <constraint firstItem="wID-43-Lwq" firstAttribute="top" secondItem="g23-R9-cPX" secondAttribute="bottom" constant="8" id="R9t-hj-QLM"/>
                                             <constraint firstItem="wID-43-Lwq" firstAttribute="leading" secondItem="iJ8-ga-wd9" secondAttribute="leading" id="XKN-MS-KFT"/>
-                                            <constraint firstAttribute="bottom" secondItem="X1M-Rh-TmC" secondAttribute="bottom" constant="8" id="aQl-t0-WCX"/>
+                                            <constraint firstAttribute="bottom" secondItem="X1M-Rh-TmC" secondAttribute="bottom" constant="-1" id="aQl-t0-WCX"/>
                                             <constraint firstAttribute="trailing" secondItem="wID-43-Lwq" secondAttribute="trailing" id="atY-4J-jXB"/>
-                                            <constraint firstItem="X1M-Rh-TmC" firstAttribute="top" secondItem="wID-43-Lwq" secondAttribute="bottom" constant="11" id="b9x-sM-if2"/>
+                                            <constraint firstItem="X1M-Rh-TmC" firstAttribute="top" secondItem="wID-43-Lwq" secondAttribute="bottom" constant="20" id="b9x-sM-if2"/>
                                             <constraint firstItem="wID-43-Lwq" firstAttribute="top" secondItem="g23-R9-cPX" secondAttribute="bottom" constant="8" id="dcW-x3-Xat"/>
+                                            <constraint firstItem="Olx-US-LBj" firstAttribute="top" secondItem="wID-43-Lwq" secondAttribute="bottom" id="fZf-KJ-FwY"/>
                                             <constraint firstItem="g23-R9-cPX" firstAttribute="top" secondItem="iJ8-ga-wd9" secondAttribute="top" constant="8" id="gSq-eV-AhH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Olx-US-LBj" secondAttribute="bottom" id="lBa-Jy-Ftj"/>
                                             <constraint firstAttribute="width" constant="375" id="sc0-An-HM1"/>
                                         </constraints>
                                     </view>
@@ -279,7 +287,7 @@
                             </button>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="dM3-ya-FkF">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iP3-t2-QN6">
@@ -605,7 +613,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyK-IU-uqQ" id="3jJ-Im-xcW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -613,7 +621,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMW-CN-moZ" id="QWv-f1-CGF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -690,9 +698,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oSy-M1-b80" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="재료별" image="tab_01_ingredient" id="ouB-Hq-n5n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EeM-fU-YV5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="ui_back" backIndicatorTransitionMaskImage="ui_back" id="EeM-fU-YV5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
                                 <color key="value" red="0.9882352941176471" green="0.76078431372549016" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -714,9 +726,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ljc-Nh-jvI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="시간별" image="tab_02_time" id="yKJ-Lz-Kh6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="00n-nw-Yja">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="ui_back" backIndicatorTransitionMaskImage="ui_back" id="00n-nw-Yja">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
                                 <color key="value" red="0.9882352941176471" green="0.76078431372549016" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -744,12 +760,19 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bu7-xv-IeR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="ui_back" backIndicatorTransitionMaskImage="ui_back" id="bu7-xv-IeR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
                                 <color key="value" red="0.9882352941176471" green="0.76078431372549016" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
@@ -768,9 +791,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tBJ-Ye-iDD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="상황별" image="tab_04_situation" id="6tf-QO-z16"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="asa-Us-2If">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="ui_back" backIndicatorTransitionMaskImage="ui_back" id="asa-Us-2If">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
                                 <color key="value" red="0.99215686274509807" green="0.79607843137254897" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -812,7 +836,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_situ_party" translatesAutoresizingMaskIntoConstraints="NO" id="0Mu-4C-f0I">
@@ -861,7 +885,7 @@
                     <navigationItem key="navigationItem" id="C3Z-x1-rvR">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="6Kc-qg-7j2">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상황별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-GM-Ku9">
@@ -929,7 +953,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이것저것음식들" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWN-gg-tck">
@@ -980,7 +1004,7 @@
                     <navigationItem key="navigationItem" id="J8T-b5-yzz">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="JQ7-gR-V6F">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음식 종류별 레시피" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-6D-GaJ">
@@ -1012,9 +1036,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwj-Qz-yzC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="종류별" image="tab_05_type" id="NII-ul-rNB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F1X-Xh-eTV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="ui_back" backIndicatorTransitionMaskImage="ui_back" id="F1X-Xh-eTV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="BarTintColor">
                                 <color key="value" red="0.99215686274509807" green="0.79607843137254897" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1051,7 +1079,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OWu-Ja-M89"/>
-        <segue reference="dLk-qF-CGs"/>
+        <segue reference="LhX-3H-0yG"/>
+        <segue reference="1WW-og-bJh"/>
     </inferredMetricsTieBreakers>
 </document>

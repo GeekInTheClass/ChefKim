@@ -20,7 +20,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     // 상단 추천레시피 태그를 위한 임시 데이터셋
     let tagIdentifier = "recipeTag"
     var temporaryTags:[String] = []
-    let tagList = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일", "파티", "저녁식사", "다이어트", "아침", "아플 때", "안주", "백반", "당충전", "생일상", "한식", "중식", "일식", "양식", "세계 음식", "디저트"]
+    let tagList = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "닭고기", "달걀", "김치", "밥", "과일", "파티", "저녁식사", "다이어트", "아침", "아플 때", "안주", "백반", "당충전", "생일상", "한식", "중식", "일식", "양식", "디저트"]
     
     
     //let randomNumber = arc4random_uniform(UInt32(colorArray.count))
@@ -44,7 +44,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("시발")
         while temporaryTags.count < 13 {
             let randomNumber = arc4random_uniform(UInt32(tagList.count))
             if !temporaryTags.contains(tagList[Int(randomNumber)]) {
@@ -70,7 +69,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.configureCell(cell: recipeTag, forIndexPath: indexPath)
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-//            recipeTag.recommendedTagLabel.text = "#" + self.temporaryTags[indexPath.item]
             recipeTag.layer.cornerRadius = 13.5
             
             return recipeTag
@@ -78,12 +76,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         else {
             let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
-            print(recipeList.count)
             recipeCell.RecommendedCellLabel.text = recipeList[indexPath.row].name
-            //if let photo = recipeList[indexPath.row].photo {
-            //    photo =
-            //}
             recipeCell.RecommendedCellImage.image = recipeList[indexPath.row].urlToPhoto(index: 0)
+            recipeCell.layer.borderWidth = 1
+            recipeCell.layer.borderColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0).cgColor
+            
             return recipeCell
         }
     }
@@ -162,13 +159,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             g_RecipeData[snapshot.key] = recipe
             recipeList += Array(g_RecipeData.values)
-                print(recipeList.count)
-                
             }
         
         })
-        print(recipeList.count)
-        print("fuck")
 
         
         // Do any additional setup after loading the view.
@@ -201,8 +194,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             performSegue(withIdentifier: "MainToTag", sender: self)
         }
         else {
-            print("recipe" + String(recipeList.count))
-            print(indexPath.row)
             selectedRecipe = recipeList[indexPath.row]
             performSegue(withIdentifier: "MainToRecipe", sender: self)
         }
@@ -210,9 +201,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("end")
         ref.removeObserver(withHandle: refHandle!)
-        print("end!!")
     }
     
     // MARK: - Navigation
