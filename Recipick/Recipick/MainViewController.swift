@@ -23,12 +23,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     let tagList = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "닭고기", "달걀", "김치", "밥", "과일", "파티", "저녁식사", "다이어트", "아침", "아플 때", "안주", "백반", "당충전", "생일상", "한식", "중식", "일식", "양식", "디저트"]
     
     @IBAction func mainCenterClicked(_ sender: Any) {
-        for recipe in recipeList {
-            if recipe.name == "7분 돼지김치찌개" {
-                selectedRecipe = recipe
-                break
-            }
-        }
+        selectedRecipe = KimchSoup
         performSegue(withIdentifier: "MainToRecipe", sender: self)
     }
     

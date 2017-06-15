@@ -15,6 +15,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     var tagList:[Recipe] = []
     var selectTag:String = ""
     
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var ingredientTagCollection: UICollectionView!
     
     @IBOutlet weak var photoCollection: UICollectionView!
@@ -25,9 +26,9 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var typeTag: UIButton!
     
-    @IBOutlet weak var recipe_ingrediant: UILabel!
+    @IBOutlet weak var recipe_ingrediant: UITextView!
     
-    @IBOutlet weak var recipe_content: UILabel!
+    @IBOutlet weak var recipe_content: UITextView!
     
     @IBAction func timeTagClicked (_sender: Any) {
         tagList.removeAll()
@@ -67,7 +68,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         self.title = " # " + recipe.name
         //self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)  ]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: label.font.fontName, size: 25)]
         
 //        timeTag.setTitle(recipe.time.toString(), for: .normal)
 //        situationTag.setTitle(recipe.situation.toString(), for: .normal)
@@ -87,11 +88,15 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.recipe_ingrediant.text = recipe.recipe_ingrediant
         self.recipe_content.text = recipe.recipe_contents
         
-        self.recipe_ingrediant.lineBreakMode = .byWordWrapping
-        self.recipe_ingrediant.numberOfLines = 0
+        self.recipe_ingrediant.isEditable = false
+        //self.recipe_ingrediant.sizeToFit()
+        //self.recipe_ingrediant.lineBreakMode = .byWordWrapping
+        //self.recipe_ingrediant.numberOfLines = 3
         
-        self.recipe_content.lineBreakMode = .byWordWrapping
-        self.recipe_content.numberOfLines = 0
+        self.recipe_content.isEditable = true
+        //self.recipe_content.sizeToFit()
+        //self.recipe_content.lineBreakMode = .byWordWrapping
+        //self.recipe_content.numberOfLines = 20
         
         timeTag.setTitle(" # " + recipe.time.toString(), for: .normal)
         timeTag.setTitleColor(UIColor.white, for: .normal)
