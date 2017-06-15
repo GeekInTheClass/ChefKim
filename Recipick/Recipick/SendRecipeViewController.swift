@@ -360,25 +360,6 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
 
 }
 
-
-
-// Classes for each tag's cells
-//class IngredientTagCell: UICollectionViewCell {
-//    @IBOutlet weak var ingredientTagCellLabel: UILabel!
-//}
-//
-//class TimeTagCell: UICollectionViewCell {
-//    @IBOutlet weak var timeTagCellLabel: UILabel!
-//}
-//
-//class SituationTagCell: UICollectionViewCell {
-//    @IBOutlet weak var situationTagCellLabel: UILabel!
-//}
-//
-//class TypeTagCell: UICollectionViewCell {
-//    @IBOutlet weak var typeTagCellLabel: UILabel!
-//}
-//
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var photoCellImage: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate {
     
     var recipe:Recipe = Recipe(id: "000", name: "뚝배기", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.H1, situation: Recipe.Situation.Birth, category: Recipe.Category.Dessert, recipe_ingrediant: "섞어", recipe_contents: "걍 먹어")
     
@@ -28,15 +28,25 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var recipe_content: UILabel!
     
+    var sizingCell: RecommendedTagCollectionViewCell?
+    
     override func viewDidLoad() {
         self.title = recipe.name
         
-        timeTag.setTitle(recipe.time.toString(), for: .normal)
-        situationTag.setTitle(recipe.situation.toString(), for: .normal)
-        typeTag.setTitle(recipe.category.toString(), for: .normal)
-        recipe_ingrediant.text = recipe.recipe_ingrediant
-        recipe_content.text = recipe.recipe_contents
+//        timeTag.setTitle(recipe.time.toString(), for: .normal)
+//        situationTag.setTitle(recipe.situation.toString(), for: .normal)
+//        typeTag.setTitle(recipe.category.toString(), for: .normal)
+//        recipe_ingrediant.text = recipe.recipe_ingrediant
+//        recipe_content.text = recipe.recipe_contents
         super.viewDidLoad()
+        
+        // Set collectionView Cells for each tag collection
+        let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
+        
+        self.ingredientTagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
+        self.ingredientTagCollection.backgroundColor = UIColor.clear
+        
+        self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! RecommendedTagCollectionViewCell?
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,24 +71,47 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.ingredientTagCollection {
             print("ingredi")
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ingrediantCell", for: indexPath as IndexPath) as! MainIngredientTagCell
+            let ingredientTag = collectionView.dequeueReusableCell(withReuseIdentifier: "recipeTag", for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
+            self.configureCell(cell: ingredientTag, forIndexPath: indexPath, type: self.recipe.ingrediant)
             
+            ingredientTag.layer.borderColor = UIColor.clear.cgColor
+            ingredientTag.layer.borderWidth = 0
+            ingredientTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+            ingredientTag.layer.cornerRadius = 13.5
             
-            cell.layer.borderColor = UIColor.clear.cgColor
-            cell.layer.borderWidth = 0
-            cell.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-            cell.ingredientLabel.text = self.recipe.ingrediant[indexPath.item].toString()
-            cell.ingredientLabel.textColor = UIColor.white
+            return ingredientTag
+        }
+        
+        else {
+            print("photo")
+            let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipePhotoCell", for: indexPath as IndexPath) as! RecipeViewPhotoCell
             
-            return cell
-        } else {
-            print("recipe")
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipePhotoCell", for: indexPath) as! RecipeCollectionViewCell
             let thumbnail:UIImage = recipe.urlToPhoto(index: indexPath.row)
+            photoCell.recipeImage.image = thumbnail
             
-            cell.recipeImage.image = thumbnail
+            return photoCell
+        }
+    }
+    
+    func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath, type: [Recipe.Ingrediant]) {
+        let tag = type[indexPath.row]
+        if cell.recommendedTagLabel != nil {
+            cell.recommendedTagLabel.text = "# " + tag.toString()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.ingredientTagCollection {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: self.recipe.ingrediant)
             
-            return cell
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+            
+        else {
+            return CGSize(width: 100, height: 100)
         }
     }
     
@@ -109,6 +142,6 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
 }
 
 
-class MainIngredientTagCell: UICollectionViewCell {
-    @IBOutlet weak var ingredientLabel: UILabel!
+class RecipeViewPhotoCell: UICollectionViewCell {
+    @IBOutlet weak var recipeImage: UIImageView!
 }

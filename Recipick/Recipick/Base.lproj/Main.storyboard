@@ -416,21 +416,12 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingrediantCell" id="FsP-r5-3Rp" customClass="MainIngredientTagCell" customModule="Recipick" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="FsP-r5-3Rp" customClass="RecommendedTagCollectionViewCell" customModule="Recipick" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="64" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-dz-Qw4">
-                                                    <rect key="frame" x="11" y="1" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
@@ -1026,7 +1017,7 @@
         <image name="ui_unlike" width="30" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="agZ-jE-PS1"/>
         <segue reference="LhX-3H-0yG"/>
+        <segue reference="SPj-iV-iR6"/>
     </inferredMetricsTieBreakers>
 </document>
