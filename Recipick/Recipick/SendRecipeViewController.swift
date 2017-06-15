@@ -50,7 +50,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_time:String = "10분 내외"
     
     let situ_cellIdentifier = "recipeTag"
-    var temp_situation:String = "홈파티 준비"
+    var temp_situation:String = "집에서 준비하는 파티 음식"
     
     let type_cellIdentifier = "recipeTag"
     var temp_type:String = "한식"
@@ -315,7 +315,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                     showCloseButton: false
                 )
                 let alertView = SCLAlertView(appearance: appearance)
-                let ingredients:[String] = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일"]
+                let ingredients:[String] = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "계란", "김치", "밥", "과일"]
                 
                 for index in ingredients {
                     if temp_ingredients.contains(index) {
@@ -346,7 +346,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 showCloseButton: false
             )
             let alertView = SCLAlertView(appearance: appearance)
-            let times:[String] = ["10분 내외", "30분 내외", "1시간", "2시간", "3시간 이상", "1일 이상"]
+            let times:[String] = ["10분 내외", "30분 내외", "1시간", "2시간", "3시간 이상", "하루 이상"]
             for index in times {
                 alertView.addButton(index) {
                     self.temp_time = index
@@ -362,7 +362,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 showCloseButton: false
             )
             let alertView = SCLAlertView(appearance: appearance)
-            let situations:[String] = ["홈파티 준비", "근사한 저녁", "다이어트", "더운 여름", "간편한 아침", "아플 때"]
+            let situations:[String] = ["집에서 준비하는 파티 음식", "근사한 저녁", "다이어트 중이에요!", "더운 여름 이겨내기", "빠르고 든든한 아침", "몸이 좋지 않을 때"]
             for index in situations {
                 alertView.addButton(index) {
                     self.temp_situation = index
@@ -378,7 +378,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 showCloseButton: false
             )
             let alertView = SCLAlertView(appearance: appearance)
-            let types:[String] = ["한식", "중식", "일식", "양식", "세계음식", "디저트"]
+            let types:[String] = ["한식", "중식", "일식", "양식", "세계 음식", "디저트"]
             for index in types {
                 alertView.addButton(index) {
                     self.temp_type = index

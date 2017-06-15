@@ -160,3 +160,24 @@ let Recipe28 = Recipe(id: "28", name: "소고기 장조림", ingrediant: [Recipe
 let Recipe29 = Recipe(id: "29", name: "짜사이 무침", ingrediant: [Recipe.Ingrediant.Vege], time: Recipe.Time.M30, situation: Recipe.Situation.Breakfast, category: Recipe.Category.Chinese, recipe_ingrediant: "test", recipe_contents: "test", photo:["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/29%20%E1%84%8D%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%20%E1%84%86%E1%85%AE%E1%84%8E%E1%85%B5%E1%86%B7.jpg?alt=media&token=9c402b33-9c24-4ae1-a5ad-5fcdd6f05dfa"])
 
 let Recipe30 = Recipe(id: "30", name: "프랑스 체리 클라푸티", ingrediant: [Recipe.Ingrediant.Cheese], time: Recipe.Time.H2, situation: Recipe.Situation.Party, category: Recipe.Category.Western, recipe_ingrediant: "test", recipe_contents: "test", photo:["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/30%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%20%E1%84%8E%E1%85%A6%E1%84%85%E1%85%B5%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%91%E1%85%AE%E1%84%90%E1%85%B5.jpg?alt=media&token=ff98cb6d-f47a-4e78-b63b-d2bb5291ef38"])
+
+/*
+ let Recipe31 = Recipe(id: "31", name: "김치호박부침개", ingrediant: [Recipe.Ingrediant.Pumpkin, Recipe.Ingrediant.Pumpkin], time: Recipe.Time.H1, situation: Recipe.Situation.Snack, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test", photo: )
+ 
+ let Recipe32 = Recipe(id: "32", name: "호박볶음", ingrediant: [Recipe.Ingrediant.Pumpkin], time: Recipe.Time.H1, situation: Recipe.Situation.Diet, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe33 = Recipe(id: "33", name: "호박죽", ingrediant: [Recipe.Ingrediant.Pumpkin], time: Recipe.Time.H3, situation: Recipe.Situation.Sick, category: Recipe.Category.Dessert, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe34 = Recipe(id: "34", name: "고구마 맛탕", ingrediant: [Recipe.Ingrediant.SweetPotato], time: Recipe.Time.H3, situation: Recipe.Situation.Sugar, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe35 = Recipe(id: "35", name: "허니버터 고구마칩", ingrediant: [Recipe.Ingrediant.SweetPotato], time: Recipe.Time.H1, situation: Recipe.Situation.Home, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test")
+ 
+ let Recipe36 = Recipe(id: "36", name: "고구마라떼", ingrediant: [Recipe.Ingrediant.SweetPotato], time: Recipe.Time.M30, situation: Recipe.Situation.Sugar, category: Recipe.Category.Dessert, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe37 = Recipe(id: "37", name: "오징어튀김", ingrediant: [Recipe.Ingrediant.Squid], time: Recipe.Time.H2, situation: Recipe.Situation.Snack, category: Recipe.Category.Global, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe38 = Recipe(id: "38", name: "오징어덮밥", ingrediant: [Recipe.Ingrediant.Squid], time: Recipe.Time.H1, situation: Recipe.Situation.Breakfast, category: Recipe.Category.Japanese, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe39 = Recipe(id: "39", name: "동파육", ingrediant: [Recipe.Ingrediant.Pork], time: Recipe.Time.Day, situation: Recipe.Situation.Party, category: Recipe.Category.Chinese, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)
+ 
+ let Recipe40 = Recipe(id: "40", name: "깐풍기", ingrediant: [Recipe.Ingrediant.Pork], time: Recipe.Time.H2, situation: Recipe.Situation.Dinner, category: Recipe.Category.Chinese, recipe_ingrediant: "test", recipe_contents: "test", photo: <#T##[String]#>)*/
