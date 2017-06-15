@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhX-XW-oNn">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,14 +45,11 @@
                                 <state key="normal" title="찜한 레시피 목록">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="likeListButtonAction:" destination="XHl-in-vHw" eventType="touchUpInside" id="YTg-FF-oQn"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBz-01-Oz0">
-                                <rect key="frame" x="36" y="438" width="342" height="30"/>
-                                <state key="normal" title="내 정보 수정">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-8C-UPs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYPAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-8C-UPs">
                                 <rect key="frame" x="142" y="257" width="130" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="euJ-B1-5Zq"/>
@@ -70,10 +67,7 @@
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="centerX" secondItem="nIH-8C-UPs" secondAttribute="centerX" id="FaW-jN-5fE"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="leading" secondItem="nIH-8C-UPs" secondAttribute="leading" id="IbY-Bn-cLP"/>
                             <constraint firstItem="CTs-Yl-1aN" firstAttribute="top" secondItem="N9g-YV-pMb" secondAttribute="bottom" constant="8" symbolic="YES" id="RCu-jc-xvj"/>
-                            <constraint firstItem="CTs-Yl-1aN" firstAttribute="trailing" secondItem="iBz-01-Oz0" secondAttribute="trailing" id="Vdb-4U-fcW"/>
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="leading" secondItem="CTs-Yl-1aN" secondAttribute="leading" id="WhC-n2-7sy"/>
-                            <constraint firstItem="iBz-01-Oz0" firstAttribute="top" secondItem="CTs-Yl-1aN" secondAttribute="bottom" constant="8" symbolic="YES" id="ghq-iX-JeX"/>
-                            <constraint firstItem="CTs-Yl-1aN" firstAttribute="leading" secondItem="iBz-01-Oz0" secondAttribute="leading" id="jZg-IZ-8f2"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="trailing" secondItem="nIH-8C-UPs" secondAttribute="trailing" id="thh-AJ-uZr"/>
                             <constraint firstItem="UsP-I8-9bv" firstAttribute="top" secondItem="s1e-z8-a2N" secondAttribute="bottom" constant="55" id="uHS-23-KW9"/>
                             <constraint firstItem="N9g-YV-pMb" firstAttribute="trailing" secondItem="CTs-Yl-1aN" secondAttribute="trailing" id="v7b-f7-FNL"/>
@@ -95,11 +89,20 @@
                     <connections>
                         <outlet property="backButton" destination="f6w-VP-Ggr" id="Eks-KL-FkA"/>
                         <outlet property="profileImg" destination="UsP-I8-9bv" id="2s5-wo-RvU"/>
+                        <segue destination="CB9-wU-we6" kind="show" identifier="LikeToTag" id="emc-Bb-9KN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrU-L3-Hza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039.2" y="-39.130434782608695"/>
+        </scene>
+        <!--toTag-->
+        <scene sceneID="Dnz-ar-UKQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Tag" id="CB9-wU-we6" userLabel="toTag" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRY-5f-c5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1364" y="512"/>
         </scene>
         <!--Send Recipe View Controller-->
         <scene sceneID="n3L-wf-yof">
