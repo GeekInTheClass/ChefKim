@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YNSearch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>17191D05C0C57E0505E5145F58375FCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>60BB8720935026DC9363C02D4BD220EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2F833F0960FFE13B7517952EFE300D1</key>
+		<key>B6F63C94626D27DE51ADF24879187C49</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F1C4D15BA0F92E34D830DEA4F479D3E9</key>
+		<key>CEB70282DF847D35448E77F974E333CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
