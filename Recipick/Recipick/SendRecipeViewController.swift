@@ -50,7 +50,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_time:String = "10분 내외"
     
     let situ_cellIdentifier = "recipeTag"
-    var temp_situation:String = "몸이 좋지 않을 때"
+    var temp_situation:String = "홈파티 준비"
     
     let type_cellIdentifier = "recipeTag"
     var temp_type:String = "한식"
@@ -316,26 +316,24 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 )
                 let alertView = SCLAlertView(appearance: appearance)
                 let ingredients:[String] = ["치즈", "요거트", "우유", "생크림", "생선", "어묵", "조개", "오징어", "쌈채소", "호박", "감자", "고구마", "쇠고기", "돼지고기", "닭고기", "달걀", "김치", "밥", "과일"]
+                
                 for index in ingredients {
-                    for tags in self.temp_ingredients {
-                        // 이미 선택한 태그일 때
-                        if tags == index {
-                            alertView.addButton(index, backgroundColor: UIColor.red, textColor: UIColor.white) {
-                                // 해당 태그 제거
-                                if let tempIndex = self.temp_ingredients.index(of:tags) {
-                                    self.temp_ingredients.remove(at: tempIndex)
-                                }
-                                collectionView.reloadData()
-                                self.view.setNeedsDisplay()
+                    if temp_ingredients.contains(index) {
+                        alertView.addButton(index, backgroundColor: UIColor.red, textColor: UIColor.white) {
+                            // 해당 태그 제거
+                            if let tempIndex = self.temp_ingredients.index(of:index) {
+                                self.temp_ingredients.remove(at: tempIndex)
                             }
+                            collectionView.reloadData()
+                            self.view.setNeedsDisplay()
                         }
-                        // 새로 선택한 태그일 때
-                        else {
-                            alertView.addButton(index) {
-                                self.temp_ingredients.insert(index, at: self.temp_ingredients.count - 1)
-                                collectionView.reloadData()
-                                self.view.setNeedsDisplay()
-                            }
+                    }
+                        
+                    else {
+                        alertView.addButton(index) {
+                            self.temp_ingredients.insert(index, at: self.temp_ingredients.count - 1)
+                            collectionView.reloadData()
+                            self.view.setNeedsDisplay()
                         }
                     }
                 }
