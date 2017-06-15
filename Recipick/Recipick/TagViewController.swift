@@ -8,17 +8,26 @@
 
 import UIKit
 
-class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class TagViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate  {
 
+    @IBOutlet weak var tagCollection: UICollectionView!
+    
     var tagList:[Recipe] = []
     var tagTitle:String = ""
     var chosenRecipe:Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("taglist count")
+        print(tagList.count)
 
         self.title = tagTitle
         // Do any additional setup after loading the view.
+        
+        let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
+        
+        self.tagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +37,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        print(tagList.count)
         return tagList.count
     }
     
