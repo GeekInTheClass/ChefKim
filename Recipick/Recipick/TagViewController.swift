@@ -38,7 +38,6 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        print(tagList.count)
         return tagList.count
     }
     
@@ -49,7 +48,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         let tag = tagList[indexPath.row]
         let thumbnail:UIImage?
-        
+        print(tag)
         thumbnail = tag.urlToPhoto(index: 0)
         
         for recipe in likeList {
@@ -61,7 +60,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         cell.nameLabel.text = tag.name
         cell.tagImageView.image = thumbnail
-        cell.recipe = tag
+        cell.recipeId.text = tag.id
         
         // add underline of cells
         if indexPath.row < tagList.count - 2 {

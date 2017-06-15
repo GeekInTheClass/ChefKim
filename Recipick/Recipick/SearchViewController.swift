@@ -25,6 +25,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
     }
     
     var tagList:[Recipe] = []
+    var selectedtag:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
         
         backButton.setImage(UIImage(named: "ui_back"), for: .normal)
         backButton.frame = CGRect(x: 5, y: 30, width:15, height: 20)
-        print("nothing")
         searchView.ynScrollView = scrollview
         searchView.ynSearchMainView = mainview
         //let ynSearch = YNSearch()
@@ -52,7 +52,6 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
         self.tabBarController?.tabBar.isHidden = true
         
         var nameList:[String] = []
-        nameList += ["쇠고기", "돼지고기", "닭고기", "바보"]
         
         for recipe in recipeList {
             nameList.append(recipe.name)
@@ -86,7 +85,6 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
         
         let key = self.ynSearchView.ynSearchListView.searchResultDatabase[indexPath.row]
         searchHistory.append(key)
-        print("this" + key)
             // Call listview clicked based on key
         self.ynSearchView.ynSearchListView.ynSearchListViewDelegate?.ynSearchListViewClicked(key: key)
             
@@ -105,6 +103,8 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
     
     func ynSearchHistoryButtonClicked(text: String) {
         //self.pushViewController(text: text)
+        tagList.removeAll()
+        selectedtag = text
         for recipe in recipeList {
             if recipe.name.range(of: text) != nil {
                 tagList.append(recipe)
@@ -133,7 +133,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
         var situationTag: Recipe.Situation? = nil
         var typeTag: Recipe.Category? = nil
         let button:String = text[text.index(text.startIndex, offsetBy:2) ..< text.index(before:text.endIndex)]
-        print(button)
+        tagList.removeAll()
         switch button {
         case "치즈":
             ingredientTag = Recipe.Ingrediant.Cheese
@@ -204,6 +204,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
                     }
                 }
             }
+            selectedtag = tag.toString()
             performSegue(withIdentifier: "tagSegue", sender: self)
             return
         }
@@ -237,6 +238,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
                     break
                 }
             }
+            selectedtag = tag.toString()
             performSegue(withIdentifier: "tagSegue", sender: self)
             return
         }
@@ -263,6 +265,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
                     break
                 }
             }
+            selectedtag = tag.toString()
             performSegue(withIdentifier: "tagSegue", sender: self)
             return
         }
@@ -271,6 +274,8 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
     
     func ynSearchListViewClicked(key: String) {
         //self.pushViewController(text: key)
+        tagList.removeAll()
+        selectedtag = key
         for recipe in recipeList {
             if recipe.name.range(of: key) != nil {
                 tagList.append(recipe)
@@ -296,8 +301,8 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
         self.tabBarController?.tabBar.isHidden = false
         if segue.identifier == "tagSegue" {
             if let destination = segue.destination as? TagViewController {
+                destination.tagTitle = selectedtag
                 destination.tagList = self.tagList
-                print("send to tag")
             }
         }
     }

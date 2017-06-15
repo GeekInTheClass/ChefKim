@@ -16,17 +16,20 @@ class TagCollectionViewCell:UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    var recipe:Recipe!
+    @IBOutlet weak var recipeId: UILabel!
     
     @IBAction func changeButton() {
-        let buttonImage = UIImage(named: "ui_unlike")
-        if buttonLike.currentImage == buttonImage {
+        print("buttonclick")
+        if buttonLike.currentImage == UIImage(named: "ui_unlike") {
             buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)
-            likeList.append(recipe)
+            let recipe = recipeList.filter() { $0.id == recipeId.text}
+            likeList.append(recipe[0])
+            print(recipe[0].name)
         }
         else {
+            print(recipeId)
             buttonLike.setImage(UIImage(named:"ui_unlike"), for: .normal)
-            recipeList = recipeList.filter() { $0 !== recipe }
+            likeList = likeList.filter() { $0.id != recipeId.text }
         }
     }
     
