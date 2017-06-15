@@ -14,7 +14,7 @@ var g_RecipeArray = [Recipe]()
 
 // 메인 김치찌개
 
-let KimchSoup = Recipe(id: "0", name: "7분 김치찌개", ingrediant: [Recipe.Ingrediant.Kimchi], time: Recipe.Time.M10, situation: Recipe.Situation.Snack, category: Recipe.Category.Korean, recipe_ingrediant: "  ", recipe_contents: "??", photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/7%E1%84%87%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8E%E1%85%B5.png?alt=media&token=dbe4c4c7-f13d-4423-a64b-30cc76cbd103"])
+let KimchSoup = Recipe(id: "0", name: "7분 돼지김치찌개", ingrediant: [Recipe.Ingrediant.Kimchi, Recipe.Ingrediant.Pork], time: Recipe.Time.M30, situation: Recipe.Situation.Home, category: Recipe.Category.Korean, recipe_ingrediant: "양파, 마늘, 파, 고춧가루", recipe_contents: "1.돼지고기를 중간불에서 볶듯이 익혀줍니다.\r\n2.고기가 충분히 익고나면 고기의 두배 정도 되는 양의 김치를 적당한 크기로 썰어 함께 볶아줍니다.\r\n3.김치의 신맛을 덜기 위해 설탕을 적당량 부어주며 볶습니다.\r\n4.볶은 재료에 재료가 충분히 잠길 정도의 물을 붓고 끓여줍니다.\r\n5.물이 끓고나면 파와 양파를 썰어 익혀줍니다.\r\n6.싱거울 경우 소금으로, 너무 실 경우 설탕을 넣어주며 간을 맞추면 완성! ", photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/7%E1%84%87%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8E%E1%85%B5.png?alt=media&token=dbe4c4c7-f13d-4423-a64b-30cc76cbd103"])
 
 
 
