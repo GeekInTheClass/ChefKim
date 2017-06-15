@@ -527,6 +527,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJQ-iH-wq0">
+                                                    <rect key="frame" x="126" y="150" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eoV-JI-ZNq">
                                                     <rect key="frame" x="10" y="13" width="160" height="160"/>
                                                     <constraints>
@@ -565,6 +572,7 @@
                                         <connections>
                                             <outlet property="buttonLike" destination="vp9-kj-Prf" id="4rz-AN-dUu"/>
                                             <outlet property="nameLabel" destination="Kb1-eX-PxC" id="Oft-6D-Mue"/>
+                                            <outlet property="recipeId" destination="rJQ-iH-wq0" id="ydb-Hl-AYf"/>
                                             <outlet property="tagImageView" destination="eoV-JI-ZNq" id="sFt-kz-RKH"/>
                                         </connections>
                                     </collectionViewCell>
@@ -812,7 +820,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_situ_party" translatesAutoresizingMaskIntoConstraints="NO" id="0Mu-4C-f0I">
@@ -929,7 +937,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="210"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="188" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이것저것음식들" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWN-gg-tck">

@@ -59,7 +59,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         cell.nameLabel.text = tag.name
         cell.tagImageView.image = thumbnail
-        cell.recipe = tag
+        cell.recipeId.text = tag.id
         
         // add underline of cells
         if indexPath.row < tagList.count - 2 {

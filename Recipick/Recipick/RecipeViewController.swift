@@ -30,6 +30,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var recipe_content: UILabel!
     
     @IBAction func timeTagClicked (_sender: Any) {
+        tagList.removeAll()
         for recipe_1 in recipeList {
             if recipe_1.time.toString() == timeTag.currentTitle {
                 tagList.append(recipe_1)
@@ -40,6 +41,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     @IBAction func situationTagClicked (_sender: Any) {
+        tagList.removeAll()
         for recipe_1 in recipeList {
             if recipe_1.situation.toString() == situationTag.currentTitle {
                 tagList.append(recipe_1)
@@ -50,6 +52,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     @IBAction func typeTagClicked (_sender: Any) {
+        tagList.removeAll()
         for recipe_1 in recipeList {
             if recipe_1.category.toString() == typeTag.currentTitle {
                 tagList.append(recipe_1)
@@ -183,6 +186,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tagList.removeAll()
         if collectionView == ingredientTagCollection {
             let selectedIngrediant = recipe.ingrediant[indexPath.row]
             for recipe in recipeList {
