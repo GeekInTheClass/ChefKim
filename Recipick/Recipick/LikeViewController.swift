@@ -16,6 +16,12 @@ class LikeViewController: UIViewController {
         
         self.title = "내가 찜한 레시피"
         // Do any additional setup after loading the view.
+        
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 18.0, weight: UIFontWeightSemibold), NSForegroundColorAttributeName: UIColor.white]
+        
+        let backImg: UIImage = UIImage(named: "ui_back")!
+        UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImg, for: .normal, barMetrics: .default)
     }
     
     override func didReceiveMemoryWarning() {
