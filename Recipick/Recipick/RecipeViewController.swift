@@ -10,7 +10,7 @@ import UIKit
 
 class RecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate {
     
-    var recipe:Recipe = Recipe(id: "000", name: "뚝배기", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.H1, situation: Recipe.Situation.Birth, category: Recipe.Category.Dessert, recipe_ingrediant: "섞어", recipe_contents: "걍 먹어")
+    var recipe:Recipe = Recipe(id: "000", name: "뚝배기", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.H1, situation: Recipe.Situation.Birth, category: Recipe.Category.Dessert, recipe_ingrediant: "예제", recipe_contents: "예제")
     
     var tagList:[Recipe] = []
     
@@ -32,6 +32,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         self.title = recipe.name
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)  ]
         
 //        timeTag.setTitle(recipe.time.toString(), for: .normal)
 //        situationTag.setTitle(recipe.situation.toString(), for: .normal)
@@ -47,6 +48,36 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.ingredientTagCollection.backgroundColor = UIColor.clear
         
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! RecommendedTagCollectionViewCell?
+        
+        self.recipe_ingrediant.text = recipe.recipe_ingrediant
+        self.recipe_content.text = recipe.recipe_contents
+        
+        self.recipe_ingrediant.lineBreakMode = .byWordWrapping
+        self.recipe_ingrediant.numberOfLines = 0
+        
+        self.recipe_content.lineBreakMode = .byWordWrapping
+        self.recipe_content.numberOfLines = 0
+        
+        timeTag.setTitle(" # " + recipe.time.toString(), for: .normal)
+        timeTag.setTitleColor(UIColor.white, for: .normal)
+        timeTag.layer.cornerRadius = 15
+        timeTag.layer.borderWidth = 0
+        timeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+        timeTag.sizeToFit()
+        
+        situationTag.setTitle(" # " + recipe.situation.toString(), for: .normal)
+        situationTag.setTitleColor(UIColor.white, for: .normal)
+        situationTag.layer.cornerRadius = 15
+        situationTag.layer.borderWidth = 0
+        situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+        situationTag.sizeToFit()
+        
+        typeTag.setTitle(" # " + recipe.category.toString(), for: .normal)
+        typeTag.setTitleColor(UIColor.white, for: .normal)
+        typeTag.layer.cornerRadius = 15
+        typeTag.layer.borderWidth = 0
+        typeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
+        typeTag.sizeToFit()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,7 +93,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             
         else {
             guard let collection = self.recipe.photo  else {
-                return 0
+                return 1
             }
             return collection.count
         }
@@ -86,9 +117,13 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
             print("photo")
             let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "recipePhotoCell", for: indexPath as IndexPath) as! RecipeViewPhotoCell
             
-            let thumbnail:UIImage = recipe.urlToPhoto(index: indexPath.row)
-            photoCell.recipeImage.image = thumbnail
-            
+            if let photos = recipe.photo {
+                let thumbnail:UIImage = recipe.urlToPhoto(index: indexPath.row)
+                photoCell.recipeImage.image = thumbnail
+            }
+            else {
+                photoCell.recipeImage.image = UIImage(named: "default")
+            }
             return photoCell
         }
     }

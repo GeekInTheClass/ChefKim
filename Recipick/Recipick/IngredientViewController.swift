@@ -66,6 +66,7 @@ class IngredientViewController: AccordionTableViewController {
                         }
                     }
                 }
+                print(tagList.count)
                 toTag.tagList = tagList
                 toTag.tagTitle = selectedIngrediantIndex
             }
