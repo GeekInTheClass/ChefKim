@@ -12,6 +12,13 @@ var recipeList:[Recipe] = []
 var g_RecipeData = [String:Recipe]()
 var g_RecipeArray = [Recipe]()
 
+// 메인 김치찌개
+
+let KimchSoup = Recipe(id: "0", name: "7분 김치찌개", ingrediant: [Recipe.Ingrediant.Kimchi], time: Recipe.Time.M10, situation: Recipe.Situation.Snack, category: Recipe.Category.Korean, recipe_ingrediant: "  ", recipe_contents: "??", photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/7%E1%84%87%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8E%E1%85%B5.png?alt=media&token=dbe4c4c7-f13d-4423-a64b-30cc76cbd103"])
+
+
+
+
 // 소고기 무국
 
 let Beefbureau = Recipe(id: "1",
