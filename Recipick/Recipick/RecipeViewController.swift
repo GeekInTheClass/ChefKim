@@ -13,6 +13,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     var recipe:Recipe = Recipe(id: "000", name: "뚝배기", ingrediant: [Recipe.Ingrediant.Beef], time: Recipe.Time.H1, situation: Recipe.Situation.Birth, category: Recipe.Category.Dessert, recipe_ingrediant: "예제", recipe_contents: "예제")
     
     var tagList:[Recipe] = []
+    var selectTag:String = ""
     
     @IBOutlet weak var ingredientTagCollection: UICollectionView!
     
@@ -27,6 +28,36 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var recipe_ingrediant: UILabel!
     
     @IBOutlet weak var recipe_content: UILabel!
+    
+    @IBAction func timeTagClicked (_sender: Any) {
+        for recipe_1 in recipeList {
+            if recipe_1.time.toString() == timeTag.currentTitle {
+                tagList.append(recipe_1)
+            }
+        }
+        selectTag = recipe.time.toString()
+        performSegue(withIdentifier: "recipeToTag", sender: self)
+    }
+    
+    @IBAction func situationTagClicked (_sender: Any) {
+        for recipe_1 in recipeList {
+            if recipe_1.situation.toString() == situationTag.currentTitle {
+                tagList.append(recipe_1)
+            }
+        }
+        selectTag = recipe.situation.toString()
+        performSegue(withIdentifier: "recipeToTag", sender: self)
+    }
+    
+    @IBAction func typeTagClicked (_sender: Any) {
+        for recipe_1 in recipeList {
+            if recipe_1.category.toString() == typeTag.currentTitle {
+                tagList.append(recipe_1)
+            }
+        }
+        selectTag = recipe.category.toString()
+        performSegue(withIdentifier: "recipeToTag", sender: self)
+    }
     
     var sizingCell: RecommendedTagCollectionViewCell?
     
@@ -161,6 +192,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
                     }
                 }
             }
+            selectTag = selectedIngrediant.toString()
         }
         else {
             return
@@ -173,6 +205,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         if segue.identifier == "recipeToTag" {
             if let destination = segue.destination as? TagViewController {
                 destination.tagList = self.tagList
+                destination.tagTitle = selectTag
                 print("send to tag")
             }
         }
