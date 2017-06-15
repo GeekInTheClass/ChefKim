@@ -182,7 +182,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeTag" id="IoN-LD-0T4" customClass="IngredientTagCell" customModule="Recipick" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="IoN-LD-0T4" customClass="RecommendedTagCollectionViewCell" customModule="Recipick" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="1" width="66" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -208,7 +208,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeTag" id="uZK-4f-bEk" customClass="TimeTagCell" customModule="Recipick" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="uZK-4f-bEk" customClass="RecommendedTagCollectionViewCell" customModule="Recipick" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -234,7 +234,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeTag" id="bAb-UH-Oce" customClass="TypeTagCell" customModule="Recipick" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="bAb-UH-Oce" customClass="RecommendedTagCollectionViewCell" customModule="Recipick" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -267,7 +267,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeTag" id="KPd-uq-bFH" customClass="SituationTagCell" customModule="Recipick" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="KPd-uq-bFH" customClass="RecommendedTagCollectionViewCell" customModule="Recipick" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="66" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -360,6 +360,9 @@
                                                 <state key="normal" title="제보하기">
                                                     <color key="titleColor" red="0.98823529409999999" green="0.26226929529999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="upLoadFb:" destination="21J-cW-8M8" eventType="touchUpInside" id="sog-Df-VZK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -435,7 +438,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailIngredientField" destination="cl6-M4-FyJ" id="iiY-9Z-sgC"/>
+                        <outlet property="detailRecipeField" destination="eMW-CJ-QKA" id="btj-cf-ysz"/>
                         <outlet property="ingredientTagCollection" destination="w6S-Nv-ZTi" id="V3C-DJ-ylA"/>
+                        <outlet property="nameField" destination="1HD-kj-OoX" id="Kj3-QZ-XRc"/>
                         <outlet property="photoCollection" destination="aPP-mo-BtI" id="ami-ct-eWv"/>
                         <outlet property="situationTagCollection" destination="Y5G-5b-Exx" id="TyV-2y-Hp3"/>
                         <outlet property="timeTagCollection" destination="xz6-cb-h5V" id="5mo-5t-E1e"/>

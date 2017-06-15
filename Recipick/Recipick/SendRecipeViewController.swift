@@ -6,12 +6,13 @@
 //  Copyright © 2017년 ChefKim. All rights reserved.
 //
 import UIKit
+import Firebase
 
 class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    /*
+
     var ref:DatabaseReference!
     var refHandle:DatabaseHandle!
-     */
+ 
     
     //  Collections used for tags : Ingredient/Time/Situation/Type
     @IBOutlet weak var nameField: UITextField!
@@ -41,13 +42,14 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     // Sample data arrays for tags
     let ingre_cellIdentifier = "recipeTag"
-    var temp_ingredients:[String] = ["김치", "계란"]
+    var temp_ingredients:[String] = ["김치", "계란", "+"]
     
+
     let time_cellIdentifier = "recipeTag"
-    var temp_time:String = "10분 이내"
+    var temp_time:String = "10분 내외"
     
     let situ_cellIdentifier = "recipeTag"
-    var temp_situation:String = "아플때"
+    var temp_situation:String = "아플 때"
     
     let type_cellIdentifier = "recipeTag"
     var temp_type:String = "한식"
@@ -58,7 +60,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var sizingCell: RecommendedTagCollectionViewCell?
     
     
-    /* Firebase 로 데이터 업로드
+    //Firebase 로 데이터 업로드
      
     @IBAction func upLoadFb(_ sender: Any) {
         print("fddd")
@@ -80,8 +82,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailIngredient)
         let upDetailRecipe = ["upDetailRecipe" : detailRecipeField.text!]
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailRecipe)
-        let upPhotoURL = ["upPhotoURL" : temp_photo]
-        ref.child("Recipe/\(code.1)").updateChildValues(upPhotoURL)
+        let upPhotoURL = ["upPhotoURL" : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Recipe392%2Fcham_dice.jpg?alt=media&token=7de47077-9058-4821-9224-7a6a3d39e944"]]
     }
     
     // firebase 분류코드 생성
@@ -99,13 +100,13 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         
         return (Code, "Recipe" + Code)
     }
-    */
+    
     
     
     // Tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.ingredientTagCollection {
-            return self.temp_ingredients.count + 1
+            return self.temp_ingredients.count
         }
             
         else if collectionView == self.timeTagCollection {
@@ -131,16 +132,17 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         // 각 collection에 따라 태그 출력
         if collectionView == self.ingredientTagCollection {
             let ingredientTag = collectionView.dequeueReusableCell(withReuseIdentifier: ingre_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-            self.configureCell(cell: ingredientTag, forIndexPath: indexPath, type: temp_ingredients)
+            self.configureCell(cell: ingredientTag, forIndexPath: indexPath, type: self.temp_ingredients)
+            print(temp_ingredients)
             
             // index가 마지막 셀(+)을 가리킬 때 : 태그 추가 버튼
-            if indexPath.row == temp_ingredients.count {
+            if indexPath.row == temp_ingredients.count - 1 {
                 print(temp_ingredients) // 배열에 태그가 들어갔는지 확인 (지울것)
 
                 ingredientTag.layer.borderColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0).cgColor
                 ingredientTag.layer.borderWidth = 1
                 ingredientTag.backgroundColor = UIColor.white
-                ingredientTag.recommendedTagLabel.text = "+"
+//                ingredientTag.recommendedTagLabel.text = "+"
                 ingredientTag.recommendedTagLabel.textColor = UIColor(red: 242/255, green: 101/255, blue: 34/255, alpha: 1.0)
             }
              
@@ -149,70 +151,47 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 ingredientTag.layer.borderColor = UIColor.clear.cgColor
                 ingredientTag.layer.borderWidth = 0
                 ingredientTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-                ingredientTag.recommendedTagLabel.text = self.temp_ingredients[indexPath.item]
-                ingredientTag.recommendedTagLabel.textColor = UIColor.white
             }
 
             // 태그 셀의 가장자리를 둥글게 설정
             ingredientTag.layer.cornerRadius = 13.5
-            print("1111111111111111111")
             
             return ingredientTag
         }
             
         else if collectionView == self.timeTagCollection {
             let timeTag = collectionView.dequeueReusableCell(withReuseIdentifier: time_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-            self.configureCell(cell: timeTag, forIndexPath: indexPath, type: [temp_time])
+            self.configureCell(cell: timeTag, forIndexPath: indexPath, type: [self.temp_time])
             
             timeTag.layer.borderColor = UIColor.clear.cgColor
             timeTag.layer.borderWidth = 0
             timeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-            timeTag.recommendedTagLabel.text = temp_time
-            timeTag.recommendedTagLabel.textColor = UIColor.white
             
             timeTag.layer.cornerRadius = 13.5
-            print("22222222222222222")
             
             return timeTag
         }
             
         else if collectionView == self.typeTagCollection {
             let typeTag = collectionView.dequeueReusableCell(withReuseIdentifier: type_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-            self.configureCell(cell: typeTag, forIndexPath: indexPath, type: [temp_type])
+            self.configureCell(cell: typeTag, forIndexPath: indexPath, type: [self.temp_type])
             
             typeTag.layer.borderColor = UIColor.clear.cgColor
             typeTag.layer.borderWidth = 0
             typeTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-            typeTag.recommendedTagLabel.text = temp_type
-            typeTag.recommendedTagLabel.textColor = UIColor.white
             
             typeTag.layer.cornerRadius = 13.5
-            print("3333333333333333333")
             
             return typeTag
         }
         
-//        else if collectionView == self.situationTagCollection {
-//            let situationTag = collectionView.dequeueReusableCell(withReuseIdentifier: situ_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-//            self.configureCell(cell: situationTag, forIndexPath: indexPath, type: [temp_situation])
-//            
-//            situationTag.layer.borderColor = UIColor.clear.cgColor
-//            situationTag.layer.borderWidth = 0
-//            situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-//            situationTag.recommendedTagLabel.text = temp_situation
-//            situationTag.recommendedTagLabel.textColor = UIColor.white
-//            situationTag.layer.cornerRadius = 13.5
-//            
-//            return situationTag
         else if collectionView == self.situationTagCollection {
             let situationTag = collectionView.dequeueReusableCell(withReuseIdentifier: situ_cellIdentifier, for: indexPath as IndexPath) as! RecommendedTagCollectionViewCell
-            self.configureCell(cell: situationTag, forIndexPath: indexPath, type: [temp_situation])
+            self.configureCell(cell: situationTag, forIndexPath: indexPath, type: [self.temp_situation])
             
             situationTag.layer.borderColor = UIColor.clear.cgColor
             situationTag.layer.borderWidth = 0
             situationTag.backgroundColor = UIColor(red: 131/255, green: 147/255, blue: 202/255, alpha: 1.0)
-            situationTag.recommendedTagLabel.text = temp_type
-            situationTag.recommendedTagLabel.textColor = UIColor.white
             
             situationTag.layer.cornerRadius = 13.5
             
@@ -243,41 +222,63 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     func configureCell(cell: RecommendedTagCollectionViewCell, forIndexPath indexPath: IndexPath, type: [String]) {
         let tag = type[indexPath.row]
-        cell.recommendedTagLabel.text = "# " + tag
+        if cell.recommendedTagLabel != nil {
+            cell.recommendedTagLabel.text = "# " + tag
+        }
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: [])
+        if collectionView == self.ingredientTagCollection {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: temp_ingredients)
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
         
-        return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        else if collectionView == self.timeTagCollection {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: [temp_time])
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+            
+        else if collectionView == self.situationTagCollection {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: [temp_situation])
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+            
+        else if collectionView == self.typeTagCollection {
+            self.configureCell(cell: self.sizingCell!, forIndexPath: indexPath as IndexPath, type: [temp_type])
+            
+            return self.sizingCell!.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        }
+        
+        else {
+            return CGSize(width: 100, height: 100)
+        }
     }
     
     // 각 Collection의 마지막 셀을 눌렀을 때 구현 (태그 또는 사진 추가)
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.ingredientTagCollection {
-            if indexPath.item == temp_ingredients.count {
+            if indexPath.item == temp_ingredients.count - 1 {
                 temp_ingredients += ["newIngre"]     //새로운 태그 추가
             }
         }
         
-//        else if collectionView == self.timeTagCollection {
-//            if indexPath.item == temp_time.count {
-//                temp_time += ["newTime"]
-//            }
-//        }
-//        
-//        else if collectionView == self.situationTagCollection {
-//            if indexPath.item == temp_situation.count {
-//                temp_situation += ["newSitu"]
-//            }
-//        }
-//        
-//        else if collectionView == self.typeTagCollection {
-//            if indexPath.item == temp_type.count {
-//                temp_type += ["newType"]
-//            }
-//        }
+        else if collectionView == self.timeTagCollection {
+            
+        }
+        
+        else if collectionView == self.situationTagCollection {
+            
+        }
+        
+        else if collectionView == self.typeTagCollection {
+            
+        }
         
         // 사진 Collection
 //        else if collectionView == self.photoCollection {
@@ -318,26 +319,27 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ref = Database.database().reference()
+        ref = Database.database().reference()
         
         // Set collectionView Cells for each tag collection
         let cellNib = UINib(nibName: "RecommendedTagCollectionViewCell", bundle: nil)
         
-        self.ingredientTagCollection.register(cellNib, forCellWithReuseIdentifier: "RecipeTag")
+        self.ingredientTagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
         self.ingredientTagCollection.backgroundColor = UIColor.clear
         
-        self.timeTagCollection.register(cellNib, forCellWithReuseIdentifier: "RecipeTag")
+        self.timeTagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
         self.ingredientTagCollection.backgroundColor = UIColor.clear
         
-        self.situationTagCollection.register(cellNib, forCellWithReuseIdentifier: "RecipeTag")
+        self.situationTagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
         self.situationTagCollection.backgroundColor = UIColor.clear
         
-        self.typeTagCollection.register(cellNib, forCellWithReuseIdentifier: "RecipeTag")
+        self.typeTagCollection.register(cellNib, forCellWithReuseIdentifier: "recipeTag")
         self.typeTagCollection.backgroundColor = UIColor.clear
         
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! RecommendedTagCollectionViewCell?
         
         // ImagePicker for photo collection
+
         self.imagePicker.delegate = self
     }
 

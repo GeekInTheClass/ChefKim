@@ -142,9 +142,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let convId = recieveId as! String
             let convName = recieveName as! String
             let convIngre = convertIngre(inputData: recieveIngre as! NSArray)
-            let convTime = convertTime(inputData: recieveTime as! NSArray)
-            let convSitu = convertSitu(inputData: recieveSituation as! NSArray)
-            let convCate = convertCategory(inputData: recieveType as! NSArray)
+            let convTime = convertTime(inputData: recieveTime as! String)
+            let convSitu = convertSitu(inputData: recieveSituation as! String)
+            let convCate = convertCategory(inputData: recieveType as! String)
             let convDetailIngre = recieveDetailIngre as! String
             let convDetailRecipe = recieveDetailRecipe as! String
             let convPhotoURL = convertPhotoURL(inputData: recievePhoto as! NSArray)
@@ -160,7 +160,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                             photo: convPhotoURL)
             
             g_RecipeData[snapshot.key] = recipe
-            recipeList = Array(g_RecipeData.values)
+            recipeList += Array(g_RecipeData.values)
             print(recipeList.count)
             
         })
@@ -195,9 +195,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == recommendedTag {
             selectedTag = temporaryTags[indexPath.row]
+            performSegue(withIdentifier: "MainToTag", sender: self)
         }
         else {
+            print("recipe" + String(recipeList.count))
+            print(indexPath.row)
             selectedRecipe = recipeList[indexPath.row]
+            performSegue(withIdentifier: "MainToRecipe", sender: self)
         }
     }
     
