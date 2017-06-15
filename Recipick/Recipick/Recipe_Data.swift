@@ -21,7 +21,8 @@ let Beefbureau = Recipe(id: "0001",
                         situation: Recipe.Situation.Home,
                         category: Recipe.Category.Korean,
                         recipe_ingrediant: "test",
-                        recipe_contents: "test")
+                        recipe_contents: "test",
+                        photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Bears.jpg?alt=media&token=1d176878-0b65-4f98-9eec-5c638209088c"])
 //어묵국
 let Fishpaste = Recipe(id: "0002",
                        name: "어묵국",
@@ -30,7 +31,8 @@ let Fishpaste = Recipe(id: "0002",
                        situation: Recipe.Situation.Breakfast,
                        category: Recipe.Category.Korean,
                        recipe_ingrediant: "test",
-                       recipe_contents: "test")
+                       recipe_contents: "test",
+                       photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Recipe008%2FRecipe008.0.jpg?alt=media&token=818a6815-5117-44eb-ad96-505bc30cf94b"])
 
 
 //야채피클
@@ -41,7 +43,8 @@ let PickledCucumber = Recipe(id: "0003",
                              situation: Recipe.Situation.Home,
                              category: Recipe.Category.Western,
                              recipe_ingrediant: "test",
-                             recipe_contents: "test")
+                             recipe_contents: "test",
+                             photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%8B%E1%85%A3%E1%84%8E%E1%85%A2%E1%84%91%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF.jpg?alt=media&token=d9d4396e-9d58-4836-a83e-d0be3a0114ab"])
 //김치볶음밥
 let KimchiFriedRice = Recipe(id: "0004",
                              name: "김치볶음밥",
@@ -50,7 +53,8 @@ let KimchiFriedRice = Recipe(id: "0004",
                              situation: Recipe.Situation.Home,
                              category: Recipe.Category.Korean,
                              recipe_ingrediant: "test",
-                             recipe_contents: "test")
+                             recipe_contents: "test",
+                             photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8E%E1%85%B5%E1%84%87%E1%85%A9%E1%86%A9%E1%84%8B%E1%85%B3%E1%86%B7%E1%84%87%E1%85%A1%E1%86%B8.jpg?alt=media&token=7c2405bb-84ff-43ff-8948-fc4644a37f25"])
 
 //바지락 순두부찌개
 let ClamSoftTofuStew = Recipe(id: "0005",
@@ -60,7 +64,8 @@ let ClamSoftTofuStew = Recipe(id: "0005",
                               situation: Recipe.Situation.Home,
                               category: Recipe.Category.Korean,
                               recipe_ingrediant: "test",
-                              recipe_contents: "test")
+                              recipe_contents: "test",
+                              photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%87%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AB%E1%84%83%E1%85%AE%E1%84%87%E1%85%AE%E1%84%8D%E1%85%B5%E1%84%80%E1%85%A2.jpg?alt=media&token=a5cc3a46-6668-4bdb-a774-758bf0aec120"])
 
 //제육볶음
 let FriedSpicyPork = Recipe(id: "0006",
@@ -70,7 +75,8 @@ let FriedSpicyPork = Recipe(id: "0006",
                             situation: Recipe.Situation.Dinner,
                             category: Recipe.Category.Korean,
                             recipe_ingrediant: "test",
-                            recipe_contents: "test")
+                            recipe_contents: "test",
+                            photo:["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%B2%E1%86%A8%E1%84%87%E1%85%A9%E1%86%A9%E1%84%8B%E1%85%B3%E1%86%B7.jpg?alt=media&token=368c13d1-bcd8-4d73-9974-321cbc9b053a"])
 
 //가지볶음
 let FriedEggPlant = Recipe(id: "0007",
@@ -80,7 +86,8 @@ let FriedEggPlant = Recipe(id: "0007",
                            situation: Recipe.Situation.Home,
                            category: Recipe.Category.Korean,
                            recipe_ingrediant: "test",
-                           recipe_contents: "test")
+                           recipe_contents: "test",
+                           photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%80%E1%85%A1%E1%84%8C%E1%85%B5%E1%84%87%E1%85%A9%E1%86%A9%E1%84%8B%E1%85%B3%E1%86%B7.jpg?alt=media&token=bf99ab58-6ff3-416a-8916-5407b3c5c751"])
 
 //봉골레파스타
 let VongolePasta = Recipe(id: "0008",
@@ -90,7 +97,8 @@ let VongolePasta = Recipe(id: "0008",
                           situation: Recipe.Situation.Dinner,
                           category: Recipe.Category.Western,
                           recipe_ingrediant: "test",
-                          recipe_contents: "test")
+                          recipe_contents: "test",
+                          photo:"https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A6%E1%84%91%E1%85%A1%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1.jpg?alt=media&token=5ee5e7f8-7616-4f79-82d6-e1b3b5a4d949")
 
 //소고기미역국
 let BeefSeaweedSoup = Recipe(id: "0009",
@@ -100,10 +108,11 @@ let BeefSeaweedSoup = Recipe(id: "0009",
                              situation: Recipe.Situation.Home,
                              category: Recipe.Category.Korean,
                              recipe_ingrediant: "test",
-                             recipe_contents: "test")
+                             recipe_contents: "test",
+                             photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%89%E1%85%A9%E1%84%80%E1%85%A9%E1%84%80%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%A8%E1%84%80%E1%85%AE%E1%86%A8.jpg?alt=media&token=3c357125-f0dc-4c97-aa71-2ae908b79303"])
 
 //베이컨볶음밥
-let Recipe10 = Recipe(id: "10", name: "베이컨볶음밥", ingrediant: [Recipe.Ingrediant.Pork], time: Recipe.Time.M30, situation: Recipe.Situation.Breakfast, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test")
+let Recipe10 = Recipe(id: "10", name: "베이컨볶음밥", ingrediant: [Recipe.Ingrediant.Pork], time: Recipe.Time.M30, situation: Recipe.Situation.Breakfast, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test", photo: ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A9%E1%84%8B%E1%85%B3%E1%86%B7%E1%84%87%E1%85%A1%E1%86%B8.jpg?alt=media&token=118f0f60-93b1-4b80-99b7-c7a35af7048f"])
 
 let Recipe11 = Recipe(id: "11", name:  "계절 쭈꾸미 달래 덮밥", ingrediant: [Recipe.Ingrediant.Squid], time: Recipe.Time.H1, situation: Recipe.Situation.Dinner, category: Recipe.Category.Korean, recipe_ingrediant: "test", recipe_contents: "test")
 
