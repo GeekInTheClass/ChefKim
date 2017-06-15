@@ -254,7 +254,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
                 // 이미지 파일이 보이지 않도록 설정
                 photoCell.photoCellImage.image = nil
                 // 임시로 보라색으로 칠함 - <TODO>사진추가 이미지 삽입
-                photoCell.backgroundColor = UIColor.purple
+                photoCell.backgroundColor = UIColor.lightGray
             }
             
             else {
@@ -415,6 +415,8 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photoArray.append(pickedImage)
+            self.photoCollection.reloadData()
+            self.view.setNeedsDisplay()
             print(photoArray)
         }
         
