@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>YNSearch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>00103D6C821BE85971C563025527BA5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17191D05C0C57E0505E5145F58375FCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B6F63C94626D27DE51ADF24879187C49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEB70282DF847D35448E77F974E333CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
