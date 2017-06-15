@@ -426,8 +426,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="SPa-m1-JIo" id="ebb-LM-yuO"/>
-                                    <outlet property="delegate" destination="SPa-m1-JIo" id="y2j-A5-U9G"/>
+                                    <outlet property="dataSource" destination="ZJw-FC-QvP" id="gVo-NN-fWY"/>
+                                    <outlet property="delegate" destination="ZJw-FC-QvP" id="EdT-p2-RnY"/>
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPl-3k-wQa">
@@ -441,7 +441,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipePhotoCell" id="Mfz-We-etT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipePhotoCell" id="Mfz-We-etT" customClass="RecipeViewPhotoCell" customModule="Recipick" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -454,8 +454,15 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="recipeImage" destination="kXi-lS-X1u" id="Hbd-o4-gLb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZJw-FC-QvP" id="EAC-Z9-xd0"/>
+                                    <outlet property="delegate" destination="ZJw-FC-QvP" id="d6A-NE-J64"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
