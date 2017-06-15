@@ -22,7 +22,7 @@ let Beefbureau = Recipe(id: "0001",
                         category: Recipe.Category.Korean,
                         recipe_ingrediant: "test",
                         recipe_contents: "test",
-                        photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Bears.jpg?alt=media&token=1d176878-0b65-4f98-9eec-5c638209088c"])
+                        photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%89%E1%85%A9%E1%84%80%E1%85%A9%E1%84%80%E1%85%B5%E1%84%86%E1%85%AE%E1%84%80%E1%85%AE%E1%86%A8.jpg?alt=media&token=4adfa214-fb5d-42c3-9d68-a30b1df28c88"])
 //어묵국
 let Fishpaste = Recipe(id: "0002",
                        name: "어묵국",
@@ -32,7 +32,7 @@ let Fishpaste = Recipe(id: "0002",
                        category: Recipe.Category.Korean,
                        recipe_ingrediant: "test",
                        recipe_contents: "test",
-                       photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Recipe008%2FRecipe008.0.jpg?alt=media&token=818a6815-5117-44eb-ad96-505bc30cf94b"])
+                       photo : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%A8%E1%84%80%E1%85%AE%E1%86%A8.jpg?alt=media&token=166dd3de-cfde-478c-9a46-7980acd7bb53"])
 
 
 //야채피클
@@ -98,7 +98,7 @@ let VongolePasta = Recipe(id: "0008",
                           category: Recipe.Category.Western,
                           recipe_ingrediant: "test",
                           recipe_contents: "test",
-                          photo:"https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A6%E1%84%91%E1%85%A1%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1.jpg?alt=media&token=5ee5e7f8-7616-4f79-82d6-e1b3b5a4d949")
+                          photo:["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/%E1%84%87%E1%85%A9%E1%86%BC%E1%84%80%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A6%E1%84%91%E1%85%A1%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1.jpg?alt=media&token=5ee5e7f8-7616-4f79-82d6-e1b3b5a4d949"])
 
 //소고기미역국
 let BeefSeaweedSoup = Recipe(id: "0009",
