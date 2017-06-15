@@ -37,7 +37,6 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        print(tagList.count)
         return tagList.count
     }
     
@@ -48,7 +47,7 @@ class TagViewController: UIViewController, UICollectionViewDataSource, UICollect
         
         let tag = tagList[indexPath.row]
         let thumbnail:UIImage?
-        
+        print(tag)
         thumbnail = tag.urlToPhoto(index: 0)
         
         for recipe in likeList {

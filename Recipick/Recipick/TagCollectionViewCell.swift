@@ -19,12 +19,15 @@ class TagCollectionViewCell:UICollectionViewCell {
     var recipe:Recipe!
     
     @IBAction func changeButton() {
-        let buttonImage = UIImage(named: "ui_unlike")
-        if buttonLike.currentImage == buttonImage {
+        print("buttonclick")
+        if buttonLike.currentImage == UIImage(named: "ui_unlike") {
+            print("Hey")
             buttonLike.setImage(UIImage(named:"ui_like"), for: .normal)
             likeList.append(recipe)
+            print(recipe)
         }
         else {
+            print("not")
             buttonLike.setImage(UIImage(named:"ui_unlike"), for: .normal)
             recipeList = recipeList.filter() { $0 !== recipe }
         }

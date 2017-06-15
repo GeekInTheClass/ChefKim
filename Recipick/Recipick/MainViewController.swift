@@ -44,7 +44,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("시발")
         while temporaryTags.count < 13 {
             let randomNumber = arc4random_uniform(UInt32(tagList.count))
             if !temporaryTags.contains(tagList[Int(randomNumber)]) {
@@ -78,7 +77,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         else {
             let recipeCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! RecommendedCollectionViewCell
-            print(recipeList.count)
             recipeCell.RecommendedCellLabel.text = recipeList[indexPath.row].name
             //if let photo = recipeList[indexPath.row].photo {
             //    photo =
@@ -162,13 +160,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             g_RecipeData[snapshot.key] = recipe
             recipeList += Array(g_RecipeData.values)
-                print(recipeList.count)
                 
             }
         
         })
-        print(recipeList.count)
-        print("fuck")
 
         
         // Do any additional setup after loading the view.
@@ -201,8 +196,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             performSegue(withIdentifier: "MainToTag", sender: self)
         }
         else {
-            print("recipe" + String(recipeList.count))
-            print(indexPath.row)
             selectedRecipe = recipeList[indexPath.row]
             performSegue(withIdentifier: "MainToRecipe", sender: self)
         }
@@ -210,9 +203,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("end")
         ref.removeObserver(withHandle: refHandle!)
-        print("end!!")
     }
     
     // MARK: - Navigation
