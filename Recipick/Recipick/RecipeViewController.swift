@@ -31,8 +31,9 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
     var sizingCell: RecommendedTagCollectionViewCell?
     
     override func viewDidLoad() {
-        self.title = recipe.name
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)  ]
+        self.title = " # " + recipe.name
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)  ]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: recipe_ingrediant.font.fontName, size: 25)]
         
 //        timeTag.setTitle(recipe.time.toString(), for: .normal)
 //        situationTag.setTitle(recipe.situation.toString(), for: .normal)
@@ -146,7 +147,7 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
             
         else {
-            return CGSize(width: 100, height: 100)
+            return CGSize(width: 125, height: 125)
         }
     }
     
@@ -160,6 +161,9 @@ class RecipeViewController: UIViewController, UICollectionViewDataSource, UIColl
                     }
                 }
             }
+        }
+        else {
+            return
         }
         
         performSegue(withIdentifier: "recipeToTag", sender: self)
