@@ -121,7 +121,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         super.viewDidLoad()
 
-        recipeList += [Beefbureau, Fishpaste, PickledCucumber, KimchiFriedRice, ClamSoftTofuStew, FriedSpicyPork, FriedEggPlant, VongolePasta, BeefSeaweedSoup, Recipe10, Recipe11, Recipe12, Recipe13, Recipe14, Recipe15, Recipe16, Recipe17,Recipe18, Recipe19, Recipe20, Recipe21, Recipe22, Recipe23, Recipe24, Recipe25,Recipe26, Recipe27, Recipe28, Recipe29, Recipe30 ]
+        recipeList += [Beefbureau, Fishpaste, PickledCucumber, KimchiFriedRice, ClamSoftTofuStew, FriedSpicyPork, FriedEggPlant, VongolePasta, BeefSeaweedSoup, Recipe10, Recipe11, Recipe12, Recipe13, Recipe14, Recipe15, Recipe16, Recipe17,Recipe18, Recipe19, Recipe20, Recipe21, Recipe22, Recipe23, Recipe24, Recipe25,Recipe26, Recipe27, Recipe28, Recipe29, Recipe30, Recipe31, Recipe32, Recipe33, Recipe34, Recipe35, Recipe36, Recipe37, Recipe38, Recipe39, Recipe40 ]
         
         //Firebase에서 데이터 가져오기
         ref = Database.database().reference()
