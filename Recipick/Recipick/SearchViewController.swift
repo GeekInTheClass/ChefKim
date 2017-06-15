@@ -29,6 +29,7 @@ class SearchViewController: YNSearchViewController, YNSearchDelegate, YNSearchMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.topItem!.title = ""
         self.ynSearchView = searchView
         self.ynSearchTextfieldView = textFieldView
         

@@ -32,7 +32,7 @@ class UIRoundPrimaryButton: UIButton {
          self.layer.borderColor: 버튼의 외곽선 컬러를 결정합니다.
          self.layer.borderWidth: 버튼의 외곽선 두께를 결정합니다. 값이 커질 수록 외곽선이 두꺼워집니다.
          */
-        self.layer.cornerRadius = 15.0
+        self.layer.cornerRadius = 15
         self.setTitleColor(UIColor.white, for: .normal)
         self.setTitleColor(UIColor.white.withAlphaComponent(0.3), for: .highlighted)
         //self.backgroundColor = randomColor()
