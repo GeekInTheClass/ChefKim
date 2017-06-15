@@ -49,7 +49,7 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     var temp_time:String = "10분 내외"
     
     let situ_cellIdentifier = "recipeTag"
-    var temp_situation:String = "아플 때"
+    var temp_situation:String = "몸이 좋지 않을 때"
     
     let type_cellIdentifier = "recipeTag"
     var temp_type:String = "한식"
@@ -59,7 +59,8 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
     
     var sizingCell: RecommendedTagCollectionViewCell?
     
-    
+    var uploadImageURL:[String] = []
+
     //Firebase 로 데이터 업로드
      
     @IBAction func upLoadFb(_ sender: Any) {
@@ -82,13 +83,55 @@ class SendRecipeViewController: UIViewController, UICollectionViewDataSource, UI
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailIngredient)
         let upDetailRecipe = ["upDetailRecipe" : detailRecipeField.text!]
         ref.child("Recipe/\(code.1)").updateChildValues(upDetailRecipe)
-        let upPhotoURL = ["upPhotoURL" : ["https://firebasestorage.googleapis.com/v0/b/shefkim-d0b57.appspot.com/o/Recipe392%2Fcham_dice.jpg?alt=media&token=7de47077-9058-4821-9224-7a6a3d39e944"]]
+
+        upLoadImage(key: code.1)
+        
+    }
+    
+    func upLoadImage(key : String) {
+        
+        var downLoadUrl:[String] = []
+        
+        let imgRef = ref.child("Recipe/\(key)")
+        for i in 0 ..< photoArray.count {
+            let storage = Storage.storage().reference()
+            let tempImageRef = storage.child("\(key)/\(key).\(i).jpg")
+            let image = photoArray[i]
+            let metaData = StorageMetadata()
+            metaData.contentType = "jpg/jpeg"
+            print(photoArray.count)
+            tempImageRef.putData(UIImageJPEGRepresentation(image, 0.8)!, metadata: metaData) { (data, error
+                ) in
+                if error == nil {
+                    print("upLoad succeccful")
+                    if let photoUrl = data?.downloadURL(){
+                        self.uploadImageURL.append("\(photoUrl)")
+                        print(self.uploadImageURL)
+                        self.uploadPhoto(ref: imgRef)
+                        
+                    }
+                }else{
+                    print(error)
+                    
+                }
+            }
+        }
+        return
+    }
+    
+    //firebase 로 업로드
+    func uploadPhoto(ref:DatabaseReference){
+        let imageRef = ref
+        let upPhotoURL = ["upPhotoURL" : uploadImageURL]
+        imageRef.updateChildValues(upPhotoURL){(error) in
+            print("Error while writing")}
+        
     }
     
     // firebase 분류코드 생성
     func madeCode(length: Int) -> (String, String){
         
-        let letters : NSString = "012356789"
+        let letters : NSString = "12356789"
         let len = UInt32(letters.length)
         
         var Code = ""
